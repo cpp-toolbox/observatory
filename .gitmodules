@@ -70,3 +70,9 @@
 [submodule "src/utility/unique_id_generator"]
 	path = src/utility/unique_id_generator
 	url = git@github.com:cpp-toolbox/unique_id_generator.git
+[submodule "src/graphics/ui"]
+	path = src/graphics/ui
+	url = git@github.com:cpp-toolbox/ui.git
+[submodule "src/graphics/font_atlas"]
+	path = src/graphics/font_atlas
+	url = git@github.com:cpp-toolbox/font_atlas.git
