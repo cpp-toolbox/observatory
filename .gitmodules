@@ -76,3 +76,12 @@
 [submodule "src/graphics/font_atlas"]
 	path = src/graphics/font_atlas
 	url = git@github.com:cpp-toolbox/font_atlas.git
+[submodule "src/graphics/colors"]
+	path = src/graphics/colors
+	url = git@github.com:cpp-toolbox/colors.git
+[submodule "src/utility/stopwatch"]
+	path = src/utility/stopwatch
+	url = git@github.com:cpp-toolbox/stopwatch.git
+[submodule "src/utility/fs_utils"]
+	path = src/utility/fs_utils
+	url = git@github.com:cpp-toolbox/fs_utils.git
