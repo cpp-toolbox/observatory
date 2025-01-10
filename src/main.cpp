@@ -28,8 +28,11 @@
 #include "utility/fs_utils/fs_utils.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 
+// TODO document the fact that this has to be in the same file that the implementation header is or doesn't work
 #include <stb_image.h>
+#include <stb_image_write.h>
 
 #include <cstdio>
 #include <cstdlib>
@@ -517,7 +520,10 @@ int main() {
                              ShaderUniformVariable::EDGE_TRANSITION_WIDTH, edge_transition);
     shader_cache.stop_using_shader_program();
 
-    TexturePacker texture_packer("assets/packed_textures/packed_texture.json");
+    const std::filesystem::path textures_directory = "assets/";
+    const std::filesystem::path output_dir = "assets/packed_textures";
+    int container_side_length = 1024;
+    TexturePacker texture_packer(textures_directory, output_dir, container_side_length);
 
     std::string currently_packed_textures_paths = "assets/packed_textures/currently_packed_texture_paths.txt";
 
@@ -591,11 +597,12 @@ int main() {
             for (auto &ivpnt : crosshair) {
                 used_texture_paths.push_back(ivpnt.texture);
             }
-            add_unique_files(currently_packed_textures_paths, used_texture_paths);
-            repack_textures();
+            // todo we just need to implement the code which will load from file in repack textures and then
+            // update that file and then use that file
+            /*add_unique_files(currently_packed_textures_paths, used_texture_paths);*/
+            /*repack_textures();*/
 
-            texture_packer.regenerate("assets/packed_textures/packed_texture.json");
-
+            texture_packer.regenerate(used_texture_paths);
             std::vector<IVPNTexturePacked> packed_crosshair = convert_ivpnt_to_ivpntp(crosshair, texture_packer);
 
             PackedModel pm(crosshair_transform, packed_crosshair);
