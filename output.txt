@@ -1,0 +1,5934 @@
+==== OpenGL Information ====
+OpenGL Version: 3.3.0 - Build 30.0.101.1368
+Vendor: Intel
+Renderer: Intel(R) Iris(R) Xe Graphics
+GLSL Version: 3.30 - Build 30.0.101.1368
+
+==== GPU Resource Limits ====
+Maximum vertex uniform blocks: 14
+Maximum geometry uniform blocks: 14
+Maximum fragment uniform blocks: 14
+Maximum combined uniform blocks: 70
+Maximum uniform block size: 65536 bytes
+Maximum uniform buffer bindings: 84
+Maximum texture size: 16384x16384 pixels
+Maximum number of vertex attributes: 16
+Maximum number of varying floats: 64
+Maximum combined vertex uniform components: 233472
+Maximum combined geometry uniform components: 233472
+Maximum combined fragment uniform components: 233472
+
+==== OpenGL Additional Capabilities ====
+Maximum texture units: 32
+Maximum texture LOD bias: 15
+Maximum renderbuffer size: 16384x16384 pixels
+Maximum number of draw buffers: 8
+Maximum number of color attachments: 8
+Maximum sample mask words: 1
+Maximum transform feedback interleaved components: 128
+==== OpenGL Extensions ====
+GL_3DFX_texture_compression_FXT1
+GL_AMD_depth_clamp_separate
+GL_AMD_vertex_shader_layer
+GL_AMD_vertex_shader_viewport_index
+GL_ARB_ES2_compatibility
+GL_ARB_ES3_1_compatibility
+GL_ARB_ES3_compatibility
+GL_ARB_arrays_of_arrays
+GL_ARB_base_instance
+GL_ARB_bindless_texture
+GL_ARB_blend_func_extended
+GL_ARB_buffer_storage
+GL_ARB_cl_event
+GL_ARB_clear_buffer_object
+GL_ARB_clear_texture
+GL_ARB_clip_control
+GL_ARB_color_buffer_float
+GL_ARB_compressed_texture_pixel_storage
+GL_ARB_compute_shader
+GL_ARB_conditional_render_inverted
+GL_ARB_conservative_depth
+GL_ARB_copy_buffer
+GL_ARB_copy_image
+GL_ARB_cull_distance
+GL_ARB_debug_output
+GL_ARB_depth_buffer_float
+GL_ARB_depth_clamp
+GL_ARB_depth_texture
+GL_ARB_derivative_control
+GL_ARB_direct_state_access
+GL_ARB_draw_buffers
+GL_ARB_draw_buffers_blend
+GL_ARB_draw_elements_base_vertex
+GL_ARB_draw_indirect
+GL_ARB_draw_instanced
+GL_ARB_enhanced_layouts
+GL_ARB_explicit_attrib_location
+GL_ARB_explicit_uniform_location
+GL_ARB_fragment_coord_conventions
+GL_ARB_fragment_layer_viewport
+GL_ARB_fragment_program
+GL_ARB_fragment_program_shadow
+GL_ARB_fragment_shader
+GL_ARB_fragment_shader_interlock
+GL_ARB_framebuffer_no_attachments
+GL_ARB_framebuffer_object
+GL_ARB_framebuffer_sRGB
+GL_ARB_geometry_shader4
+GL_ARB_get_program_binary
+GL_ARB_get_texture_sub_image
+GL_ARB_gl_spirv
+GL_ARB_gpu_shader5
+GL_ARB_gpu_shader_fp64
+GL_ARB_half_float_pixel
+GL_ARB_half_float_vertex
+GL_ARB_indirect_parameters
+GL_ARB_instanced_arrays
+GL_ARB_internalformat_query
+GL_ARB_internalformat_query2
+GL_ARB_invalidate_subdata
+GL_ARB_map_buffer_alignment
+GL_ARB_map_buffer_range
+GL_ARB_multi_bind
+GL_ARB_multi_draw_indirect
+GL_ARB_multisample
+GL_ARB_multitexture
+GL_ARB_occlusion_query
+GL_ARB_occlusion_query2
+GL_ARB_pipeline_statistics_query
+GL_ARB_pixel_buffer_object
+GL_ARB_point_parameters
+GL_ARB_point_sprite
+GL_ARB_polygon_offset_clamp
+GL_ARB_post_depth_coverage
+GL_ARB_program_interface_query
+GL_ARB_provoking_vertex
+GL_ARB_query_buffer_object
+GL_ARB_robust_buffer_access_behavior
+GL_ARB_robustness
+GL_ARB_robustness_isolation
+GL_ARB_sample_shading
+GL_ARB_sampler_objects
+GL_ARB_seamless_cube_map
+GL_ARB_seamless_cubemap_per_texture
+GL_ARB_separate_shader_objects
+GL_ARB_shader_atomic_counter_ops
+GL_ARB_shader_atomic_counters
+GL_ARB_shader_bit_encoding
+GL_ARB_shader_draw_parameters
+GL_ARB_shader_group_vote
+GL_ARB_shader_image_load_store
+GL_ARB_shader_image_size
+GL_ARB_shader_objects
+GL_ARB_shader_precision
+GL_ARB_shader_stencil_export
+GL_ARB_shader_storage_buffer_object
+GL_ARB_shader_subroutine
+GL_ARB_shader_texture_image_samples
+GL_ARB_shading_language_100
+GL_ARB_shading_language_420pack
+GL_ARB_shading_language_packing
+GL_ARB_shadow
+GL_ARB_spirv_extensions
+GL_ARB_stencil_texturing
+GL_ARB_sync
+GL_ARB_tessellation_shader
+GL_ARB_texture_barrier
+GL_ARB_texture_border_clamp
+GL_ARB_texture_buffer_object
+GL_ARB_texture_buffer_object_rgb32
+GL_ARB_texture_buffer_range
+GL_ARB_texture_compression
+GL_ARB_texture_compression_bptc
+GL_ARB_texture_compression_rgtc
+GL_ARB_texture_cube_map
+GL_ARB_texture_cube_map_array
+GL_ARB_texture_env_add
+GL_ARB_texture_env_combine
+GL_ARB_texture_env_crossbar
+GL_ARB_texture_env_dot3
+GL_ARB_texture_filter_anisotropic
+GL_ARB_texture_float
+GL_ARB_texture_gather
+GL_ARB_texture_mirror_clamp_to_edge
+GL_ARB_texture_mirrored_repeat
+GL_ARB_texture_multisample
+GL_ARB_texture_non_power_of_two
+GL_ARB_texture_query_levels
+GL_ARB_texture_query_lod
+GL_ARB_texture_rectangle
+GL_ARB_texture_rg
+GL_ARB_texture_rgb10_a2ui
+GL_ARB_texture_stencil8
+GL_ARB_texture_storage
+GL_ARB_texture_storage_multisample
+GL_ARB_texture_swizzle
+GL_ARB_texture_view
+GL_ARB_timer_query
+GL_ARB_transform_feedback2
+GL_ARB_transform_feedback3
+GL_ARB_transform_feedback_instanced
+GL_ARB_transform_feedback_overflow_query
+GL_ARB_transpose_matrix
+GL_ARB_uniform_buffer_object
+GL_ARB_vertex_array_bgra
+GL_ARB_vertex_array_object
+GL_ARB_vertex_attrib_64bit
+GL_ARB_vertex_attrib_binding
+GL_ARB_vertex_buffer_object
+GL_ARB_vertex_program
+GL_ARB_vertex_shader
+GL_ARB_vertex_type_10f_11f_11f_rev
+GL_ARB_vertex_type_2_10_10_10_rev
+GL_ARB_viewport_array
+GL_ARB_window_pos
+GL_ATI_separate_stencil
+GL_EXT_abgr
+GL_EXT_bgra
+GL_EXT_blend_color
+GL_EXT_blend_equation_separate
+GL_EXT_blend_func_separate
+GL_EXT_blend_minmax
+GL_EXT_blend_subtract
+GL_EXT_clip_volume_hint
+GL_EXT_compiled_vertex_array
+GL_EXT_depth_bounds_test
+GL_EXT_direct_state_access
+GL_EXT_draw_buffers2
+GL_EXT_draw_range_elements
+GL_EXT_fog_coord
+GL_EXT_framebuffer_blit
+GL_EXT_framebuffer_multisample
+GL_EXT_framebuffer_object
+GL_EXT_geometry_shader4
+GL_EXT_gpu_program_parameters
+GL_EXT_gpu_shader4
+GL_EXT_memory_object
+GL_EXT_memory_object_win32
+GL_EXT_multi_draw_arrays
+GL_EXT_packed_depth_stencil
+GL_EXT_packed_float
+GL_EXT_packed_pixels
+GL_EXT_polygon_offset_clamp
+GL_EXT_rescale_normal
+GL_EXT_secondary_color
+GL_EXT_semaphore
+GL_EXT_semaphore_win32
+GL_EXT_separate_specular_color
+GL_EXT_shader_framebuffer_fetch
+GL_EXT_shader_integer_mix
+GL_EXT_shadow_funcs
+GL_EXT_stencil_two_side
+GL_EXT_stencil_wrap
+GL_EXT_texture3D
+GL_EXT_texture_array
+GL_EXT_texture_compression_s3tc
+GL_EXT_texture_edge_clamp
+GL_EXT_texture_env_add
+GL_EXT_texture_env_combine
+GL_EXT_texture_filter_anisotropic
+GL_EXT_texture_integer
+GL_EXT_texture_lod_bias
+GL_EXT_texture_rectangle
+GL_EXT_texture_sRGB
+GL_EXT_texture_sRGB_decode
+GL_EXT_texture_shared_exponent
+GL_EXT_texture_snorm
+GL_EXT_texture_storage
+GL_EXT_texture_swizzle
+GL_EXT_timer_query
+GL_EXT_transform_feedback
+GL_IBM_texture_mirrored_repeat
+GL_INTEL_coarse_fragment_shader
+GL_INTEL_conservative_rasterization
+GL_INTEL_fragment_shader_ordering
+GL_INTEL_framebuffer_CMAA
+GL_INTEL_map_texture
+GL_INTEL_multi_rate_fragment_shader
+GL_INTEL_performance_query
+GL_KHR_blend_equation_advanced
+GL_KHR_blend_equation_advanced_coherent
+GL_KHR_context_flush_control
+GL_KHR_debug
+GL_KHR_no_error
+GL_KHR_shader_subgroup
+GL_KHR_shader_subgroup_arithmetic
+GL_KHR_shader_subgroup_ballot
+GL_KHR_shader_subgroup_basic
+GL_KHR_shader_subgroup_clustered
+GL_KHR_shader_subgroup_quad
+GL_KHR_shader_subgroup_shuffle
+GL_KHR_shader_subgroup_shuffle_relative
+GL_KHR_shader_subgroup_vote
+GL_KHR_texture_compression_astc_ldr
+GL_NV_blend_square
+GL_NV_conditional_render
+GL_NV_primitive_restart
+GL_NV_texgen_reflection
+GL_OVR_multiview
+GL_SGIS_generate_mipmap
+GL_SGIS_texture_edge_clamp
+GL_SGIS_texture_lod
+GL_SUN_multi_draw_arrays
+GL_WIN_swap_hint
+WGL_EXT_swap_control
+
+[2025-01-10 12:55:52.995] [shader cache] [info] creating new shader program
+[2025-01-10 12:55:53.042] [shader cache] [info] Successfully linked shader program
+[2025-01-10 12:55:53.042] [shader cache] [info] creating new shader program
+[2025-01-10 12:55:53.053] [shader cache] [info] Successfully linked shader program
+[2025-01-10 12:55:53.053] [shader cache] [info] creating new shader program
+[2025-01-10 12:55:53.061] [shader cache] [info] Successfully linked shader program
+[2025-01-10 12:55:53.061] [shader cache] [info] Logging Created Shaders:
+[2025-01-10 12:55:53.061] [shader cache] [info] Total shaders: 3
+[2025-01-10 12:55:53.061] [shader cache] [info] Shader Type: texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_and_multiple_lights, Program ID: 1
+[2025-01-10 12:55:53.061] [shader cache] [info] Shader Type: transform_v_with_signed_distance_field_text, Program ID: 4
+[2025-01-10 12:55:53.061] [shader cache] [info] Shader Type: absolute_position_with_colored_vertex, Program ID: 7
+[2025-01-10 12:55:53.061] [shader cache] [info] Binding vertex attribute local_to_world_index
+[2025-01-10 12:55:53.061] [shader cache] [info] Binding vertex attribute passthrough_bone_ids
+[2025-01-10 12:55:53.061] [shader cache] [info] Binding vertex attribute passthrough_bone_weights
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute passthrough_packed_texture_index
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute passthrough_texture_coordinate
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute passthrough_normal
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute xyz_position
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute xyz_position
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute passthrough_rgb_color
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute xyz_position
+[2025-01-10 12:55:53.062] [shader cache] [info] Binding vertex attribute passthrough_texture_coordinate
+DEBOGGING: assets\crosshair\bright_green.png
+DEBOGGING: assets\cube_test\cube_test.fbm\cube_test.png
+DEBOGGING: assets\cube_test\cube_test.png
+DEBOGGING: assets\fonts\times_64_sdf_atlas.png
+DEBOGGING: assets\images\alphabet.png
+DEBOGGING: assets\images\flame.png
+DEBOGGING: assets\images\missing_texture.png
+DEBOGGING: assets\images\smoke_64px.png
+DEBOGGING: assets\images\test_box.png
+DEBOGGING: assets\lightbulb\lightbulb.png
+DEBOGGING: assets\new.png
+DEBOGGING: assets\packed_textures\packed_texture_0.png
+Skipping file inside output directory: assets\packed_textures\packed_texture_0.png
+DEBOGGING: assets\packed_textures\packed_texture_1.png
+Skipping file inside output directory: assets\packed_textures\packed_texture_1.png
+DEBOGGING: assets\packed_textures\packed_texture_2.png
+Skipping file inside output directory: assets\packed_textures\packed_texture_2.png
+DEBOGGING: assets\room\curtain 22_128x128.png
+DEBOGGING: assets\room\curtain nm_128x128.png
+DEBOGGING: assets\room\door_128x256.png
+DEBOGGING: assets\room\door_back_128x256.png
+DEBOGGING: assets\room\floor_512x256.png
+DEBOGGING: assets\room\floor_nm_512x256.png
+DEBOGGING: assets\room\NormalMap (31)_128x256.png
+DEBOGGING: assets\room\wall 0_128x128.png
+DEBOGGING: assets\room\wall_nm_128x128.png
+DEBOGGING: assets\room\window 0_128x256.png
+DEBOGGING: assets\room\window white_128x16.png
+DEBOGGING: assets\room\window_nm_128x16.png
+DEBOGGING: assets\smoking\smoking.fbm\cigarette.png
+DEBOGGING: assets\smoking\smoking.fbm\cigarette_pack.png
+DEBOGGING: assets\smoking\smoking.fbm\couch_texure.png
+DEBOGGING: assets\smoking\smoking.fbm\curtain 22_128x128.png
+DEBOGGING: assets\smoking\smoking.fbm\door_128x256.png
+DEBOGGING: assets\smoking\smoking.fbm\door_back_128x256.png
+DEBOGGING: assets\smoking\smoking.fbm\floor_512x256.png
+DEBOGGING: assets\smoking\smoking.fbm\guy_everything.png
+DEBOGGING: assets\smoking\smoking.fbm\knife.png
+DEBOGGING: assets\smoking\smoking.fbm\lighter.png
+DEBOGGING: assets\smoking\smoking.fbm\wall 0_128x128.png
+DEBOGGING: assets\smoking\smoking.fbm\window 0_128x256.png
+DEBOGGING: assets\smoking\smoking.fbm\window white_128x16.png
+Starting texture packing with 36 textures.
+Found texture assets\crosshair\bright_green.png with dimensions 1x1
+Found texture assets\cube_test\cube_test.fbm\cube_test.png with dimensions 128x128
+Found texture assets\cube_test\cube_test.png with dimensions 128x128
+Found texture assets\fonts\times_64_sdf_atlas.png with dimensions 1024x256
+Found texture assets\images\alphabet.png with dimensions 1024x512
+Found texture assets\images\flame.png with dimensions 1024x512
+Found texture assets\images\missing_texture.png with dimensions 32x32
+Found texture assets\images\smoke_64px.png with dimensions 64x64
+Found texture assets\images\test_box.png with dimensions 64x64
+Found texture assets\lightbulb\lightbulb.png with dimensions 64x64
+Found texture assets\new.png with dimensions 128x128
+Found texture assets\room\curtain 22_128x128.png with dimensions 128x128
+Found texture assets\room\curtain nm_128x128.png with dimensions 128x128
+Found texture assets\room\door_128x256.png with dimensions 128x256
+Found texture assets\room\door_back_128x256.png with dimensions 128x256
+Found texture assets\room\floor_512x256.png with dimensions 512x256
+Found texture assets\room\floor_nm_512x256.png with dimensions 512x256
+Found texture assets\room\NormalMap (31)_128x256.png with dimensions 128x256
+Found texture assets\room\wall 0_128x128.png with dimensions 128x128
+Found texture assets\room\wall_nm_128x128.png with dimensions 128x128
+Found texture assets\room\window 0_128x256.png with dimensions 128x256
+Found texture assets\room\window white_128x16.png with dimensions 128x16
+Found texture assets\room\window_nm_128x16.png with dimensions 128x16
+Found texture assets\smoking\smoking.fbm\cigarette.png with dimensions 64x64
+Found texture assets\smoking\smoking.fbm\cigarette_pack.png with dimensions 128x128
+Found texture assets\smoking\smoking.fbm\couch_texure.png with dimensions 256x256
+Found texture assets\smoking\smoking.fbm\curtain 22_128x128.png with dimensions 128x128
+Found texture assets\smoking\smoking.fbm\door_128x256.png with dimensions 128x256
+Found texture assets\smoking\smoking.fbm\door_back_128x256.png with dimensions 128x256
+Found texture assets\smoking\smoking.fbm\floor_512x256.png with dimensions 512x256
+Found texture assets\smoking\smoking.fbm\guy_everything.png with dimensions 256x256
+Found texture assets\smoking\smoking.fbm\knife.png with dimensions 256x256
+Found texture assets\smoking\smoking.fbm\lighter.png with dimensions 128x128
+Found texture assets\smoking\smoking.fbm\wall 0_128x128.png with dimensions 128x128
+Found texture assets\smoking\smoking.fbm\window 0_128x256.png with dimensions 128x256
+Found texture assets\smoking\smoking.fbm\window white_128x16.png with dimensions 128x16
+Constructed 36 texture blocks:
+  - TextureBlock: assets\crosshair\bright_green.png
+      Dimensions: 1x1
+      Subtextures: [
+      ]
+  - TextureBlock: assets\cube_test\cube_test.fbm\cube_test.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\cube_test\cube_test.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\fonts\times_64_sdf_atlas.png
+      Dimensions: 1024x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\images\alphabet.png
+      Dimensions: 1024x512
+      Subtextures: [
+      ]
+  - TextureBlock: assets\images\flame.png
+      Dimensions: 1024x512
+      Subtextures: [
+      ]
+  - TextureBlock: assets\images\missing_texture.png
+      Dimensions: 32x32
+      Subtextures: [
+      ]
+  - TextureBlock: assets\images\smoke_64px.png
+      Dimensions: 64x64
+      Subtextures: [
+      ]
+  - TextureBlock: assets\images\test_box.png
+      Dimensions: 64x64
+      Subtextures: [
+      ]
+  - TextureBlock: assets\lightbulb\lightbulb.png
+      Dimensions: 64x64
+      Subtextures: [
+      ]
+  - TextureBlock: assets\new.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\curtain 22_128x128.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\curtain nm_128x128.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\door_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\door_back_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\floor_512x256.png
+      Dimensions: 512x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\floor_nm_512x256.png
+      Dimensions: 512x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\NormalMap (31)_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\wall 0_128x128.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\wall_nm_128x128.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\window 0_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\window white_128x16.png
+      Dimensions: 128x16
+      Subtextures: [
+      ]
+  - TextureBlock: assets\room\window_nm_128x16.png
+      Dimensions: 128x16
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\cigarette.png
+      Dimensions: 64x64
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\cigarette_pack.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\couch_texure.png
+      Dimensions: 256x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\curtain 22_128x128.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\door_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\door_back_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\floor_512x256.png
+      Dimensions: 512x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\guy_everything.png
+      Dimensions: 256x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\knife.png
+      Dimensions: 256x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\lighter.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\wall 0_128x128.png
+      Dimensions: 128x128
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\window 0_128x256.png
+      Dimensions: 128x256
+      Subtextures: [
+      ]
+  - TextureBlock: assets\smoking\smoking.fbm\window white_128x16.png
+      Dimensions: 128x16
+      Subtextures: [
+      ]
+Starting texture packing into containers. Container size: 1024x1024
+Sorted texture blocks by minimum side length (descending order):
+  - TextureBlock: assets\images\alphabet.png
+      Dimensions: 1024x512
+  - TextureBlock: assets\images\flame.png
+      Dimensions: 1024x512
+  - TextureBlock: assets\fonts\times_64_sdf_atlas.png
+      Dimensions: 1024x256
+  - TextureBlock: assets\room\floor_512x256.png
+      Dimensions: 512x256
+  - TextureBlock: assets\room\floor_nm_512x256.png
+      Dimensions: 512x256
+  - TextureBlock: assets\smoking\smoking.fbm\couch_texure.png
+      Dimensions: 256x256
+  - TextureBlock: assets\smoking\smoking.fbm\floor_512x256.png
+      Dimensions: 512x256
+  - TextureBlock: assets\smoking\smoking.fbm\guy_everything.png
+      Dimensions: 256x256
+  - TextureBlock: assets\smoking\smoking.fbm\knife.png
+      Dimensions: 256x256
+  - TextureBlock: assets\room\wall 0_128x128.png
+      Dimensions: 128x128
+  - TextureBlock: assets\cube_test\cube_test.fbm\cube_test.png
+      Dimensions: 128x128
+  - TextureBlock: assets\cube_test\cube_test.png
+      Dimensions: 128x128
+  - TextureBlock: assets\new.png
+      Dimensions: 128x128
+  - TextureBlock: assets\room\curtain 22_128x128.png
+      Dimensions: 128x128
+  - TextureBlock: assets\room\curtain nm_128x128.png
+      Dimensions: 128x128
+  - TextureBlock: assets\room\door_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\room\door_back_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\room\NormalMap (31)_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\room\wall_nm_128x128.png
+      Dimensions: 128x128
+  - TextureBlock: assets\room\window 0_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\smoking\smoking.fbm\cigarette_pack.png
+      Dimensions: 128x128
+  - TextureBlock: assets\smoking\smoking.fbm\curtain 22_128x128.png
+      Dimensions: 128x128
+  - TextureBlock: assets\smoking\smoking.fbm\door_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\smoking\smoking.fbm\door_back_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\smoking\smoking.fbm\lighter.png
+      Dimensions: 128x128
+  - TextureBlock: assets\smoking\smoking.fbm\wall 0_128x128.png
+      Dimensions: 128x128
+  - TextureBlock: assets\smoking\smoking.fbm\window 0_128x256.png
+      Dimensions: 128x256
+  - TextureBlock: assets\images\smoke_64px.png
+      Dimensions: 64x64
+  - TextureBlock: assets\images\test_box.png
+      Dimensions: 64x64
+  - TextureBlock: assets\lightbulb\lightbulb.png
+      Dimensions: 64x64
+  - TextureBlock: assets\smoking\smoking.fbm\cigarette.png
+      Dimensions: 64x64
+  - TextureBlock: assets\images\missing_texture.png
+      Dimensions: 32x32
+  - TextureBlock: assets\smoking\smoking.fbm\window white_128x16.png
+      Dimensions: 128x16
+  - TextureBlock: assets\room\window white_128x16.png
+      Dimensions: 128x16
+  - TextureBlock: assets\room\window_nm_128x16.png
+      Dimensions: 128x16
+  - TextureBlock: assets\crosshair\bright_green.png
+      Dimensions: 1x1
+Processing TextureBlock: assets\images\alphabet.png with dimensions 1024x512
+  Creating a new container for the texture.
+    Successfully packed into the new container.
+Processing TextureBlock: assets\images\flame.png with dimensions 1024x512
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\fonts\times_64_sdf_atlas.png with dimensions 1024x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Creating a new container for the texture.
+    Successfully packed into the new container.
+Processing TextureBlock: assets\room\floor_512x256.png with dimensions 512x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\floor_nm_512x256.png with dimensions 512x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\couch_texure.png with dimensions 256x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\floor_512x256.png with dimensions 512x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\guy_everything.png with dimensions 256x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\knife.png with dimensions 256x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\wall 0_128x128.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\cube_test\cube_test.fbm\cube_test.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\cube_test\cube_test.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\new.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\curtain 22_128x128.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\curtain nm_128x128.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\door_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Creating a new container for the texture.
+    Successfully packed into the new container.
+Processing TextureBlock: assets\room\door_back_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\NormalMap (31)_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\wall_nm_128x128.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\window 0_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\cigarette_pack.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\curtain 22_128x128.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\door_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\door_back_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\lighter.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\wall 0_128x128.png with dimensions 128x128
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\window 0_128x256.png with dimensions 128x256
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\images\smoke_64px.png with dimensions 64x64
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\images\test_box.png with dimensions 64x64
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\lightbulb\lightbulb.png with dimensions 64x64
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\cigarette.png with dimensions 64x64
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\images\missing_texture.png with dimensions 32x32
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\smoking\smoking.fbm\window white_128x16.png with dimensions 128x16
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\window white_128x16.png with dimensions 128x16
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\room\window_nm_128x16.png with dimensions 128x16
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Processing TextureBlock: assets\crosshair\bright_green.png with dimensions 1x1
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Failed to fit into this container.
+  Attempting to fit into an existing container...
+    Successfully packed into existing container.
+Packing completed. Created 3 containers.
+Container 0:
+  - Number of packed blocks: 2
+    - TextureBlock: assets\images\alphabet.png
+        Dimensions: 1024x512
+        Placement: (0, 0)
+    - TextureBlock: assets\images\flame.png
+        Dimensions: 1024x512
+        Placement: (0, 512)
+Container 1:
+  - Number of packed blocks: 22
+    - TextureBlock: assets\fonts\times_64_sdf_atlas.png
+        Dimensions: 1024x256
+        Placement: (0, 0)
+    - TextureBlock: assets\room\floor_512x256.png
+        Dimensions: 512x256
+        Placement: (0, 256)
+    - TextureBlock: assets\room\floor_nm_512x256.png
+        Dimensions: 512x256
+        Placement: (512, 256)
+    - TextureBlock: assets\smoking\smoking.fbm\couch_texure.png
+        Dimensions: 256x256
+        Placement: (0, 512)
+    - TextureBlock: assets\smoking\smoking.fbm\floor_512x256.png
+        Dimensions: 512x256
+        Placement: (256, 512)
+    - TextureBlock: assets\smoking\smoking.fbm\guy_everything.png
+        Dimensions: 256x256
+        Placement: (768, 512)
+    - TextureBlock: assets\smoking\smoking.fbm\knife.png
+        Dimensions: 256x256
+        Placement: (0, 768)
+    - TextureBlock: assets\room\wall 0_128x128.png
+        Dimensions: 128x128
+        Placement: (256, 768)
+    - TextureBlock: assets\cube_test\cube_test.fbm\cube_test.png
+        Dimensions: 128x128
+        Placement: (384, 768)
+    - TextureBlock: assets\cube_test\cube_test.png
+        Dimensions: 128x128
+        Placement: (512, 768)
+    - TextureBlock: assets\new.png
+        Dimensions: 128x128
+        Placement: (640, 768)
+    - TextureBlock: assets\room\curtain 22_128x128.png
+        Dimensions: 128x128
+        Placement: (768, 768)
+    - TextureBlock: assets\room\curtain nm_128x128.png
+        Dimensions: 128x128
+        Placement: (896, 768)
+    - TextureBlock: assets\room\wall_nm_128x128.png
+        Dimensions: 128x128
+        Placement: (256, 896)
+    - TextureBlock: assets\smoking\smoking.fbm\cigarette_pack.png
+        Dimensions: 128x128
+        Placement: (384, 896)
+    - TextureBlock: assets\smoking\smoking.fbm\curtain 22_128x128.png
+        Dimensions: 128x128
+        Placement: (512, 896)
+    - TextureBlock: assets\smoking\smoking.fbm\lighter.png
+        Dimensions: 128x128
+        Placement: (640, 896)
+    - TextureBlock: assets\smoking\smoking.fbm\wall 0_128x128.png
+        Dimensions: 128x128
+        Placement: (768, 896)
+    - TextureBlock: assets\images\smoke_64px.png
+        Dimensions: 64x64
+        Placement: (896, 896)
+    - TextureBlock: assets\images\test_box.png
+        Dimensions: 64x64
+        Placement: (960, 896)
+    - TextureBlock: assets\lightbulb\lightbulb.png
+        Dimensions: 64x64
+        Placement: (896, 960)
+    - TextureBlock: assets\smoking\smoking.fbm\cigarette.png
+        Dimensions: 64x64
+        Placement: (960, 960)
+Container 2:
+  - Number of packed blocks: 12
+    - TextureBlock: assets\room\door_128x256.png
+        Dimensions: 128x256
+        Placement: (0, 0)
+    - TextureBlock: assets\room\door_back_128x256.png
+        Dimensions: 128x256
+        Placement: (128, 0)
+    - TextureBlock: assets\room\NormalMap (31)_128x256.png
+        Dimensions: 128x256
+        Placement: (256, 0)
+    - TextureBlock: assets\room\window 0_128x256.png
+        Dimensions: 128x256
+        Placement: (384, 0)
+    - TextureBlock: assets\smoking\smoking.fbm\door_128x256.png
+        Dimensions: 128x256
+        Placement: (512, 0)
+    - TextureBlock: assets\smoking\smoking.fbm\door_back_128x256.png
+        Dimensions: 128x256
+        Placement: (640, 0)
+    - TextureBlock: assets\smoking\smoking.fbm\window 0_128x256.png
+        Dimensions: 128x256
+        Placement: (768, 0)
+    - TextureBlock: assets\images\missing_texture.png
+        Dimensions: 32x32
+        Placement: (896, 0)
+    - TextureBlock: assets\smoking\smoking.fbm\window white_128x16.png
+        Dimensions: 128x16
+        Placement: (896, 32)
+    - TextureBlock: assets\room\window white_128x16.png
+        Dimensions: 128x16
+        Placement: (896, 48)
+    - TextureBlock: assets\room\window_nm_128x16.png
+        Dimensions: 128x16
+        Placement: (896, 64)
+    - TextureBlock: assets\crosshair\bright_green.png
+        Dimensions: 1x1
+        Placement: (928, 0)
+Packed texture blocks into 3 containers:
+Container 0:
+  - Number of packed blocks: 2
+    - TextureBlock: assets\images\alphabet.png
+        Dimensions: 1024x512
+        Placement: (0, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\images\flame.png
+        Dimensions: 1024x512
+        Placement: (0, 512)
+        Subtextures: [
+        ]
+Container 1:
+  - Number of packed blocks: 22
+    - TextureBlock: assets\fonts\times_64_sdf_atlas.png
+        Dimensions: 1024x256
+        Placement: (0, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\floor_512x256.png
+        Dimensions: 512x256
+        Placement: (0, 256)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\floor_nm_512x256.png
+        Dimensions: 512x256
+        Placement: (512, 256)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\couch_texure.png
+        Dimensions: 256x256
+        Placement: (0, 512)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\floor_512x256.png
+        Dimensions: 512x256
+        Placement: (256, 512)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\guy_everything.png
+        Dimensions: 256x256
+        Placement: (768, 512)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\knife.png
+        Dimensions: 256x256
+        Placement: (0, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\wall 0_128x128.png
+        Dimensions: 128x128
+        Placement: (256, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\cube_test\cube_test.fbm\cube_test.png
+        Dimensions: 128x128
+        Placement: (384, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\cube_test\cube_test.png
+        Dimensions: 128x128
+        Placement: (512, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\new.png
+        Dimensions: 128x128
+        Placement: (640, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\curtain 22_128x128.png
+        Dimensions: 128x128
+        Placement: (768, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\curtain nm_128x128.png
+        Dimensions: 128x128
+        Placement: (896, 768)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\wall_nm_128x128.png
+        Dimensions: 128x128
+        Placement: (256, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\cigarette_pack.png
+        Dimensions: 128x128
+        Placement: (384, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\curtain 22_128x128.png
+        Dimensions: 128x128
+        Placement: (512, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\lighter.png
+        Dimensions: 128x128
+        Placement: (640, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\wall 0_128x128.png
+        Dimensions: 128x128
+        Placement: (768, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\images\smoke_64px.png
+        Dimensions: 64x64
+        Placement: (896, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\images\test_box.png
+        Dimensions: 64x64
+        Placement: (960, 896)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\lightbulb\lightbulb.png
+        Dimensions: 64x64
+        Placement: (896, 960)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\cigarette.png
+        Dimensions: 64x64
+        Placement: (960, 960)
+        Subtextures: [
+        ]
+Container 2:
+  - Number of packed blocks: 12
+    - TextureBlock: assets\room\door_128x256.png
+        Dimensions: 128x256
+        Placement: (0, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\door_back_128x256.png
+        Dimensions: 128x256
+        Placement: (128, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\NormalMap (31)_128x256.png
+        Dimensions: 128x256
+        Placement: (256, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\window 0_128x256.png
+        Dimensions: 128x256
+        Placement: (384, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\door_128x256.png
+        Dimensions: 128x256
+        Placement: (512, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\door_back_128x256.png
+        Dimensions: 128x256
+        Placement: (640, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\window 0_128x256.png
+        Dimensions: 128x256
+        Placement: (768, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\images\missing_texture.png
+        Dimensions: 32x32
+        Placement: (896, 0)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\smoking\smoking.fbm\window white_128x16.png
+        Dimensions: 128x16
+        Placement: (896, 32)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\window white_128x16.png
+        Dimensions: 128x16
+        Placement: (896, 48)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\room\window_nm_128x16.png
+        Dimensions: 128x16
+        Placement: (896, 64)
+        Subtextures: [
+        ]
+    - TextureBlock: assets\crosshair\bright_green.png
+        Dimensions: 1x1
+        Placement: (928, 0)
+        Subtextures: [
+        ]
+Processing container 0 with 2 texture blocks.
+Processing block: assets\images\alphabet.png at position (0, 0).
+Loaded image: assets\images\alphabet.png with dimensions (1024x512).
+delme: assets\images\alphabet.png
+Processing block: assets\images\flame.png at position (0, 512).
+Loaded image: assets\images\flame.png with dimensions (1024x512).
+delme: assets\images\flame.png
+Packed texture saved to "assets\\packed_textures\\packed_texture_0.png"
+Processing container 1 with 22 texture blocks.
+Processing block: assets\fonts\times_64_sdf_atlas.png at position (0, 0).
+Loaded image: assets\fonts\times_64_sdf_atlas.png with dimensions (1024x256).
+delme: assets\fonts\times_64_sdf_atlas.png
+Processing block: assets\room\floor_512x256.png at position (0, 256).
+Loaded image: assets\room\floor_512x256.png with dimensions (512x256).
+delme: assets\room\floor_512x256.png
+Processing block: assets\room\floor_nm_512x256.png at position (512, 256).
+Loaded image: assets\room\floor_nm_512x256.png with dimensions (512x256).
+delme: assets\room\floor_nm_512x256.png
+Processing block: assets\smoking\smoking.fbm\couch_texure.png at position (0, 512).
+Loaded image: assets\smoking\smoking.fbm\couch_texure.png with dimensions (256x256).
+delme: assets\smoking\smoking.fbm\couch_texure.png
+Processing block: assets\smoking\smoking.fbm\floor_512x256.png at position (256, 512).
+Loaded image: assets\smoking\smoking.fbm\floor_512x256.png with dimensions (512x256).
+delme: assets\smoking\smoking.fbm\floor_512x256.png
+Processing block: assets\smoking\smoking.fbm\guy_everything.png at position (768, 512).
+Loaded image: assets\smoking\smoking.fbm\guy_everything.png with dimensions (256x256).
+delme: assets\smoking\smoking.fbm\guy_everything.png
+Processing block: assets\smoking\smoking.fbm\knife.png at position (0, 768).
+Loaded image: assets\smoking\smoking.fbm\knife.png with dimensions (256x256).
+delme: assets\smoking\smoking.fbm\knife.png
+Processing block: assets\room\wall 0_128x128.png at position (256, 768).
+Loaded image: assets\room\wall 0_128x128.png with dimensions (128x128).
+delme: assets\room\wall 0_128x128.png
+Processing block: assets\cube_test\cube_test.fbm\cube_test.png at position (384, 768).
+Loaded image: assets\cube_test\cube_test.fbm\cube_test.png with dimensions (128x128).
+delme: assets\cube_test\cube_test.fbm\cube_test.png
+Processing block: assets\cube_test\cube_test.png at position (512, 768).
+Loaded image: assets\cube_test\cube_test.png with dimensions (128x128).
+delme: assets\cube_test\cube_test.png
+Processing block: assets\new.png at position (640, 768).
+Loaded image: assets\new.png with dimensions (128x128).
+delme: assets\new.png
+Processing block: assets\room\curtain 22_128x128.png at position (768, 768).
+Loaded image: assets\room\curtain 22_128x128.png with dimensions (128x128).
+delme: assets\room\curtain 22_128x128.png
+Processing block: assets\room\curtain nm_128x128.png at position (896, 768).
+Loaded image: assets\room\curtain nm_128x128.png with dimensions (128x128).
+delme: assets\room\curtain nm_128x128.png
+Processing block: assets\room\wall_nm_128x128.png at position (256, 896).
+Loaded image: assets\room\wall_nm_128x128.png with dimensions (128x128).
+delme: assets\room\wall_nm_128x128.png
+Processing block: assets\smoking\smoking.fbm\cigarette_pack.png at position (384, 896).
+Loaded image: assets\smoking\smoking.fbm\cigarette_pack.png with dimensions (128x128).
+delme: assets\smoking\smoking.fbm\cigarette_pack.png
+Processing block: assets\smoking\smoking.fbm\curtain 22_128x128.png at position (512, 896).
+Loaded image: assets\smoking\smoking.fbm\curtain 22_128x128.png with dimensions (128x128).
+delme: assets\smoking\smoking.fbm\curtain 22_128x128.png
+Processing block: assets\smoking\smoking.fbm\lighter.png at position (640, 896).
+Loaded image: assets\smoking\smoking.fbm\lighter.png with dimensions (128x128).
+delme: assets\smoking\smoking.fbm\lighter.png
+Processing block: assets\smoking\smoking.fbm\wall 0_128x128.png at position (768, 896).
+Loaded image: assets\smoking\smoking.fbm\wall 0_128x128.png with dimensions (128x128).
+delme: assets\smoking\smoking.fbm\wall 0_128x128.png
+Processing block: assets\images\smoke_64px.png at position (896, 896).
+Loaded image: assets\images\smoke_64px.png with dimensions (64x64).
+delme: assets\images\smoke_64px.png
+Processing block: assets\images\test_box.png at position (960, 896).
+Loaded image: assets\images\test_box.png with dimensions (64x64).
+delme: assets\images\test_box.png
+Processing block: assets\lightbulb\lightbulb.png at position (896, 960).
+Loaded image: assets\lightbulb\lightbulb.png with dimensions (64x64).
+delme: assets\lightbulb\lightbulb.png
+Processing block: assets\smoking\smoking.fbm\cigarette.png at position (960, 960).
+Loaded image: assets\smoking\smoking.fbm\cigarette.png with dimensions (64x64).
+delme: assets\smoking\smoking.fbm\cigarette.png
+Packed texture saved to "assets\\packed_textures\\packed_texture_1.png"
+Processing container 2 with 12 texture blocks.
+Processing block: assets\room\door_128x256.png at position (0, 0).
+Loaded image: assets\room\door_128x256.png with dimensions (128x256).
+delme: assets\room\door_128x256.png
+Processing block: assets\room\door_back_128x256.png at position (128, 0).
+Loaded image: assets\room\door_back_128x256.png with dimensions (128x256).
+delme: assets\room\door_back_128x256.png
+Processing block: assets\room\NormalMap (31)_128x256.png at position (256, 0).
+Loaded image: assets\room\NormalMap (31)_128x256.png with dimensions (128x256).
+delme: assets\room\NormalMap (31)_128x256.png
+Processing block: assets\room\window 0_128x256.png at position (384, 0).
+Loaded image: assets\room\window 0_128x256.png with dimensions (128x256).
+delme: assets\room\window 0_128x256.png
+Processing block: assets\smoking\smoking.fbm\door_128x256.png at position (512, 0).
+Loaded image: assets\smoking\smoking.fbm\door_128x256.png with dimensions (128x256).
+delme: assets\smoking\smoking.fbm\door_128x256.png
+Processing block: assets\smoking\smoking.fbm\door_back_128x256.png at position (640, 0).
+Loaded image: assets\smoking\smoking.fbm\door_back_128x256.png with dimensions (128x256).
+delme: assets\smoking\smoking.fbm\door_back_128x256.png
+Processing block: assets\smoking\smoking.fbm\window 0_128x256.png at position (768, 0).
+Loaded image: assets\smoking\smoking.fbm\window 0_128x256.png with dimensions (128x256).
+delme: assets\smoking\smoking.fbm\window 0_128x256.png
+Processing block: assets\images\missing_texture.png at position (896, 0).
+Loaded image: assets\images\missing_texture.png with dimensions (32x32).
+delme: assets\images\missing_texture.png
+Processing block: assets\smoking\smoking.fbm\window white_128x16.png at position (896, 32).
+Loaded image: assets\smoking\smoking.fbm\window white_128x16.png with dimensions (128x16).
+delme: assets\smoking\smoking.fbm\window white_128x16.png
+Processing block: assets\room\window white_128x16.png at position (896, 48).
+Loaded image: assets\room\window white_128x16.png with dimensions (128x16).
+delme: assets\room\window white_128x16.png
+Processing block: assets\room\window_nm_128x16.png at position (896, 64).
+Loaded image: assets\room\window_nm_128x16.png with dimensions (128x16).
+delme: assets\room\window_nm_128x16.png
+Processing block: assets\crosshair\bright_green.png at position (928, 0).
+Loaded image: assets\crosshair\bright_green.png with dimensions (1x1).
+delme: assets\crosshair\bright_green.png
+Packed texture saved to "assets\\packed_textures\\packed_texture_2.png"
+Metadata saved to "assets\\packed_textures\\packed_textures.json"
+Texture packing completed successfully.
+super working on : assets\crosshair\bright_green.png
+super working on : assets\cube_test\cube_test.fbm\cube_test.png
+super working on : assets\cube_test\cube_test.png
+super working on : assets\fonts\times_64_sdf_atlas.png
+super working on : assets\images\alphabet.png
+super working on : assets\images\flame.png
+super working on : assets\images\missing_texture.png
+super working on : assets\images\smoke_64px.png
+super working on : assets\images\test_box.png
+super working on : assets\lightbulb\lightbulb.png
+super working on : assets\new.png
+super working on : assets\room\NormalMap (31)_128x256.png
+super working on : assets\room\curtain 22_128x128.png
+super working on : assets\room\curtain nm_128x128.png
+super working on : assets\room\door_128x256.png
+super working on : assets\room\door_back_128x256.png
+super working on : assets\room\floor_512x256.png
+super working on : assets\room\floor_nm_512x256.png
+super working on : assets\room\wall 0_128x128.png
+super working on : assets\room\wall_nm_128x128.png
+super working on : assets\room\window 0_128x256.png
+super working on : assets\room\window white_128x16.png
+super working on : assets\room\window_nm_128x16.png
+super working on : assets\smoking\smoking.fbm\cigarette.png
+super working on : assets\smoking\smoking.fbm\cigarette_pack.png
+super working on : assets\smoking\smoking.fbm\couch_texure.png
+super working on : assets\smoking\smoking.fbm\curtain 22_128x128.png
+super working on : assets\smoking\smoking.fbm\door_128x256.png
+super working on : assets\smoking\smoking.fbm\door_back_128x256.png
+super working on : assets\smoking\smoking.fbm\floor_512x256.png
+super working on : assets\smoking\smoking.fbm\guy_everything.png
+super working on : assets\smoking\smoking.fbm\knife.png
+super working on : assets\smoking\smoking.fbm\lighter.png
+super working on : assets\smoking\smoking.fbm\wall 0_128x128.png
+super working on : assets\smoking\smoking.fbm\window 0_128x256.png
+super working on : assets\smoking\smoking.fbm\window white_128x16.png
+Texture loaded from: assets\fonts\times_64_sdf_atlas.png
+Sprite Name:  
+UV[0]: (0.800781, 0.726562)
+UV[1]: (0.800781, 0.773438)
+UV[2]: (0.789062, 0.773438)
+UV[3]: (0.789062, 0.726562)
+Sprite Name: !
+UV[0]: (0.271484, 0.296875)
+UV[1]: (0.271484, 0.515625)
+UV[2]: (0.25293, 0.515625)
+UV[3]: (0.25293, 0.296875)
+Sprite Name: "
+UV[0]: (0.595703, 0.726562)
+UV[1]: (0.595703, 0.835938)
+UV[2]: (0.567383, 0.835938)
+UV[3]: (0.567383, 0.726562)
+Sprite Name: #
+UV[0]: (0.700195, 0.515625)
+UV[1]: (0.700195, 0.726562)
+UV[2]: (0.657227, 0.726562)
+UV[3]: (0.657227, 0.515625)
+Sprite Name: $
+UV[0]: (0.24707, 0)
+UV[1]: (0.24707, 0.253906)
+UV[2]: (0.208984, 0.253906)
+UV[3]: (0.208984, 0)
+Sprite Name: %
+UV[0]: (0.469727, 0)
+UV[1]: (0.469727, 0.21875)
+UV[2]: (0.413086, 0.21875)
+UV[3]: (0.413086, 0)
+Sprite Name: &
+UV[0]: (0.525391, 0)
+UV[1]: (0.525391, 0.21875)
+UV[2]: (0.469727, 0.21875)
+UV[3]: (0.469727, 0)
+Sprite Name: '
+UV[0]: (0.632812, 0.726562)
+UV[1]: (0.632812, 0.835938)
+UV[2]: (0.616211, 0.835938)
+UV[3]: (0.616211, 0.726562)
+Sprite Name: (
+UV[0]: (0.154297, 0)
+UV[1]: (0.154297, 0.261719)
+UV[2]: (0.126953, 0.261719)
+UV[3]: (0.126953, 0)
+Sprite Name: )
+UV[0]: (0.126953, 0)
+UV[1]: (0.126953, 0.261719)
+UV[2]: (0.0986328, 0.261719)
+UV[3]: (0.0986328, 0)
+Sprite Name: *
+UV[0]: (0.485352, 0.726562)
+UV[1]: (0.485352, 0.875)
+UV[2]: (0.450195, 0.875)
+UV[3]: (0.450195, 0.726562)
+Sprite Name: +
+UV[0]: (0.899414, 0.515625)
+UV[1]: (0.899414, 0.6875)
+UV[2]: (0.855469, 0.6875)
+UV[3]: (0.855469, 0.515625)
+Sprite Name: ,
+UV[0]: (0.616211, 0.726562)
+UV[1]: (0.616211, 0.835938)
+UV[2]: (0.595703, 0.835938)
+UV[3]: (0.595703, 0.726562)
+Sprite Name: -
+UV[0]: (0.746094, 0.726562)
+UV[1]: (0.746094, 0.789062)
+UV[2]: (0.71875, 0.789062)
+UV[3]: (0.71875, 0.726562)
+Sprite Name: .
+UV[0]: (0.71875, 0.726562)
+UV[1]: (0.71875, 0.800781)
+UV[2]: (0.699219, 0.800781)
+UV[3]: (0.699219, 0.726562)
+Sprite Name: /
+UV[0]: (0.169922, 0.296875)
+UV[1]: (0.169922, 0.515625)
+UV[2]: (0.139648, 0.515625)
+UV[3]: (0.139648, 0.296875)
+Sprite Name: 0
+UV[0]: (0.944336, 0)
+UV[1]: (0.944336, 0.21875)
+UV[2]: (0.904297, 0.21875)
+UV[3]: (0.904297, 0)
+Sprite Name: 1
+UV[0]: (0.910156, 0.296875)
+UV[1]: (0.910156, 0.511719)
+UV[2]: (0.880859, 0.511719)
+UV[3]: (0.880859, 0.296875)
+Sprite Name: 2
+UV[0]: (0.767578, 0.296875)
+UV[1]: (0.767578, 0.511719)
+UV[2]: (0.727539, 0.511719)
+UV[3]: (0.727539, 0.296875)
+Sprite Name: 3
+UV[0]: (0.0361328, 0.296875)
+UV[1]: (0.0361328, 0.515625)
+UV[2]: (0, 0.515625)
+UV[3]: (0, 0.296875)
+Sprite Name: 4
+UV[0]: (0.604492, 0.296875)
+UV[1]: (0.604492, 0.511719)
+UV[2]: (0.563477, 0.511719)
+UV[3]: (0.563477, 0.296875)
+Sprite Name: 5
+UV[0]: (0.413086, 0)
+UV[1]: (0.413086, 0.222656)
+UV[2]: (0.375977, 0.222656)
+UV[3]: (0.375977, 0)
+Sprite Name: 6
+UV[0]: (0.336914, 0)
+UV[1]: (0.336914, 0.222656)
+UV[2]: (0.297852, 0.222656)
+UV[3]: (0.297852, 0)
+Sprite Name: 7
+UV[0]: (0.84668, 0.296875)
+UV[1]: (0.84668, 0.511719)
+UV[2]: (0.807617, 0.511719)
+UV[3]: (0.807617, 0.296875)
+Sprite Name: 8
+UV[0]: (0.0722656, 0.296875)
+UV[1]: (0.0722656, 0.515625)
+UV[2]: (0.0361328, 0.515625)
+UV[3]: (0.0361328, 0.296875)
+Sprite Name: 9
+UV[0]: (0.375977, 0)
+UV[1]: (0.375977, 0.222656)
+UV[2]: (0.336914, 0.222656)
+UV[3]: (0.336914, 0)
+Sprite Name: :
+UV[0]: (0.199219, 0.726562)
+UV[1]: (0.199219, 0.890625)
+UV[2]: (0.180664, 0.890625)
+UV[3]: (0.180664, 0.726562)
+Sprite Name: ;
+UV[0]: (0.779297, 0.515625)
+UV[1]: (0.779297, 0.710938)
+UV[2]: (0.758789, 0.710938)
+UV[3]: (0.758789, 0.515625)
+Sprite Name: <
+UV[0]: (0.817383, 0.515625)
+UV[1]: (0.817383, 0.699219)
+UV[2]: (0.779297, 0.699219)
+UV[3]: (0.779297, 0.515625)
+Sprite Name: =
+UV[0]: (0.567383, 0.726562)
+UV[1]: (0.567383, 0.839844)
+UV[2]: (0.523438, 0.839844)
+UV[3]: (0.523438, 0.726562)
+Sprite Name: >
+UV[0]: (0.855469, 0.515625)
+UV[1]: (0.855469, 0.699219)
+UV[2]: (0.817383, 0.699219)
+UV[3]: (0.817383, 0.515625)
+Sprite Name: ?
+UV[0]: (0.139648, 0.296875)
+UV[1]: (0.139648, 0.515625)
+UV[2]: (0.106445, 0.515625)
+UV[3]: (0.106445, 0.296875)
+Sprite Name: @
+UV[0]: (0.581055, 0)
+UV[1]: (0.581055, 0.21875)
+UV[2]: (0.525391, 0.21875)
+UV[3]: (0.525391, 0)
+Sprite Name: A
+UV[0]: (0.397461, 0.296875)
+UV[1]: (0.397461, 0.511719)
+UV[2]: (0.341797, 0.511719)
+UV[3]: (0.341797, 0.296875)
+Sprite Name: B
+UV[0]: (0.519531, 0.515625)
+UV[1]: (0.519531, 0.726562)
+UV[2]: (0.47168, 0.726562)
+UV[3]: (0.47168, 0.515625)
+Sprite Name: C
+UV[0]: (0.737305, 0)
+UV[1]: (0.737305, 0.21875)
+UV[2]: (0.6875, 0.21875)
+UV[3]: (0.6875, 0)
+Sprite Name: D
+UV[0]: (0.273438, 0.515625)
+UV[1]: (0.273438, 0.726562)
+UV[2]: (0.219727, 0.726562)
+UV[3]: (0.219727, 0.515625)
+Sprite Name: E
+UV[0]: (0.374023, 0.515625)
+UV[1]: (0.374023, 0.726562)
+UV[2]: (0.325195, 0.726562)
+UV[3]: (0.325195, 0.515625)
+Sprite Name: F
+UV[0]: (0.612305, 0.515625)
+UV[1]: (0.612305, 0.726562)
+UV[2]: (0.567383, 0.726562)
+UV[3]: (0.567383, 0.515625)
+Sprite Name: G
+UV[0]: (0.634766, 0)
+UV[1]: (0.634766, 0.21875)
+UV[2]: (0.581055, 0.21875)
+UV[3]: (0.581055, 0)
+Sprite Name: H
+UV[0]: (0.110352, 0.515625)
+UV[1]: (0.110352, 0.726562)
+UV[2]: (0.0556641, 0.726562)
+UV[3]: (0.0556641, 0.515625)
+Sprite Name: I
+UV[0]: (0.730469, 0.515625)
+UV[1]: (0.730469, 0.726562)
+UV[2]: (0.700195, 0.726562)
+UV[3]: (0.700195, 0.515625)
+Sprite Name: J
+UV[0]: (0.880859, 0.296875)
+UV[1]: (0.880859, 0.511719)
+UV[2]: (0.84668, 0.511719)
+UV[3]: (0.84668, 0.296875)
+Sprite Name: K
+UV[0]: (0.165039, 0.515625)
+UV[1]: (0.165039, 0.726562)
+UV[2]: (0.110352, 0.726562)
+UV[3]: (0.110352, 0.515625)
+Sprite Name: L
+UV[0]: (0.422852, 0.515625)
+UV[1]: (0.422852, 0.726562)
+UV[2]: (0.374023, 0.726562)
+UV[3]: (0.374023, 0.515625)
+Sprite Name: M
+UV[0]: (0.975586, 0.296875)
+UV[1]: (0.975586, 0.507812)
+UV[2]: (0.910156, 0.507812)
+UV[3]: (0.910156, 0.296875)
+Sprite Name: N
+UV[0]: (0.453125, 0.296875)
+UV[1]: (0.453125, 0.511719)
+UV[2]: (0.397461, 0.511719)
+UV[3]: (0.397461, 0.296875)
+Sprite Name: O
+UV[0]: (0.6875, 0)
+UV[1]: (0.6875, 0.21875)
+UV[2]: (0.634766, 0.21875)
+UV[3]: (0.634766, 0)
+Sprite Name: P
+UV[0]: (0.657227, 0.515625)
+UV[1]: (0.657227, 0.726562)
+UV[2]: (0.612305, 0.726562)
+UV[3]: (0.612305, 0.515625)
+Sprite Name: Q
+UV[0]: (0.0986328, 0)
+UV[1]: (0.0986328, 0.261719)
+UV[2]: (0.0449219, 0.261719)
+UV[3]: (0.0449219, 0)
+Sprite Name: R
+UV[0]: (0.325195, 0.515625)
+UV[1]: (0.325195, 0.726562)
+UV[2]: (0.273438, 0.726562)
+UV[3]: (0.273438, 0.515625)
+Sprite Name: S
+UV[0]: (0.984375, 0)
+UV[1]: (0.984375, 0.21875)
+UV[2]: (0.944336, 0.21875)
+UV[3]: (0.944336, 0)
+Sprite Name: T
+UV[0]: (0.567383, 0.515625)
+UV[1]: (0.567383, 0.726562)
+UV[2]: (0.519531, 0.726562)
+UV[3]: (0.519531, 0.515625)
+Sprite Name: U
+UV[0]: (0.508789, 0.296875)
+UV[1]: (0.508789, 0.511719)
+UV[2]: (0.453125, 0.511719)
+UV[3]: (0.453125, 0.296875)
+Sprite Name: V
+UV[0]: (0.563477, 0.296875)
+UV[1]: (0.563477, 0.511719)
+UV[2]: (0.508789, 0.511719)
+UV[3]: (0.508789, 0.296875)
+Sprite Name: W
+UV[0]: (0.341797, 0.296875)
+UV[1]: (0.341797, 0.511719)
+UV[2]: (0.271484, 0.511719)
+UV[3]: (0.271484, 0.296875)
+Sprite Name: X
+UV[0]: (0.0556641, 0.515625)
+UV[1]: (0.0556641, 0.726562)
+UV[2]: (0, 0.726562)
+UV[3]: (0, 0.515625)
+Sprite Name: Y
+UV[0]: (0.219727, 0.515625)
+UV[1]: (0.219727, 0.726562)
+UV[2]: (0.165039, 0.726562)
+UV[3]: (0.165039, 0.515625)
+Sprite Name: Z
+UV[0]: (0.47168, 0.515625)
+UV[1]: (0.47168, 0.726562)
+UV[2]: (0.422852, 0.726562)
+UV[3]: (0.422852, 0.515625)
+Sprite Name: [
+UV[0]: (0.272461, 0)
+UV[1]: (0.272461, 0.25)
+UV[2]: (0.24707, 0.25)
+UV[3]: (0.24707, 0)
+Sprite Name: \
+UV[0]: (0.200195, 0.296875)
+UV[1]: (0.200195, 0.515625)
+UV[2]: (0.169922, 0.515625)
+UV[3]: (0.169922, 0.296875)
+Sprite Name: ]
+UV[0]: (0.297852, 0)
+UV[1]: (0.297852, 0.25)
+UV[2]: (0.272461, 0.25)
+UV[3]: (0.272461, 0)
+Sprite Name: ^
+UV[0]: (0.523438, 0.726562)
+UV[1]: (0.523438, 0.867188)
+UV[2]: (0.485352, 0.867188)
+UV[3]: (0.485352, 0.726562)
+Sprite Name: _
+UV[0]: (0.789062, 0.726562)
+UV[1]: (0.789062, 0.785156)
+UV[2]: (0.746094, 0.785156)
+UV[3]: (0.746094, 0.726562)
+Sprite Name: `
+UV[0]: (0.658203, 0.726562)
+UV[1]: (0.658203, 0.816406)
+UV[2]: (0.632812, 0.816406)
+UV[3]: (0.632812, 0.726562)
+Sprite Name: a
+UV[0]: (0.0771484, 0.726562)
+UV[1]: (0.0771484, 0.890625)
+UV[2]: (0.0400391, 0.890625)
+UV[3]: (0.0400391, 0.726562)
+Sprite Name: b
+UV[0]: (0.863281, 0)
+UV[1]: (0.863281, 0.21875)
+UV[2]: (0.822266, 0.21875)
+UV[3]: (0.822266, 0)
+Sprite Name: c
+UV[0]: (0.150391, 0.726562)
+UV[1]: (0.150391, 0.890625)
+UV[2]: (0.114258, 0.890625)
+UV[3]: (0.114258, 0.726562)
+Sprite Name: d
+UV[0]: (0.904297, 0)
+UV[1]: (0.904297, 0.21875)
+UV[2]: (0.863281, 0.21875)
+UV[3]: (0.863281, 0)
+Sprite Name: e
+UV[0]: (0.114258, 0.726562)
+UV[1]: (0.114258, 0.890625)
+UV[2]: (0.0771484, 0.890625)
+UV[3]: (0.0771484, 0.726562)
+Sprite Name: f
+UV[0]: (0.106445, 0.296875)
+UV[1]: (0.106445, 0.515625)
+UV[2]: (0.0722656, 0.515625)
+UV[3]: (0.0722656, 0.296875)
+Sprite Name: g
+UV[0]: (0.807617, 0.296875)
+UV[1]: (0.807617, 0.511719)
+UV[2]: (0.767578, 0.511719)
+UV[3]: (0.767578, 0.296875)
+Sprite Name: h
+UV[0]: (0.822266, 0)
+UV[1]: (0.822266, 0.21875)
+UV[2]: (0.780273, 0.21875)
+UV[3]: (0.780273, 0)
+Sprite Name: i
+UV[0]: (0.226562, 0.296875)
+UV[1]: (0.226562, 0.515625)
+UV[2]: (0.200195, 0.515625)
+UV[3]: (0.200195, 0.296875)
+Sprite Name: j
+UV[0]: (0.0449219, 0)
+UV[1]: (0.0449219, 0.273438)
+UV[2]: (0.0166016, 0.273438)
+UV[3]: (0.0166016, 0)
+Sprite Name: k
+UV[0]: (0.780273, 0)
+UV[1]: (0.780273, 0.21875)
+UV[2]: (0.737305, 0.21875)
+UV[3]: (0.737305, 0)
+Sprite Name: l
+UV[0]: (0.25293, 0.296875)
+UV[1]: (0.25293, 0.515625)
+UV[2]: (0.226562, 0.515625)
+UV[3]: (0.226562, 0.296875)
+Sprite Name: m
+UV[0]: (0.258789, 0.726562)
+UV[1]: (0.258789, 0.886719)
+UV[2]: (0.199219, 0.886719)
+UV[3]: (0.199219, 0.726562)
+Sprite Name: n
+UV[0]: (0.299805, 0.726562)
+UV[1]: (0.299805, 0.886719)
+UV[2]: (0.258789, 0.886719)
+UV[3]: (0.258789, 0.726562)
+Sprite Name: o
+UV[0]: (0.0400391, 0.726562)
+UV[1]: (0.0400391, 0.890625)
+UV[2]: (0, 0.890625)
+UV[3]: (0, 0.726562)
+Sprite Name: p
+UV[0]: (0.645508, 0.296875)
+UV[1]: (0.645508, 0.511719)
+UV[2]: (0.604492, 0.511719)
+UV[3]: (0.604492, 0.296875)
+Sprite Name: q
+UV[0]: (0.686523, 0.296875)
+UV[1]: (0.686523, 0.511719)
+UV[2]: (0.645508, 0.511719)
+UV[3]: (0.645508, 0.296875)
+Sprite Name: r
+UV[0]: (0.450195, 0.726562)
+UV[1]: (0.450195, 0.886719)
+UV[2]: (0.417969, 0.886719)
+UV[3]: (0.417969, 0.726562)
+Sprite Name: s
+UV[0]: (0.180664, 0.726562)
+UV[1]: (0.180664, 0.890625)
+UV[2]: (0.150391, 0.890625)
+UV[3]: (0.150391, 0.726562)
+Sprite Name: t
+UV[0]: (0.758789, 0.515625)
+UV[1]: (0.758789, 0.710938)
+UV[2]: (0.730469, 0.710938)
+UV[3]: (0.730469, 0.515625)
+Sprite Name: u
+UV[0]: (0.34082, 0.726562)
+UV[1]: (0.34082, 0.886719)
+UV[2]: (0.299805, 0.886719)
+UV[3]: (0.299805, 0.726562)
+Sprite Name: v
+UV[0]: (0.994141, 0.515625)
+UV[1]: (0.994141, 0.679688)
+UV[2]: (0.953125, 0.679688)
+UV[3]: (0.953125, 0.515625)
+Sprite Name: w
+UV[0]: (0.953125, 0.515625)
+UV[1]: (0.953125, 0.679688)
+UV[2]: (0.899414, 0.679688)
+UV[3]: (0.899414, 0.515625)
+Sprite Name: x
+UV[0]: (0.381836, 0.726562)
+UV[1]: (0.381836, 0.886719)
+UV[2]: (0.34082, 0.886719)
+UV[3]: (0.34082, 0.726562)
+Sprite Name: y
+UV[0]: (0.727539, 0.296875)
+UV[1]: (0.727539, 0.511719)
+UV[2]: (0.686523, 0.511719)
+UV[3]: (0.686523, 0.296875)
+Sprite Name: z
+UV[0]: (0.417969, 0.726562)
+UV[1]: (0.417969, 0.886719)
+UV[2]: (0.381836, 0.886719)
+UV[3]: (0.381836, 0.726562)
+Sprite Name: {
+UV[0]: (0.181641, 0)
+UV[1]: (0.181641, 0.261719)
+UV[2]: (0.154297, 0.261719)
+UV[3]: (0.154297, 0)
+Sprite Name: |
+UV[0]: (0.0166016, 0)
+UV[1]: (0.0166016, 0.296875)
+UV[2]: (0, 0.296875)
+UV[3]: (0, 0)
+Sprite Name: }
+UV[0]: (0.208984, 0)
+UV[1]: (0.208984, 0.261719)
+UV[2]: (0.181641, 0.261719)
+UV[3]: (0.181641, 0)
+Sprite Name: ~
+UV[0]: (0.699219, 0.726562)
+UV[1]: (0.699219, 0.808594)
+UV[2]: (0.658203, 0.808594)
+UV[3]: (0.658203, 0.726562)
+processing mesh materials: assets/crosshair/
+assets/crosshair/bright_green.png
+before crosshair pack
+before loop
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+before grabassets\crosshair\bright_green.png
+after grab
+after crosshair pack
+processing mesh materials: assets/lightbulb/
+assets/lightbulb/lightbulb.png
+processing mesh materials: assets/lightbulb/
+assets/lightbulb/lightbulb.png
+before loop
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before loop
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before loop
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before loop
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+before grabassets\lightbulb\lightbulb.png
+after grab
+delme before smokefbx
+root_node_transform:
++------------------------+
+| 1 0 0 0 
+| 0 1 0 0 
+| 0 0 1 0 
+| 0 0 0 1 
++------------------------+
+inverse_root_node_transform:
++------------------------+
+| 1 -0 0 -0 
+| -0 1 -0 0 
+| 0 -0 1 -0 
+| -0 0 -0 1 
++------------------------+
+Animation 0: character_armature|character_anim
++-----------------------------------------------+
+| Animation Name: character_armature|character_anim
+| Duration: 750 ticks
+| Ticks per second: 24
+| Number of Bone Animation Channels: 59
+| Number of Mesh Animation Channels: 0
+| Number of Morph Mesh Animation Channels: 0
+| Bone Animation Channels: 
+|   Channel 1: 000001A11598BC00
+|   Channel 2: 000001A11598BC08
+|   Channel 3: 000001A11598BC10
+|   Channel 4: 000001A11598BC18
+|   Channel 5: 000001A11598BC20
+|   Channel 6: 000001A11598BC28
+|   Channel 7: 000001A11598BC30
+|   Channel 8: 000001A11598BC38
+|   Channel 9: 000001A11598BC40
+|   Channel 10: 000001A11598BC48
+|   Channel 11: 000001A11598BC50
+|   Channel 12: 000001A11598BC58
+|   Channel 13: 000001A11598BC60
+|   Channel 14: 000001A11598BC68
+|   Channel 15: 000001A11598BC70
+|   Channel 16: 000001A11598BC78
+|   Channel 17: 000001A11598BC80
+|   Channel 18: 000001A11598BC88
+|   Channel 19: 000001A11598BC90
+|   Channel 20: 000001A11598BC98
+|   Channel 21: 000001A11598BCA0
+|   Channel 22: 000001A11598BCA8
+|   Channel 23: 000001A11598BCB0
+|   Channel 24: 000001A11598BCB8
+|   Channel 25: 000001A11598BCC0
+|   Channel 26: 000001A11598BCC8
+|   Channel 27: 000001A11598BCD0
+|   Channel 28: 000001A11598BCD8
+|   Channel 29: 000001A11598BCE0
+|   Channel 30: 000001A11598BCE8
+|   Channel 31: 000001A11598BCF0
+|   Channel 32: 000001A11598BCF8
+|   Channel 33: 000001A11598BD00
+|   Channel 34: 000001A11598BD08
+|   Channel 35: 000001A11598BD10
+|   Channel 36: 000001A11598BD18
+|   Channel 37: 000001A11598BD20
+|   Channel 38: 000001A11598BD28
+|   Channel 39: 000001A11598BD30
+|   Channel 40: 000001A11598BD38
+|   Channel 41: 000001A11598BD40
+|   Channel 42: 000001A11598BD48
+|   Channel 43: 000001A11598BD50
+|   Channel 44: 000001A11598BD58
+|   Channel 45: 000001A11598BD60
+|   Channel 46: 000001A11598BD68
+|   Channel 47: 000001A11598BD70
+|   Channel 48: 000001A11598BD78
+|   Channel 49: 000001A11598BD80
+|   Channel 50: 000001A11598BD88
+|   Channel 51: 000001A11598BD90
+|   Channel 52: 000001A11598BD98
+|   Channel 53: 000001A11598BDA0
+|   Channel 54: 000001A11598BDA8
+|   Channel 55: 000001A11598BDB0
+|   Channel 56: 000001A11598BDB8
+|   Channel 57: 000001A11598BDC0
+|   Channel 58: 000001A11598BDC8
+|   Channel 59: 000001A11598BDD0
+| No Mesh Animation Channels
+| No Morph Mesh Animation Channels
++-----------------------------------------------+
+Animation 1: cig_armature|cig_anim
++-----------------------------------------------+
+| Animation Name: cig_armature|cig_anim
+| Duration: 750 ticks
+| Ticks per second: 24
+| Number of Bone Animation Channels: 2
+| Number of Mesh Animation Channels: 0
+| Number of Morph Mesh Animation Channels: 0
+| Bone Animation Channels: 
+|   Channel 1: 000001A115E28A00
+|   Channel 2: 000001A115E28A08
+| No Mesh Animation Channels
+| No Morph Mesh Animation Channels
++-----------------------------------------------+
+Animation 2: cigarette_armature|cigarette_anim
++-----------------------------------------------+
+| Animation Name: cigarette_armature|cigarette_anim
+| Duration: 750 ticks
+| Ticks per second: 24
+| Number of Bone Animation Channels: 3
+| Number of Mesh Animation Channels: 0
+| Number of Morph Mesh Animation Channels: 0
+| Bone Animation Channels: 
+|   Channel 1: 000001A115E28F20
+|   Channel 2: 000001A115E28F28
+|   Channel 3: 000001A115E28F30
+| No Mesh Animation Channels
+| No Morph Mesh Animation Channels
++-----------------------------------------------+
+Animation 3: knife_armature|knife_anim
++-----------------------------------------------+
+| Animation Name: knife_armature|knife_anim
+| Duration: 750 ticks
+| Ticks per second: 24
+| Number of Bone Animation Channels: 2
+| Number of Mesh Animation Channels: 0
+| Number of Morph Mesh Animation Channels: 0
+| Bone Animation Channels: 
+|   Channel 1: 000001A115E29800
+|   Channel 2: 000001A115E29808
+| No Mesh Animation Channels
+| No Morph Mesh Animation Channels
++-----------------------------------------------+
+Animation 4: lighter_armature|lighter_anim
++-----------------------------------------------+
+| Animation Name: lighter_armature|lighter_anim
+| Duration: 749 ticks
+| Ticks per second: 24
+| Number of Bone Animation Channels: 4
+| Number of Mesh Animation Channels: 0
+| Number of Morph Mesh Animation Channels: 0
+| Bone Animation Channels: 
+|   Channel 1: 000001A115DD0C70
+|   Channel 2: 000001A115DD0C78
+|   Channel 3: 000001A115DD0C80
+|   Channel 4: 000001A115DD0C88
+| No Mesh Animation Channels
+| No Morph Mesh Animation Channels
++-----------------------------------------------+
+Building armature to animation map...
+Processing animation 0: character_armature|character_anim
+  Parsed armature name: character_armature
+  Parsed action name: character
+  Stripped armature name: character
+  Armature and action names match.
+  Added to map: character_armature -> 0
+Processing animation 1: cig_armature|cig_anim
+  Parsed armature name: cig_armature
+  Parsed action name: cig
+  Stripped armature name: cig
+  Armature and action names match.
+  Added to map: cig_armature -> 1
+Processing animation 2: cigarette_armature|cigarette_anim
+  Parsed armature name: cigarette_armature
+  Parsed action name: cigarette
+  Stripped armature name: cigarette
+  Armature and action names match.
+  Added to map: cigarette_armature -> 2
+Processing animation 3: knife_armature|knife_anim
+  Parsed armature name: knife_armature
+  Parsed action name: knife
+  Stripped armature name: knife
+  Armature and action names match.
+  Added to map: knife_armature -> 3
+Processing animation 4: lighter_armature|lighter_anim
+  Parsed armature name: lighter_armature
+  Parsed action name: lighter
+  Stripped armature name: lighter
+  Armature and action names match.
+  Added to map: lighter_armature -> 4
+Completed building armature to animation map. Total entries: 5
+Armature to Animation Mapping:
+Armature: character_armature
+  Animation Index: 0
+Armature: knife_armature
+  Animation Index: 3
+Armature: cig_armature
+  Animation Index: 1
+Armature: cigarette_armature
+  Animation Index: 2
+Armature: lighter_armature
+  Animation Index: 4
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/wall 0_128x128.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+no messages
+assets/images/missing_texture.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/window white_128x16.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/couch_texure.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/couch_texure.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/couch_texure.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/couch_texure.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/couch_texure.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/couch_texure.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/window white_128x16.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/window 0_128x256.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/floor_512x256.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/window white_128x16.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/curtain 22_128x128.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/curtain 22_128x128.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/door_back_128x256.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/door_128x256.png
+working on bones of a mesh now it has: 0bones
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/lighter.png
+working on bones of a mesh now it has: 3bones
+Bone 'lighter_root' affects 128 vertices
+bone offset matrix:
++------------------------+
+| 3.88838e-08 -0.456822 -0.889558 0 
+| -1 -1.93819e-07 -5.12272e-08 0 
+| 1.99683e-08 0.889558 -0.456822 0 
+| 0.113054 0.0181838 -0.250773 1 
++------------------------+
+Bone 'flintwheel' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 3.88838e-08 -0.456822 -0.889558 0 
+| -1 -1.93819e-07 -5.12273e-08 0 
+| 1.99683e-08 0.889558 -0.456822 0 
+| 0.113054 -0.0131893 -0.2599 1 
++------------------------+
+Bone 'cap' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 3.88838e-08 -0.456822 -0.889558 0 
+| -1 -1.93819e-07 -5.12272e-08 0 
+| 1.99684e-08 0.889558 -0.456822 0 
+| 0.113054 -0.00682276 -0.232755 1 
++------------------------+
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/guy_everything.png
+working on bones of a mesh now it has: 58bones
+Bone 'Main' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 1 0 0 0 
+| 0 1 0 0 
+| 0 0 1 0 
+| 0.431395 0.266965 -0.146765 1 
++------------------------+
+Bone 'Hip' affects 72 vertices
+bone offset matrix:
++------------------------+
+| 1 0 2.38419e-07 0 
+| 3.34516e-08 0.990108 -0.140306 0 
+| -2.3606e-07 0.140306 0.990108 0 
+| 0.431395 -0.461974 -0.0594592 1 
++------------------------+
+Bone 'spine' affects 60 vertices
+bone offset matrix:
++------------------------+
+| 1 -3.55271e-15 2.38419e-07 0 
+| 2.29655e-08 0.99535 -0.0963242 0 
+| -2.3731e-07 0.0963242 0.99535 0 
+| 0.431395 -0.61518 -0.0867859 1 
++------------------------+
+Bone 'chest' affects 134 vertices
+bone offset matrix:
++------------------------+
+| 1 0 2.38419e-07 0 
+| -6.16745e-08 0.965963 0.258682 0 
+| -2.30304e-07 -0.258682 0.965963 0 
+| 0.431395 -0.683631 -0.348528 1 
++------------------------+
+Bone 'neck' affects 96 vertices
+bone offset matrix:
++------------------------+
+| 1 -7.10543e-15 2.38419e-07 0 
+| 1.2581e-07 0.849441 -0.527683 0 
+| -2.02523e-07 0.527683 0.849441 0 
+| 0.431395 -0.862947 0.410736 1 
++------------------------+
+Bone 'head' affects 144 vertices
+bone offset matrix:
++------------------------+
+| 1 -2.13163e-14 2.38419e-07 0 
+| 9.245e-15 1 -2.98023e-08 0 
+| -2.38419e-07 -4.4964e-15 1 0 
+| 0.431395 -1.00325 -0.139696 1 
++------------------------+
+Bone 'clav.L' affects 46 vertices
+bone offset matrix:
++------------------------+
+| 0.465773 0.872566 0.147252 0 
+| -0.884904 0.45928 0.0775066 0 
+| -2.01166e-07 -0.166405 0.986057 0 
+| 0.934821 -0.0158929 -0.169643 1 
++------------------------+
+Bone 'upper_arm.L' affects 37 vertices
+bone offset matrix:
++------------------------+
+| -0.00978454 0.995286 0.0964941 0 
+| -0.999059 -0.0138073 0.0411101 0 
+| 0.0422487 -0.0960011 0.994484 0 
+| 0.888289 0.290583 -0.157265 1 
++------------------------+
+Bone 'lower_arm.L' affects 54 vertices
+bone offset matrix:
++------------------------+
+| -0.00460306 0.994102 -0.10835 0 
+| -0.999099 1.13621e-07 0.0424451 0 
+| 0.0421948 0.108447 0.993206 0 
+| 0.8884 -8.65674e-05 -0.161021 1 
++------------------------+
+Bone 'hand.L' affects 52 vertices
+bone offset matrix:
++------------------------+
+| 0.0131454 0.999913 -0.000558467 0 
+| -0.999012 0.0131574 0.0424415 0 
+| 0.0424452 -5.25615e-08 0.999099 0 
+| 0.884566 -0.221359 -0.184477 1 
++------------------------+
+Bone 'pinky_1.L' affects 114 vertices
+bone offset matrix:
++------------------------+
+| 0.0697079 0.99745 0.0152987 0 
+| -0.996543 0.0689335 0.0463655 0 
+| 0.0451927 -0.0184779 0.998807 0 
+| 0.875837 -0.33394 -0.165422 1 
++------------------------+
+Bone 'pinky_2.L' affects 63 vertices
+bone offset matrix:
++------------------------+
+| 1.29144e-08 1 8.05862e-10 0 
+| -0.998949 1.12413e-07 0.0458378 0 
+| 0.0458379 -4.73886e-08 0.998949 0 
+| 0.897893 -0.286295 -0.160582 1 
++------------------------+
+Bone 'pinky_3.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 2.9569e-17 1 -1.12496e-16 0 
+| -0.998949 9.96225e-08 0.0458378 0 
+| 0.0458379 -4.5842e-08 0.998949 0 
+| 0.897893 -0.297026 -0.160582 1 
++------------------------+
+Bone 'ring_1.L' affects 116 vertices
+bone offset matrix:
++------------------------+
+| 0.0461892 0.998931 -0.0019622 0 
+| -0.998031 0.046231 0.0423993 0 
+| 0.0424448 -1.09663e-07 0.999099 0 
+| 0.88338 -0.315746 -0.171259 1 
++------------------------+
+Bone 'ring_2.L' affects 26 vertices
+bone offset matrix:
++------------------------+
+| 8.69312e-10 1 -4.50904e-10 0 
+| -0.999099 1.17554e-07 0.0424448 0 
+| 0.0424449 -4.67554e-08 0.999099 0 
+| 0.897824 -0.291783 -0.171873 1 
++------------------------+
+Bone 'ring_3.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 1.8888e-16 1 -4.96951e-17 0 
+| -0.999099 1.16682e-07 0.0424448 0 
+| 0.0424449 -4.69412e-08 0.999099 0 
+| 0.897823 -0.307181 -0.171873 1 
++------------------------+
+Bone 'middle_1.L' affects 111 vertices
+bone offset matrix:
++------------------------+
+| 0.0457569 0.998951 -0.0019439 0 
+| -0.998051 0.0457983 0.0424004 0 
+| 0.042445 -5.22705e-08 0.999099 0 
+| 0.882879 -0.315866 -0.185722 1 
++------------------------+
+Bone 'middle_2.L' affects 49 vertices
+bone offset matrix:
++------------------------+
+| -7.51726e-09 1 -3.82701e-10 0 
+| -0.999099 1.13218e-07 0.0424447 0 
+| 0.0424448 -4.61079e-08 0.999099 0 
+| 0.897209 -0.292455 -0.18633 1 
++------------------------+
+Bone 'middle_3.L' affects 32 vertices
+bone offset matrix:
++------------------------+
+| -7.0782e-17 1 -1.08833e-17 0 
+| -0.999099 1.20729e-07 0.0424447 0 
+| 0.0424448 -4.65656e-08 0.999099 0 
+| 0.897209 -0.30986 -0.18633 1 
++------------------------+
+Bone 'index_1.L' affects 84 vertices
+bone offset matrix:
++------------------------+
+| 0.0457569 0.998951 -0.00194398 0 
+| -0.998051 0.0457983 0.0424007 0 
+| 0.0424453 1.76951e-08 0.999099 0 
+| 0.882252 -0.315866 -0.200482 1 
++------------------------+
+Bone 'index_2.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| -4.46508e-09 1 4.93158e-10 0 
+| -0.999099 1.10841e-07 0.0424444 0 
+| 0.0424444 -4.62752e-08 0.999099 0 
+| 0.896582 -0.292455 -0.20109 1 
++------------------------+
+Bone 'index_3.L' affects 44 vertices
+bone offset matrix:
++------------------------+
+| -2.11446e-16 1 8.98287e-18 0 
+| -0.999099 1.19043e-07 0.0424448 0 
+| 0.0424449 -4.63482e-08 0.999099 0 
+| 0.896582 -0.305711 -0.201091 1 
++------------------------+
+Bone 'thumb_1.L' affects 78 vertices
+bone offset matrix:
++------------------------+
+| -0.17357 0.863185 -0.474114 0 
+| -0.982182 -0.186946 0.0192113 0 
+| -0.0720507 0.469001 0.880253 0 
+| 0.935029 -0.120619 -0.0534447 1 
++------------------------+
+Bone 'thumb_2.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| -0.15609 0.915206 -0.371529 0 
+| -0.987582 -0.151402 0.0419549 0 
+| -0.0178526 0.373464 0.927473 0 
+| 0.925618 -0.167177 -0.108626 1 
++------------------------+
+Bone 'thumb_3.L' affects 20 vertices
+bone offset matrix:
++------------------------+
+| -0.201027 0.886275 -0.417259 0 
+| -0.978429 -0.202359 0.0415668 0 
+| -0.0475965 0.416614 0.907837 0 
+| 0.935126 -0.136576 -0.0922728 1 
++------------------------+
+Bone 'hand_IK.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 0.988603 6.47215e-08 -0.150544 0 
+| -5.95321e-08 1 -6.00743e-09 0 
+| 0.150544 -4.47548e-08 0.988603 0 
+| -0.229314 -0.894434 -0.113537 1 
++------------------------+
+Bone 'clav.R' affects 46 vertices
+bone offset matrix:
++------------------------+
+| 0.465773 -0.872566 -0.147252 0 
+| 0.884904 0.45928 0.077507 0 
+| -2.83122e-07 -0.166405 0.986057 0 
+| -0.532956 -0.768734 -0.296691 1 
++------------------------+
+Bone 'upper_arm.R' affects 34 vertices
+bone offset matrix:
++------------------------+
+| -0.00978456 -0.995286 -0.096494 0 
+| 0.999059 -0.0138072 0.0411107 0 
+| -0.0422493 -0.096001 0.994484 0 
+| -0.896731 -0.568139 -0.24052 1 
++------------------------+
+Bone 'lower_arm.R' affects 54 vertices
+bone offset matrix:
++------------------------+
+| -0.00460307 -0.994102 0.10835 0 
+| 0.999099 1.4063e-07 0.042445 0 
+| -0.0421948 0.108447 0.993206 0 
+| -0.892371 -0.857788 -0.0675381 1 
++------------------------+
+Bone 'hand.R' affects 43 vertices
+bone offset matrix:
++------------------------+
+| 0.0131454 -0.999914 0.000558452 0 
+| 0.999012 0.0131574 0.0424415 0 
+| -0.0424452 -8.78936e-09 0.999099 0 
+| -0.873224 -1.08407 -0.183995 1 
++------------------------+
+Bone 'pinky_1.R' affects 109 vertices
+bone offset matrix:
++------------------------+
+| 0.0697079 -0.99745 -0.0152987 0 
+| 0.996543 0.0689335 0.0463644 0 
+| -0.0451916 -0.0184778 0.998807 0 
+| -0.815694 -1.19453 -0.178621 1 
++------------------------+
+Bone 'pinky_2.R' affects 53 vertices
+bone offset matrix:
++------------------------+
+| 7.93405e-09 -1 1.06329e-09 0 
+| 0.998949 1.38284e-07 0.0458378 0 
+| -0.0458379 9.8566e-10 0.998949 0 
+| -0.897893 -1.14908 -0.160582 1 
++------------------------+
+Bone 'pinky_3.R' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 8.31792e-17 -1 3.81676e-18 0 
+| 0.998949 1.30436e-07 0.0458378 0 
+| -0.0458379 1.78658e-10 0.998949 0 
+| -0.897892 -1.15982 -0.160582 1 
++------------------------+
+Bone 'ring_1.R' affects 98 vertices
+bone offset matrix:
++------------------------+
+| 0.0461888 -0.998931 0.00196218 0 
+| 0.99803 0.0462306 0.0423993 0 
+| -0.0424447 -6.63567e-08 0.999099 0 
+| -0.843529 -1.17761 -0.169566 1 
++------------------------+
+Bone 'ring_2.R' affects 44 vertices
+bone offset matrix:
++------------------------+
+| -1.93672e-09 -1 3.32684e-10 0 
+| 0.999099 1.57576e-07 0.0424444 0 
+| -0.0424444 -2.47996e-09 0.999099 0 
+| -0.897823 -1.15457 -0.171872 1 
++------------------------+
+Bone 'ring_3.R' affects 32 vertices
+bone offset matrix:
++------------------------+
+| -3.41416e-16 -1 -3.53397e-17 0 
+| 0.999099 1.55766e-07 0.0424444 0 
+| -0.0424444 -2.80688e-09 0.999099 0 
+| -0.897823 -1.16997 -0.171872 1 
++------------------------+
+Bone 'middle_1.R' affects 98 vertices
+bone offset matrix:
++------------------------+
+| 0.0457568 -0.998951 0.0019439 0 
+| 0.99805 0.0457982 0.0424003 0 
+| -0.0424449 -9.31322e-10 0.999099 0 
+| -0.843401 -1.17775 -0.184044 1 
++------------------------+
+Bone 'middle_2.R' affects 54 vertices
+bone offset matrix:
++------------------------+
+| -3.49898e-09 -1 7.92571e-11 0 
+| 0.999099 1.5188e-07 0.0424448 0 
+| -0.0424449 -2.59488e-09 0.999099 0 
+| -0.897209 -1.15524 -0.18633 1 
++------------------------+
+Bone 'middle_3.R' affects 28 vertices
+bone offset matrix:
++------------------------+
+| 6.94567e-17 -1 2.03136e-17 0 
+| 0.999099 1.51664e-07 0.0424446 0 
+| -0.0424447 -2.72371e-09 0.999099 0 
+| -0.897209 -1.17265 -0.18633 1 
++------------------------+
+Bone 'index_1.R' affects 76 vertices
+bone offset matrix:
++------------------------+
+| 0.0457569 -0.998951 0.00194396 0 
+| 0.99805 0.0457983 0.0424004 0 
+| -0.042445 5.61122e-08 0.999099 0 
+| -0.842774 -1.17775 -0.198805 1 
++------------------------+
+Bone 'index_2.R' affects 44 vertices
+bone offset matrix:
++------------------------+
+| -2.74276e-09 -1 -6.48107e-11 0 
+| 0.999099 1.4838e-07 0.0424448 0 
+| -0.0424449 -2.60232e-09 0.999099 0 
+| -0.896582 -1.15524 -0.201091 1 
++------------------------+
+Bone 'index_3.R' affects 32 vertices
+bone offset matrix:
++------------------------+
+| -5.06071e-18 -1 6.73016e-18 0 
+| 0.999099 1.51133e-07 0.0424448 0 
+| -0.0424449 -2.61688e-09 0.999099 0 
+| -0.896582 -1.1685 -0.201091 1 
++------------------------+
+Bone 'thumb_1.R' affects 73 vertices
+bone offset matrix:
++------------------------+
+| -0.173569 -0.863187 0.474111 0 
+| 0.982182 -0.186945 0.0192104 0 
+| 0.0720503 0.468998 0.880255 0 
+| -1.08478 -0.865369 0.355613 1 
++------------------------+
+Bone 'thumb_2.R' affects 0 vertices
+bone offset matrix:
++------------------------+
+| -0.156091 -0.915205 0.371532 0 
+| 0.987581 -0.151403 0.0419556 0 
+| 0.0178528 0.373466 0.927472 0 
+| -1.06029 -0.956806 0.211928 1 
++------------------------+
+Bone 'thumb_3.R' affects 20 vertices
+bone offset matrix:
++------------------------+
+| -0.201025 -0.886277 0.417255 0 
+| 0.978429 -0.202358 0.0415654 0 
+| 0.0475962 0.41661 0.907838 0 
+| -1.10857 -0.901248 0.267731 1 
++------------------------+
+Bone 'hand_IK.R' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 0.988603 6.31141e-08 0.150544 0 
+| -5.87284e-08 1 -2.40161e-08 0 
+| -0.150544 -1.52922e-08 0.988603 0 
+| 1.08227 -0.894434 0.0163514 1 
++------------------------+
+Bone 'leg.L' affects 54 vertices
+bone offset matrix:
++------------------------+
+| -5.18241e-08 -5.35501e-07 -0.999997 0 
+| -0.0319392 -0.99949 -2.44214e-08 0 
+| -0.99949 0.0319392 5.20978e-08 0 
+| 0.184007 0.472068 -0.355422 1 
++------------------------+
+Bone 'lower_leg.L' affects 76 vertices
+bone offset matrix:
++------------------------+
+| -4.264e-08 -5.55976e-07 -0.999997 0 
+| 0.110096 -0.993921 -1.34026e-08 0 
+| -0.993921 -0.110096 1.20995e-07 0 
+| 0.168902 0.118574 -0.355422 1 
++------------------------+
+Bone 'leg.R' affects 54 vertices
+bone offset matrix:
++------------------------+
+| -3.82115e-08 5.9838e-07 0.999997 0 
+| 0.0319392 -0.99949 2.72136e-08 0 
+| 0.99949 0.0319392 3.52801e-08 0 
+| -0.184007 0.472068 0.507365 1 
++------------------------+
+Bone 'lower_leg.R' affects 76 vertices
+bone offset matrix:
++------------------------+
+| -4.26399e-08 5.66821e-07 0.999997 0 
+| -0.110096 -0.993921 -1.34015e-08 0 
+| 0.993921 -0.110096 1.20986e-07 0 
+| -0.168902 0.118575 0.507365 1 
++------------------------+
+Bone 'foot_IK.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| -4.37114e-08 -1.19209e-07 -1 0 
+| 1 -5.21081e-15 -4.37114e-08 0 
+| 0 -1 -0 0 
+| 0.20917 0.146765 -0.355423 1 
++------------------------+
+Bone 'foot.L' affects 56 vertices
+bone offset matrix:
++------------------------+
+| -2.98592e-08 1.13216e-07 -1 0 
+| -0.949721 -0.313095 -7.08935e-09 0 
+| -0.313095 0.949722 -2.33715e-09 0 
+| -0.152702 -0.204876 -0.355423 1 
++------------------------+
+Bone 'foot_IK.R' affects 0 vertices
+bone offset matrix:
++------------------------+
+| -4.37114e-08 1.19209e-07 1 0 
+| -1 -5.21081e-15 -4.37114e-08 0 
+| -0 -1 0 0 
+| -0.20917 0.146765 0.507367 1 
++------------------------+
+Bone 'foot.R' affects 56 vertices
+bone offset matrix:
++------------------------+
+| -2.98592e-08 -1.13216e-07 1 0 
+| 0.949721 -0.313095 -7.08935e-09 0 
+| 0.313095 0.949722 -2.33715e-09 0 
+| 0.152702 -0.204876 0.507367 1 
++------------------------+
+Bone 'arm_target.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 0.0285823 0 0.999591 0 
+| -0.999591 0 0.0285823 0 
+| 0 -1 0 0 
+| 0.894448 -0.0567996 -0.0122992 1 
++------------------------+
+Bone 'leg_target.L' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 7.54979e-08 1.19209e-07 -1 0 
+| -1 9.00005e-15 -7.54979e-08 0 
+| 0 1 0 0 
+| 0.0992583 -0.425521 -0.355423 1 
++------------------------+
+Bone 'arm_target.R' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 0.0285823 0 -0.999591 0 
+| 0.999591 0 0.0285823 0 
+| 0 -1 0 0 
+| -0.869787 -0.0567996 -0.874736 1 
++------------------------+
+Bone 'leg_target.R' affects 0 vertices
+bone offset matrix:
++------------------------+
+| 7.54979e-08 -1.19209e-07 1 0 
+| 1 9.00005e-15 -7.54979e-08 0 
+| 0 1 0 0 
+| -0.0992582 -0.425521 0.507367 1 
++------------------------+
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/cigarette_pack.png
+working on bones of a mesh now it has: 2bones
+Bone 'root' affects 160 vertices
+bone offset matrix:
++------------------------+
+| -2.01782e-07 -0.766044 0.642788 0 
+| 1 -1.97332e-07 3.21198e-07 0 
+| -2.40474e-07 0.642788 0.766044 0 
+| -0.104004 -0.412559 0.602465 1 
++------------------------+
+Bone 'cap_bone' affects 0 vertices
+bone offset matrix:
++------------------------+
+| -0.72855 -0.236726 0.642787 0 
+| 0.309021 -0.951055 -2.74181e-06 0 
+| 0.611327 0.198633 0.766045 0 
+| -0.480219 -0.0570427 0.602465 1 
++------------------------+
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/cigarette_pack.png
+working on bones of a mesh now it has: 2bones
+Bone 'root' affects 0 vertices
+Bone 'cap_bone' affects 56 vertices
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/lighter.png
+working on bones of a mesh now it has: 3bones
+Bone 'lighter_root' affects 0 vertices
+Bone 'flintwheel' affects 0 vertices
+Bone 'cap' affects 108 vertices
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/cigarette.png
+working on bones of a mesh now it has: 1bones
+Bone 'cig_root' affects 48 vertices
+bone offset matrix:
++------------------------+
+| 1.05864e-07 0.760994 0.648759 0 
+| -1 3.13432e-07 -1.53825e-07 0 
+| -2.89258e-07 -0.648759 0.760994 0 
+| 0.109097 0.470807 0.606211 1 
++------------------------+
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/cigarette_pack.png
+working on bones of a mesh now it has: 2bones
+Bone 'root' affects 1056 vertices
+Bone 'cap_bone' affects 0 vertices
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/lighter.png
+working on bones of a mesh now it has: 3bones
+Bone 'lighter_root' affects 0 vertices
+Bone 'flintwheel' affects 48 vertices
+Bone 'cap' affects 0 vertices
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/knife.png
+working on bones of a mesh now it has: 1bones
+Bone 'knife_bone' affects 1120 vertices
+bone offset matrix:
++------------------------+
+| 0.791709 0.610899 -1.90235e-07 0 
+| 8.52651e-14 3.11402e-07 1 0 
+| 0.610899 -0.791709 2.4654e-07 0 
+| 0.605143 0.555264 -0.0987802 1 
++------------------------+
+processing mesh materials: assets/smoking/
+assets/smoking/smoking.fbm/lighter.png
+working on bones of a mesh now it has: 3bones
+Bone 'lighter_root' affects 962 vertices
+Bone 'flintwheel' affects 0 vertices
+Bone 'cap' affects 0 vertices
+delme after smokefbx

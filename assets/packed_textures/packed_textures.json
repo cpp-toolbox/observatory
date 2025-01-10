@@ -1,0 +1,300 @@
+{
+    "sub_textures": {
+        "C:\\Users\\ccn\\projects\\3D\\models\\strat\\strat_green.png": {
+            "container_index": 0,
+            "height": 512,
+            "sub_textures": {},
+            "width": 512,
+            "x": 0,
+            "y": 0
+        },
+        "assets\\crosshair\\bright_green.png": {
+            "container_index": 2,
+            "height": 1,
+            "sub_textures": {},
+            "width": 1,
+            "x": 928,
+            "y": 256
+        },
+        "assets\\cube_test\\cube_test.fbm\\cube_test.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 256,
+            "y": 0
+        },
+        "assets\\cube_test\\cube_test.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 384,
+            "y": 0
+        },
+        "assets\\fonts\\times_64_sdf_atlas.png": {
+            "container_index": 1,
+            "height": 256,
+            "sub_textures": {},
+            "width": 1024,
+            "x": 0,
+            "y": 512
+        },
+        "assets\\images\\alphabet.png": {
+            "container_index": 0,
+            "height": 512,
+            "sub_textures": {},
+            "width": 1024,
+            "x": 0,
+            "y": 512
+        },
+        "assets\\images\\flame.png": {
+            "container_index": 1,
+            "height": 512,
+            "sub_textures": {},
+            "width": 1024,
+            "x": 0,
+            "y": 0
+        },
+        "assets\\images\\missing_texture.png": {
+            "container_index": 2,
+            "height": 32,
+            "sub_textures": {},
+            "width": 32,
+            "x": 896,
+            "y": 256
+        },
+        "assets\\images\\smoke_64px.png": {
+            "container_index": 2,
+            "height": 64,
+            "sub_textures": {},
+            "width": 64,
+            "x": 960,
+            "y": 128
+        },
+        "assets\\images\\test_box.png": {
+            "container_index": 2,
+            "height": 64,
+            "sub_textures": {},
+            "width": 64,
+            "x": 896,
+            "y": 128
+        },
+        "assets\\lightbulb\\lightbulb.png": {
+            "container_index": 2,
+            "height": 64,
+            "sub_textures": {},
+            "width": 64,
+            "x": 896,
+            "y": 192
+        },
+        "assets\\new.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 512,
+            "y": 0
+        },
+        "assets\\room\\NormalMap (31)_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 256,
+            "y": 256
+        },
+        "assets\\room\\curtain 22_128x128.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 640,
+            "y": 0
+        },
+        "assets\\room\\curtain nm_128x128.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 768,
+            "y": 0
+        },
+        "assets\\room\\door_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 0,
+            "y": 256
+        },
+        "assets\\room\\door_back_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 128,
+            "y": 256
+        },
+        "assets\\room\\floor_512x256.png": {
+            "container_index": 0,
+            "height": 256,
+            "sub_textures": {},
+            "width": 512,
+            "x": 512,
+            "y": 256
+        },
+        "assets\\room\\floor_nm_512x256.png": {
+            "container_index": 0,
+            "height": 256,
+            "sub_textures": {},
+            "width": 512,
+            "x": 512,
+            "y": 0
+        },
+        "assets\\room\\wall 0_128x128.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 896,
+            "y": 0
+        },
+        "assets\\room\\wall_nm_128x128.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 256,
+            "y": 128
+        },
+        "assets\\room\\window 0_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 384,
+            "y": 256
+        },
+        "assets\\room\\window white_128x16.png": {
+            "container_index": 2,
+            "height": 16,
+            "sub_textures": {},
+            "width": 128,
+            "x": 896,
+            "y": 288
+        },
+        "assets\\room\\window_nm_128x16.png": {
+            "container_index": 2,
+            "height": 16,
+            "sub_textures": {},
+            "width": 128,
+            "x": 896,
+            "y": 304
+        },
+        "assets\\smoking\\smoking.fbm\\cigarette.png": {
+            "container_index": 2,
+            "height": 64,
+            "sub_textures": {},
+            "width": 64,
+            "x": 960,
+            "y": 192
+        },
+        "assets\\smoking\\smoking.fbm\\cigarette_pack.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 384,
+            "y": 128
+        },
+        "assets\\smoking\\smoking.fbm\\couch_texure.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 256,
+            "x": 0,
+            "y": 0
+        },
+        "assets\\smoking\\smoking.fbm\\curtain 22_128x128.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 512,
+            "y": 128
+        },
+        "assets\\smoking\\smoking.fbm\\door_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 512,
+            "y": 256
+        },
+        "assets\\smoking\\smoking.fbm\\door_back_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 640,
+            "y": 256
+        },
+        "assets\\smoking\\smoking.fbm\\floor_512x256.png": {
+            "container_index": 1,
+            "height": 256,
+            "sub_textures": {},
+            "width": 512,
+            "x": 512,
+            "y": 768
+        },
+        "assets\\smoking\\smoking.fbm\\guy_everything.png": {
+            "container_index": 1,
+            "height": 256,
+            "sub_textures": {},
+            "width": 256,
+            "x": 256,
+            "y": 768
+        },
+        "assets\\smoking\\smoking.fbm\\knife.png": {
+            "container_index": 1,
+            "height": 256,
+            "sub_textures": {},
+            "width": 256,
+            "x": 0,
+            "y": 768
+        },
+        "assets\\smoking\\smoking.fbm\\lighter.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 640,
+            "y": 128
+        },
+        "assets\\smoking\\smoking.fbm\\wall 0_128x128.png": {
+            "container_index": 2,
+            "height": 128,
+            "sub_textures": {},
+            "width": 128,
+            "x": 768,
+            "y": 128
+        },
+        "assets\\smoking\\smoking.fbm\\window 0_128x256.png": {
+            "container_index": 2,
+            "height": 256,
+            "sub_textures": {},
+            "width": 128,
+            "x": 768,
+            "y": 256
+        },
+        "assets\\smoking\\smoking.fbm\\window white_128x16.png": {
+            "container_index": 2,
+            "height": 16,
+            "sub_textures": {},
+            "width": 128,
+            "x": 896,
+            "y": 320
+        }
+    }
+}
