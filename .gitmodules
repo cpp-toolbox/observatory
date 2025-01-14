@@ -85,3 +85,6 @@
 [submodule "src/utility/fs_utils"]
 	path = src/utility/fs_utils
 	url = git@github.com:cpp-toolbox/fs_utils.git
+[submodule "src/graphics/cube_map"]
+	path = src/graphics/cube_map
+	url = git@github.com:cpp-toolbox/cube_map.git

@@ -5,6 +5,7 @@
 
 #include "graphics/animated_texture_atlas/animated_texture_atlas.hpp"
 #include "graphics/batcher/generated/batcher.hpp"
+#include "graphics/cube_map/cube_map.hpp"
 #include "graphics/fps_camera/fps_camera.hpp"
 #include "graphics/scripted_events/scripted_scene_manager.hpp"
 #include "graphics/vertex_geometry/vertex_geometry.hpp"
@@ -24,7 +25,6 @@
 #include "utility/temporal_binary_signal/temporal_binary_signal.hpp"
 #include "utility/unique_id_generator/unique_id_generator.hpp"
 #include "utility/stopwatch/stopwatch.hpp"
-#include "utility/ndc/ndc.hpp"
 #include "utility/fs_utils/fs_utils.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -96,24 +96,6 @@ void add_unique_files(const std::string &file_path, const std::vector<std::strin
         output_file.close();
     } else {
         std::cerr << "Could not open file: " << file_path << " for writing.\n";
-    }
-}
-
-void repack_textures() {
-    std::cout << "got here" << std::endl;
-    // Define the command to run your Python script
-    std::string command = "python3 scripts/textures/texture_packer/main.py "
-                          "-f assets/packed_textures/currently_packed_texture_paths.txt "
-                          "-d assets/packed_textures/";
-
-    // Execute the command
-    int result = std::system(command.c_str());
-
-    // Check the result
-    if (result != 0) {
-        std::cerr << "Error: Python script execution failed.\n";
-    } else {
-        std::cout << "Python script executed successfully.\n";
     }
 }
 
@@ -358,8 +340,8 @@ template <typename T, typename R, typename... Args> auto wrap_member_function(T 
     return std::function<R(Args...)>{[&obj, f](Args &&...args) { return (obj.*f)(std::forward<Args>(args)...); }};
 }
 
-void draw_packed_object(std::vector<IVPNTexturePacked> &packed_object, Transform &object_transform,
-                        glm::mat4 *ltw_matrices, Batcher &batcher) {
+void draw_ivpntp_object(std::vector<IVPNTexturePacked> &packed_object, Transform &object_transform,
+                        glm::mat4 *ltw_matrices, Batcher &batcher, bool replace) {
     int ltw_mat_idx = packed_object[0].id;
     ltw_matrices[ltw_mat_idx] = object_transform.get_transform_matrix();
     for (auto &ivptp : packed_object) {
@@ -368,11 +350,30 @@ void draw_packed_object(std::vector<IVPNTexturePacked> &packed_object, Transform
         std::vector<int> ptis(ivptp.xyz_positions.size(), ivptp.packed_texture_index);
         std::vector<glm::ivec4> blank_bone_ids(ivptp.xyz_positions.size(), glm::ivec4(0, 0, 0, 0));
         std::vector<glm::vec4> blank_bone_weights(ivptp.xyz_positions.size(), glm::vec4(0, 0, 0, 0));
+        std::vector<int> ptbbi(ivptp.xyz_positions.size(), ivptp.packed_texture_bounding_box_index);
 
         batcher
             .texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_and_multiple_lights_shader_batcher
             .queue_draw(ivptp.id, ivptp.indices, ltw_indices, blank_bone_ids, blank_bone_weights, ptis,
-                        ivptp.packed_texture_coordinates, ivptp.normals, ivptp.xyz_positions);
+                        ivptp.packed_texture_coordinates, ptbbi, ivptp.normals, ivptp.xyz_positions, replace);
+    }
+}
+
+void draw_ivptp_object(std::vector<IVPNTexturePacked> &packed_object, Transform &object_transform,
+                       glm::mat4 *ltw_matrices, Batcher &batcher, bool replace) {
+    int ltw_mat_idx = packed_object[0].id;
+    ltw_matrices[ltw_mat_idx] = object_transform.get_transform_matrix();
+    for (auto &ivptp : packed_object) {
+        // hopefully the matrix at this index is an identity
+        std::vector<unsigned int> ltw_indices(ivptp.xyz_positions.size(), ltw_mat_idx);
+        std::vector<int> ptis(ivptp.xyz_positions.size(), ivptp.packed_texture_index);
+        std::vector<glm::ivec4> blank_bone_ids(ivptp.xyz_positions.size(), glm::ivec4(0, 0, 0, 0));
+        std::vector<glm::vec4> blank_bone_weights(ivptp.xyz_positions.size(), glm::vec4(0, 0, 0, 0));
+        std::vector<int> ptbbi(ivptp.xyz_positions.size(), ivptp.packed_texture_bounding_box_index);
+
+        batcher.texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_shader_batcher
+            .queue_draw(ivptp.id, ivptp.indices, ltw_indices, blank_bone_ids, blank_bone_weights, ptis,
+                        ivptp.packed_texture_coordinates, ptbbi, ivptp.xyz_positions, replace);
     }
 }
 
@@ -437,7 +438,7 @@ std::vector<int> generate_ui_for_directory(std::string &current_directory, std::
     return doids_for_clickable_textboxes_for_active_directory;
 }
 
-struct PackedModel {
+struct IVPNTPModel {
     Transform transform;
     std::vector<IVPNTexturePacked> packed_model;
 };
@@ -445,7 +446,7 @@ struct PackedModel {
 int main() {
     TemporalBinarySignal mouse_clicked_signal;
 
-    std::vector<PackedModel> packed_models;
+    std::vector<IVPNTPModel> packed_models;
 
     Stopwatch fps_counter;
 
@@ -469,10 +470,12 @@ int main() {
     GLFWwindow *window =
         initialize_glfw_glad_and_return_window(SCREEN_WIDTH, SCREEN_HEIGHT, "cpp-tbx demo", true, true, false, true);
 
+    /*DivploCubeMap skybox("assets/skyboxes/dusk_land", "png", ShaderType::SKYBOX, shader_cache);*/
+
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    FPSCamera camera(glm::vec3(0, 0, 0), 50, SCREEN_WIDTH, SCREEN_HEIGHT, 90, 0.1, 50);
+    FPSCamera camera(glm::vec3(0, 0, 0), 50, SCREEN_WIDTH, SCREEN_HEIGHT, 90, 0.1, 500);
     std::function<void(unsigned int)> char_callback = [](unsigned int _) {};
     std::function<void(int, int, int, int)> key_callback = [&](int key, int scancode, int action, int mods) {
         if (key == GLFW_KEY_M && action == GLFW_PRESS) {
@@ -496,7 +499,9 @@ int main() {
 
     std::vector<ShaderType> requested_shaders = {
         ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-        ShaderType::TRANSFORM_V_WITH_SIGNED_DISTANCE_FIELD_TEXT, ShaderType::ABSOLUTE_POSITION_WITH_COLORED_VERTEX};
+        ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
+        ShaderType::TRANSFORM_V_WITH_SIGNED_DISTANCE_FIELD_TEXT, ShaderType::ABSOLUTE_POSITION_WITH_COLORED_VERTEX,
+        ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED};
 
     ShaderCache shader_cache(requested_shaders, sinks);
     Batcher batcher(shader_cache);
@@ -522,8 +527,25 @@ int main() {
 
     const std::filesystem::path textures_directory = "assets/";
     const std::filesystem::path output_dir = "assets/packed_textures";
-    int container_side_length = 1024;
+    int container_side_length = 4096;
+
     TexturePacker texture_packer(textures_directory, output_dir, container_side_length);
+
+    shader_cache.set_uniform(
+        ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+        ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+
+    shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
+                             ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES,
+                             texture_packer.texture_index_to_bounding_box);
+
+    shader_cache.set_uniform(
+        ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
+        ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+
+    TemporalBinarySignal texture_packer_regen_signal;
+
+    CubeMap skybox("assets/skybox", "png", texture_packer);
 
     std::string currently_packed_textures_paths = "assets/packed_textures/currently_packed_texture_paths.txt";
 
@@ -589,13 +611,11 @@ int main() {
 
     on_click = [&]() {
         if (has_extension(currently_selected_file, "obj")) {
-            Transform crosshair_transform = Transform();
-
-            auto crosshair = parse_model_into_ivpnts(currently_selected_file, false);
+            auto model_we_are_loading = parse_model_into_ivpnts(currently_selected_file, false);
 
             std::vector<std::string> used_texture_paths;
-            for (auto &ivpnt : crosshair) {
-                used_texture_paths.push_back(ivpnt.texture);
+            for (auto &ivpnt : model_we_are_loading) {
+                used_texture_paths.push_back(ivpnt.texture_path);
             }
             // todo we just need to implement the code which will load from file in repack textures and then
             // update that file and then use that file
@@ -603,9 +623,31 @@ int main() {
             /*repack_textures();*/
 
             texture_packer.regenerate(used_texture_paths);
-            std::vector<IVPNTexturePacked> packed_crosshair = convert_ivpnt_to_ivpntp(crosshair, texture_packer);
+            shader_cache.set_uniform(
+                ShaderType::
+                    TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+                ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+            shader_cache.set_uniform(
+                ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
+                ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+            shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
+                                     ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES,
+                                     texture_packer.texture_index_to_bounding_box);
+            texture_packer_regen_signal.toggle_state();
+            skybox.regenerate();
 
-            PackedModel pm(crosshair_transform, packed_crosshair);
+            for (auto &pm : packed_models) {
+                for (auto &ivpnt : pm.packed_model) {
+                    ivpnt.packed_texture_coordinates = texture_packer.get_packed_texture_coordinates(
+                        ivpnt.texture_path, ivpnt.original_texture_coordinates);
+                    ivpnt.packed_texture_index = texture_packer.get_packed_texture_index_of_texture(ivpnt.texture_path);
+                }
+            }
+
+            // add the new model
+            Transform new_model_transform = Transform();
+            std::vector<IVPNTexturePacked> packed_model = convert_ivpnt_to_ivpntp(model_we_are_loading, texture_packer);
+            IVPNTPModel pm(new_model_transform, packed_model);
             packed_models.push_back(pm);
         }
     };
@@ -780,6 +822,8 @@ int main() {
 
         glm::mat4 projection = camera.get_projection_matrix();
         glm::mat4 view = camera.get_view_matrix();
+        glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));
+        glm::mat4 local_to_world(1.0f);
 
         shader_cache.set_uniform(
             ShaderType::
@@ -789,6 +833,20 @@ int main() {
             ShaderType::
                 TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
             ShaderUniformVariable::WORLD_TO_CAMERA, view);
+
+        shader_cache.set_uniform(
+            ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
+            ShaderUniformVariable::CAMERA_TO_CLIP, projection);
+        shader_cache.set_uniform(
+            ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
+            ShaderUniformVariable::WORLD_TO_CAMERA, view);
+
+        shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED, ShaderUniformVariable::CAMERA_TO_CLIP,
+                                 projection);
+        shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
+                                 ShaderUniformVariable::WORLD_TO_CAMERA, origin_view);
+        shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED, ShaderUniformVariable::LOCAL_TO_WORLD,
+                                 local_to_world);
 
         /*cs_pe.particle_emitter.update(delta_time, projection * view);*/
         /*auto cs_particles = cs_pe.particle_emitter.get_particles_sorted_by_distance();*/
@@ -843,9 +901,37 @@ int main() {
         /*} else {*/
         /*}*/
 
+        // draw skybox
+        glDepthMask(GL_FALSE);
+        glDepthFunc(
+            GL_LEQUAL); // change depth function so depth test passes when values are equal to depth buffer's content
+        // Array of skybox faces and their corresponding identifiers
+        std::vector<std::tuple<int, const IVPTexturePacked &>> skybox_faces = {
+            {0, skybox.top_face},  {1, skybox.bottom_face}, {2, skybox.right_face},
+            {3, skybox.left_face}, {4, skybox.front_face},  {5, skybox.back_face}};
+
+        for (const auto &[id, face] : skybox_faces) {
+            std::vector<int> ptis(face.xyz_positions.size(), face.packed_texture_index);
+            std::vector<int> ptbbi(face.xyz_positions.size(), face.packed_texture_bounding_box_index);
+
+            // Call to the actual function
+            batcher.cwl_v_transformation_texture_packed_shader_batcher.queue_draw(
+                id, face.indices, face.xyz_positions, ptis, face.packed_texture_coordinates, ptbbi,
+                texture_packer_regen_signal.has_just_changed());
+        }
+
+        batcher.cwl_v_transformation_texture_packed_shader_batcher.draw_everything();
+        glDepthFunc(GL_LESS);
+        glDepthMask(GL_TRUE);
+
+        // draw all other objects
         set_shader_light_data(camera, shader_cache, false, glm::vec3(0));
         for (auto &pm : packed_models) {
-            draw_packed_object(pm.packed_model, pm.transform, ltw_matrices, batcher);
+            /*draw_ivpntp_object(pm.packed_model, pm.transform, ltw_matrices, batcher,*/
+            /*                   texture_packer_regen_signal.has_just_changed());*/
+
+            draw_ivptp_object(pm.packed_model, pm.transform, ltw_matrices, batcher,
+                              texture_packer_regen_signal.has_just_changed());
         }
 
         // run scripted events
@@ -1107,9 +1193,12 @@ int main() {
         /*double curr_time_sec = glfwGetTime();*/
         /*scripted_event.run_scripted_events(curr_time_sec, event_callbacks);*/
 
-        batcher
-            .texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_and_multiple_lights_shader_batcher
+        batcher.texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_shader_batcher
             .draw_everything();
+        /*batcher*/
+        /*    .texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_and_multiple_lights_shader_batcher*/
+        /*    .draw_everything();*/
+
         glDisable(GL_DEPTH_TEST);
         batcher.absolute_position_with_colored_vertex_shader_batcher.draw_everything();
         batcher.transform_v_with_signed_distance_field_text_shader_batcher.draw_everything();
