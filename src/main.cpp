@@ -398,14 +398,15 @@ glm::mat4 get_the_transform_to_attach_an_object_to_a_bone(std::string bone_name,
 
 void on_directory_clicked() {}
 
-std::vector<int> generate_ui_for_directory(std::string &current_directory, std::string &currently_selected_file,
+std::vector<int> generate_ui_for_directory(std::filesystem::path &current_directory,
+                                           std::filesystem::path &currently_selected_file,
                                            Rectangle &main_file_view_rect, UI &filesystem_browser,
                                            TemporalBinarySignal &directory_click_signal,
                                            TemporalBinarySignal &file_click_signal) {
 
     std::vector<int> doids_for_clickable_textboxes_for_active_directory;
 
-    std::vector<std::string> files_and_dirs = list_files_and_directories(current_directory);
+    std::vector<std::filesystem::path> files_and_dirs = list_files_and_directories(current_directory);
 
     Grid file_rows(files_and_dirs.size(), 1, main_file_view_rect);
     auto file_rects = file_rows.get_column(0);
@@ -414,7 +415,7 @@ std::vector<int> generate_ui_for_directory(std::string &current_directory, std::
 
     // note that the hover color doesn't work right now because of the batcher
     for (int i = 0; i < file_rects.size(); i++) {
-        std::string file_or_directory_path = files_and_dirs.at(i);
+        std::filesystem::path file_or_directory_path = files_and_dirs.at(i);
         std::function<void()> on_click = [file_or_directory_path, &filesystem_browser, &main_file_view_rect,
                                           &directory_click_signal, &current_directory, &currently_selected_file,
                                           &file_click_signal]() {
@@ -422,7 +423,7 @@ std::vector<int> generate_ui_for_directory(std::string &current_directory, std::
             // if we tried to erase the ui element we're existing on then we've just killed ourself and the code
             // would not run anymore, thus, we use a signal and then outside this function we react based on the signal
             // in a safer environment
-            if (is_directory(file_or_directory_path)) {
+            if (std::filesystem::is_directory(file_or_directory_path)) {
                 current_directory = file_or_directory_path;
                 directory_click_signal.toggle_state();
             } else { // there are only files and directories, nothing else
@@ -430,9 +431,9 @@ std::vector<int> generate_ui_for_directory(std::string &current_directory, std::
                 file_click_signal.toggle_state();
             }
         };
-
-        int oid = filesystem_browser.add_clickable_textbox(on_click, on_hover, file_or_directory_path, file_rects.at(i),
-                                                           colors.white, colors.grey);
+        std::string file_or_directory_path_str = file_or_directory_path.string();
+        int oid = filesystem_browser.add_clickable_textbox(on_click, on_hover, file_or_directory_path_str,
+                                                           file_rects.at(i), colors.white, colors.grey);
         doids_for_clickable_textboxes_for_active_directory.push_back(oid);
     }
     return doids_for_clickable_textboxes_for_active_directory;
@@ -525,8 +526,8 @@ int main() {
                              ShaderUniformVariable::EDGE_TRANSITION_WIDTH, edge_transition);
     shader_cache.stop_using_shader_program();
 
-    const std::filesystem::path textures_directory = "assets/";
-    const std::filesystem::path output_dir = "assets/packed_textures";
+    const std::filesystem::path textures_directory = "assets";
+    std::filesystem::path output_dir = std::filesystem::path("assets") / "packed_textures";
     int container_side_length = 4096;
 
     TexturePacker texture_packer(textures_directory, output_dir, container_side_length);
@@ -549,10 +550,13 @@ int main() {
 
     std::string currently_packed_textures_paths = "assets/packed_textures/currently_packed_texture_paths.txt";
 
-    AnimatedTextureAtlas animated_texture_atlas("", "assets/images/flame.png", 50.0, texture_packer);
+    std::filesystem::path font_info_path =
+        std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas_font_info.json";
+    std::filesystem::path font_json_path = std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas.json";
+    std::filesystem::path font_image_path = std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas.png";
 
-    FontAtlas font_atlas("assets/fonts/times_64_sdf_atlas_font_info.json", "assets/fonts/times_64_sdf_atlas.json",
-                         "assets/fonts/times_64_sdf_atlas.png", SCREEN_WIDTH, false, true);
+    FontAtlas font_atlas(font_info_path.string(), font_json_path.string(), font_image_path.string(), SCREEN_WIDTH,
+                         false, true);
 
     Grid ui_grid(10, 10);
     UI top_bar(font_atlas);
@@ -574,8 +578,8 @@ int main() {
     TemporalBinarySignal directory_click_signal;
     TemporalBinarySignal up_a_dir_signal;
 
-    std::string current_directory = get_home_directory();
-    std::string currently_selected_file = "";
+    std::filesystem::path current_directory = get_home_directory();
+    std::filesystem::path currently_selected_file = "";
 
     UI filesystem_browser(font_atlas);
     float fsb_height = 1.5;
@@ -592,7 +596,7 @@ int main() {
     Rectangle up_a_dir_button = create_rectangle(-.4 * fsb_width, .4 * fsb_height, .05 * fsb_width, .05 * fsb_height);
 
     filesystem_browser.add_colored_rectangle(background_rect, colors.gray10);
-    int curr_dir_doid = filesystem_browser.add_textbox(current_directory, current_directory_rect, colors.gold);
+    int curr_dir_doid = filesystem_browser.add_textbox(current_directory.string(), current_directory_rect, colors.gold);
     filesystem_browser.add_colored_rectangle(main_file_view_rect, colors.gray40);
     int selected_file_doid = filesystem_browser.add_textbox("select a file", file_selection_bar, colors.gray40);
     filesystem_browser.add_textbox("x", close_button, colors.darkred);
@@ -605,6 +609,8 @@ int main() {
     on_hover = []() {};
     filesystem_browser.add_clickable_textbox(on_click, on_hover, "^", up_a_dir_button, colors.purple, colors.green);
 
+    std::string currrent_directory_str = current_directory.string();
+    std::string currently_selected_file_str = currently_selected_file.string();
     std::vector<int> doids_for_clickable_textboxes_for_active_directory =
         generate_ui_for_directory(current_directory, currently_selected_file, main_file_view_rect, filesystem_browser,
                                   directory_click_signal, file_click_signal);
@@ -612,6 +618,7 @@ int main() {
     on_click = [&]() {
         if (has_extension(currently_selected_file, "obj")) {
             auto model_we_are_loading = parse_model_into_ivpnts(currently_selected_file, false);
+            Transform crosshair_transform = Transform();
 
             std::vector<std::string> used_texture_paths;
             for (auto &ivpnt : model_we_are_loading) {
@@ -663,7 +670,10 @@ int main() {
     Transform crosshair_transform = Transform();
     crosshair_transform.scale = glm::vec3(.01, .01, .01);
     auto crosshair = parse_model_into_ivpnts("assets/crosshair/3d_crosshair.obj", false);
+    std::cout << "before crosshair pack" << std::endl;
+
     std::vector<IVPNTexturePacked> packed_crosshair = convert_ivpnt_to_ivpntp(crosshair, texture_packer);
+    std::cout << "after crosshair pack" << std::endl;
 
     auto lightbulb = parse_model_into_ivpnts("assets/lightbulb/lightbulb.obj", false);
     // we have four point lights atm
@@ -689,8 +699,12 @@ int main() {
     lightbulb_4_transform.position = glm::vec3(-.8, .8, .8);
 
     /*std::vector<IVPNTRigged> smoke_ivpntrs = rirc.parse_model_into_ivpntrs("assets/test/test.fbx");*/
+    std::cout << "delme before smokefbx" << std::endl;
     std::vector<IVPNTRigged> smoke_ivpntrs = rirc.parse_model_into_ivpntrs("assets/smoking/smoking.fbx");
+    std::cout << "delme after smokefbx" << std::endl;
+
     std::vector<IVPNTPRigged> smoke_ivptprs = convert_ivpnt_to_ivpntpr(smoke_ivpntrs, texture_packer);
+    std::cout << "delme after smokefbx pack" << std::endl;
 
     glfwSwapInterval(0);
 
@@ -721,6 +735,8 @@ int main() {
 
     SoundSystem sound_system(100, sound_type_to_file);
 
+    std::cout << "after soundsystem" << std::endl;
+
     sound_system.queue_sound(SoundType::AMBIENT, glm::vec3(0, 0, 0));
 
     std::vector<glm::vec2> packed_tex_coords_last_tick{};
@@ -736,6 +752,8 @@ int main() {
     bs_pe.particle_emitter.stop_emitting_particles();
     cs_pe.particle_emitter.stop_emitting_particles();
     ScriptedEvent scripted_event("assets/smoking/smoking_event.json");
+
+    std::cout << "after scripted events" << std::endl;
 
     std::vector<glm::ivec4> smoke_bone_ids(4, glm::ivec4(0, 0, 0, 0));   // 4 because square
     std::vector<glm::vec4> smoke_bone_weights(4, glm::vec4(0, 0, 0, 0)); // 4 because square
@@ -793,13 +811,21 @@ int main() {
          }},
     };
 
+    std::cout << "before get packed" << std::endl;
+
     auto smoke_vertices = generate_square_vertices(0, 0, 0.5);
     auto smoke_indices = generate_rectangle_indices();
     std::vector<glm::vec2> smoke_local_uvs = generate_rectangle_texture_coordinates();
-    auto smoke_texture_coordinates =
-        texture_packer.get_packed_texture_coordinates("assets/images/smoke_64px.png", smoke_local_uvs);
-    auto smoke_pt_idx = texture_packer.get_packed_texture_index_of_texture("assets/images/smoke_64px.png");
+
+    // Convert paths to native format
+    std::string smoke_texture_path = std::filesystem::path("assets/images/smoke_64px.png").make_preferred().string();
+
+    auto smoke_texture_coordinates = texture_packer.get_packed_texture_coordinates(smoke_texture_path, smoke_local_uvs);
+
+    auto smoke_pt_idx = texture_packer.get_packed_texture_index_of_texture(smoke_texture_path);
     std::vector<int> smoke_pt_idxs(4, smoke_pt_idx); // 4 because square
+
+    std::cout << "before while" << std::endl;
 
     int width, height;
 
@@ -1169,8 +1195,9 @@ int main() {
         // draw file browser end ^^^^
 
         if (directory_click_signal.has_just_changed() or up_a_dir_signal.has_just_changed()) {
-
-            filesystem_browser.modify_text_of_a_textbox(curr_dir_doid, current_directory);
+            std::string current_directory_str = current_directory.string();
+            std::string currently_selected_file_str = currently_selected_file.string();
+            filesystem_browser.modify_text_of_a_textbox(curr_dir_doid, current_directory_str);
 
             // this is a function which updates the thing, that's all
             // remove all the old ui elements
@@ -1185,7 +1212,7 @@ int main() {
         }
 
         if (file_click_signal.has_just_changed()) {
-            filesystem_browser.modify_text_of_a_textbox(selected_file_doid, currently_selected_file);
+            filesystem_browser.modify_text_of_a_textbox(selected_file_doid, currently_selected_file_str);
         }
 
         // render ui now
