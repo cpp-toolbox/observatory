@@ -471,7 +471,6 @@ int main() {
     GLFWwindow *window =
         initialize_glfw_glad_and_return_window(SCREEN_WIDTH, SCREEN_HEIGHT, "cpp-tbx demo", true, true, false, true);
 
-    /*DivploCubeMap skybox("assets/skyboxes/dusk_land", "png", ShaderType::SKYBOX, shader_cache);*/
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -530,11 +529,14 @@ int main() {
     std::filesystem::path output_dir = std::filesystem::path("assets") / "packed_textures";
     int container_side_length = 4096;
 
+    std::cout << "before packing" << std::endl;
     TexturePacker texture_packer(textures_directory, output_dir, container_side_length);
+    std::cout << "after packing" << std::endl;
 
-    shader_cache.set_uniform(
-        ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-        ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+
+    //shader_cache.set_uniform(
+    //    ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+    //    ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
 
     shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
                              ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES,
@@ -544,9 +546,18 @@ int main() {
         ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
         ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
 
+    std::cout << "after set bounding boxes" << std::endl;
+
     TemporalBinarySignal texture_packer_regen_signal;
 
-    CubeMap skybox("assets/skybox", "png", texture_packer);
+
+    // Define the directory path and file extension
+    std::filesystem::path cube_map_dir = std::filesystem::path("assets") / "skybox";
+    std::string file_extension = "png";
+
+    // Construct the CubeMap using the variables
+    CubeMap skybox(cube_map_dir, file_extension, texture_packer);
+    std::cout << "after skybox" << std::endl;
 
     std::string currently_packed_textures_paths = "assets/packed_textures/currently_packed_texture_paths.txt";
 
@@ -555,8 +566,12 @@ int main() {
     std::filesystem::path font_json_path = std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas.json";
     std::filesystem::path font_image_path = std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas.png";
 
+    std::cout << "before FONT atlas" << std::endl;
+
     FontAtlas font_atlas(font_info_path.string(), font_json_path.string(), font_image_path.string(), SCREEN_WIDTH,
                          false, true);
+
+    std::cout << "after FONT atlas" << std::endl;
 
     Grid ui_grid(10, 10);
     UI top_bar(font_atlas);
@@ -617,7 +632,7 @@ int main() {
 
     on_click = [&]() {
         if (has_extension(currently_selected_file, "obj")) {
-            auto model_we_are_loading = parse_model_into_ivpnts(currently_selected_file, false);
+            auto model_we_are_loading = parse_model_into_ivpnts(currently_selected_file.string(), false);
             Transform crosshair_transform = Transform();
 
             std::vector<std::string> used_texture_paths;
@@ -630,10 +645,10 @@ int main() {
             /*repack_textures();*/
 
             texture_packer.regenerate(used_texture_paths);
-            shader_cache.set_uniform(
-                ShaderType::
-                    TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-                ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+            //shader_cache.set_uniform(
+            //    ShaderType::
+            //        TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+            //    ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
             shader_cache.set_uniform(
                 ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
                 ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
@@ -664,6 +679,9 @@ int main() {
                                              colors.lightgreen);
 
     /*AnimatedTextureAtlas animated_texture_atlas("", "assets/images/flame.png", 500.0, texture_packer);*/
+
+
+    std::cout << "after UI" << std::endl;
 
     RecIvpntRiggedCollector rirc;
 
@@ -851,14 +869,14 @@ int main() {
         glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));
         glm::mat4 local_to_world(1.0f);
 
-        shader_cache.set_uniform(
-            ShaderType::
-                TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-            ShaderUniformVariable::CAMERA_TO_CLIP, projection);
-        shader_cache.set_uniform(
-            ShaderType::
-                TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-            ShaderUniformVariable::WORLD_TO_CAMERA, view);
+        //shader_cache.set_uniform(
+        //    ShaderType::
+        //        TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+        //    ShaderUniformVariable::CAMERA_TO_CLIP, projection);
+        //shader_cache.set_uniform(
+        //    ShaderType::
+        //        TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+        //    ShaderUniformVariable::WORLD_TO_CAMERA, view);
 
         shader_cache.set_uniform(
             ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
@@ -951,7 +969,7 @@ int main() {
         glDepthMask(GL_TRUE);
 
         // draw all other objects
-        set_shader_light_data(camera, shader_cache, false, glm::vec3(0));
+        // set_shader_light_data(camera, shader_cache, false, glm::vec3(0));
         for (auto &pm : packed_models) {
             /*draw_ivpntp_object(pm.packed_model, pm.transform, ltw_matrices, batcher,*/
             /*                   texture_packer_regen_signal.has_just_changed());*/
