@@ -1,3 +1,6 @@
+// aboutodo
+// was going to now implement dynamic loading of scripted events so we can test.
+// need to get ui working better on the file browser
 #include <fmt/core.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -468,9 +471,9 @@ int main() {
 
     LiveInputState live_input_state;
 
-    GLFWwindow *window =
-        initialize_glfw_glad_and_return_window(SCREEN_WIDTH, SCREEN_HEIGHT, "cpp-tbx demo", true, true, false, true);
-
+    bool start_in_fullscreen = true;
+    GLFWwindow *window = initialize_glfw_glad_and_return_window(SCREEN_WIDTH, SCREEN_HEIGHT, "cpp-tbx demo",
+                                                                start_in_fullscreen, true, false, true);
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -533,23 +536,29 @@ int main() {
     TexturePacker texture_packer(textures_directory, output_dir, container_side_length);
     std::cout << "after packing" << std::endl;
 
+    // shader_cache.set_uniform(
+    //     ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+    //     ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
 
-    //shader_cache.set_uniform(
-    //    ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-    //    ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+    /*shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,*/
+    /*                         ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES,*/
+    /*                         texture_packer.texture_index_to_bounding_box);*/
+    /**/
+    /*shader_cache.set_uniform(*/
+    /*    ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,*/
+    /*    ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);*/
 
+    // here we're setting the texture uniforms
     shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
-                             ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES,
-                             texture_packer.texture_index_to_bounding_box);
+                             ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, 1);
 
     shader_cache.set_uniform(
         ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
-        ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+        ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, 1);
 
     std::cout << "after set bounding boxes" << std::endl;
 
     TemporalBinarySignal texture_packer_regen_signal;
-
 
     // Define the directory path and file extension
     std::filesystem::path cube_map_dir = std::filesystem::path("assets") / "skybox";
@@ -586,7 +595,10 @@ int main() {
     std::function<void()> on_hover = []() {};
 
     top_bar.add_clickable_textbox(on_click, on_hover, "open", open_rect, colors.grey10, colors.darkgreen);
+
+    std::cout << "before adding settings textbox" << std::endl;
     top_bar.add_textbox("settings", settings_rect, colors.grey10);
+    std::cout << "after adding settings textbox" << std::endl;
 
     // signals for buttons
     TemporalBinarySignal file_click_signal;
@@ -597,24 +609,14 @@ int main() {
     std::filesystem::path currently_selected_file = "";
 
     UI filesystem_browser(font_atlas);
-    float fsb_height = 1.5;
-    float fsb_width = 1.5;
-    float fsb_to_side_edge_dist = fsb_width / 2.0;
-    float fsb_to_top_edge_dist = fsb_height / 2.0;
+    FileBrowser fb(1.5, 1.5);
 
-    Rectangle background_rect = create_rectangle(0, 0, fsb_width, fsb_height);
-    Rectangle current_directory_rect = create_rectangle(0, .8 * fsb_to_top_edge_dist, .8 * fsb_width, .1 * fsb_height);
-    Rectangle main_file_view_rect = create_rectangle(0, 0 * fsb_height, .7 * fsb_width, .7 * fsb_height);
-    Rectangle file_selection_bar = create_rectangle(0, -.4 * fsb_height, .8 * fsb_width, .1 * fsb_height);
-    Rectangle open_button = create_rectangle(.4 * fsb_width, -.4 * fsb_height, .1 * fsb_width, .1 * fsb_height);
-    Rectangle close_button = create_rectangle(.4 * fsb_width, .4 * fsb_height, .05 * fsb_width, .05 * fsb_height);
-    Rectangle up_a_dir_button = create_rectangle(-.4 * fsb_width, .4 * fsb_height, .05 * fsb_width, .05 * fsb_height);
-
-    filesystem_browser.add_colored_rectangle(background_rect, colors.gray10);
-    int curr_dir_doid = filesystem_browser.add_textbox(current_directory.string(), current_directory_rect, colors.gold);
-    filesystem_browser.add_colored_rectangle(main_file_view_rect, colors.gray40);
-    int selected_file_doid = filesystem_browser.add_textbox("select a file", file_selection_bar, colors.gray40);
-    filesystem_browser.add_textbox("x", close_button, colors.darkred);
+    filesystem_browser.add_colored_rectangle(fb.background_rect, colors.gray10);
+    int curr_dir_doid =
+        filesystem_browser.add_textbox(current_directory.string(), fb.current_directory_rect, colors.gold);
+    filesystem_browser.add_colored_rectangle(fb.main_file_view_rect, colors.gray40);
+    int selected_file_doid = filesystem_browser.add_textbox("select a file", fb.file_selection_bar, colors.gray40);
+    filesystem_browser.add_textbox("x", fb.close_button, colors.darkred);
     /*filesystem_browser.add_textbox("^", up_a_dir_button, colors.purple);*/
 
     on_click = [&]() {
@@ -622,13 +624,13 @@ int main() {
         current_directory = get_parent_directory(current_directory);
     };
     on_hover = []() {};
-    filesystem_browser.add_clickable_textbox(on_click, on_hover, "^", up_a_dir_button, colors.purple, colors.green);
+    filesystem_browser.add_clickable_textbox(on_click, on_hover, "^", fb.up_a_dir_button, colors.purple, colors.green);
 
     std::string currrent_directory_str = current_directory.string();
     std::string currently_selected_file_str = currently_selected_file.string();
     std::vector<int> doids_for_clickable_textboxes_for_active_directory =
-        generate_ui_for_directory(current_directory, currently_selected_file, main_file_view_rect, filesystem_browser,
-                                  directory_click_signal, file_click_signal);
+        generate_ui_for_directory(current_directory, currently_selected_file, fb.main_file_view_rect,
+                                  filesystem_browser, directory_click_signal, file_click_signal);
 
     on_click = [&]() {
         if (has_extension(currently_selected_file, "obj")) {
@@ -645,10 +647,10 @@ int main() {
             /*repack_textures();*/
 
             texture_packer.regenerate(used_texture_paths);
-            //shader_cache.set_uniform(
-            //    ShaderType::
-            //        TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-            //    ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
+            // shader_cache.set_uniform(
+            //     ShaderType::
+            //         TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+            //     ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
             shader_cache.set_uniform(
                 ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
                 ShaderUniformVariable::PACKED_TEXTURE_BOUNDING_BOXES, texture_packer.texture_index_to_bounding_box);
@@ -675,11 +677,10 @@ int main() {
     };
     on_hover = []() {};
 
-    filesystem_browser.add_clickable_textbox(on_click, on_hover, "open", open_button, colors.darkgreen,
+    filesystem_browser.add_clickable_textbox(on_click, on_hover, "open", fb.open_button, colors.darkgreen,
                                              colors.lightgreen);
 
     /*AnimatedTextureAtlas animated_texture_atlas("", "assets/images/flame.png", 500.0, texture_packer);*/
-
 
     std::cout << "after UI" << std::endl;
 
@@ -869,14 +870,14 @@ int main() {
         glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));
         glm::mat4 local_to_world(1.0f);
 
-        //shader_cache.set_uniform(
-        //    ShaderType::
-        //        TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-        //    ShaderUniformVariable::CAMERA_TO_CLIP, projection);
-        //shader_cache.set_uniform(
-        //    ShaderType::
-        //        TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
-        //    ShaderUniformVariable::WORLD_TO_CAMERA, view);
+        // shader_cache.set_uniform(
+        //     ShaderType::
+        //         TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+        //     ShaderUniformVariable::CAMERA_TO_CLIP, projection);
+        // shader_cache.set_uniform(
+        //     ShaderType::
+        //         TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
+        //     ShaderUniformVariable::WORLD_TO_CAMERA, view);
 
         shader_cache.set_uniform(
             ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
@@ -1225,7 +1226,7 @@ int main() {
             doids_for_clickable_textboxes_for_active_directory.clear();
             // create the new ones
             doids_for_clickable_textboxes_for_active_directory =
-                generate_ui_for_directory(current_directory, currently_selected_file, main_file_view_rect,
+                generate_ui_for_directory(current_directory, currently_selected_file, fb.main_file_view_rect,
                                           filesystem_browser, directory_click_signal, file_click_signal);
         }
 
@@ -1245,6 +1246,9 @@ int main() {
         /*    .draw_everything();*/
 
         glDisable(GL_DEPTH_TEST);
+        // this is bad, pack it up soon
+        glActiveTexture(GL_TEXTURE0);
+        font_atlas.texture_atlas.bind_texture();
         batcher.absolute_position_with_colored_vertex_shader_batcher.draw_everything();
         batcher.transform_v_with_signed_distance_field_text_shader_batcher.draw_everything();
         glEnable(GL_DEPTH_TEST);

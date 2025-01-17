@@ -88,3 +88,6 @@
 [submodule "src/graphics/cube_map"]
 	path = src/graphics/cube_map
 	url = git@github.com:cpp-toolbox/cube_map.git
+[submodule "src/utility/expiring_temporal_vector"]
+	path = src/utility/expiring_temporal_vector
+	url = git@github.com:cpp-toolbox/expiring_temporal_vector.git
