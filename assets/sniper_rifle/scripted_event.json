@@ -1,0 +1,39 @@
+{
+    "events": [
+        {
+            "name": "exit_idle",
+            "time": 0.0,
+            "type": "playthrough"
+        },
+        {
+            "name": "bolt_grab",
+            "time": 0.4,
+            "type": "playthrough"
+        },
+        {
+            "name": "bolt_slide_back",
+            "time": 0.9,
+            "type": "playthrough"
+        },
+        {
+            "name": "bolt_rotate_complete",
+            "time": 1.4000000000000001,
+            "type": "playthrough"
+        },
+        {
+            "name": "bolt_rotate",
+            "time": 0.6000000000000001,
+            "type": "playthrough"
+        },
+        {
+            "name": "bolt_slide_complete",
+            "time": 1.2000000000000002,
+            "type": "playthrough"
+        },
+        {
+            "name": "return_to_idle",
+            "time": 1.5,
+            "type": "playthrough"
+        }
+    ]
+}

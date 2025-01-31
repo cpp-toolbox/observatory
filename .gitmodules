@@ -91,3 +91,6 @@
 [submodule "src/utility/expiring_temporal_vector"]
 	path = src/utility/expiring_temporal_vector
 	url = git@github.com:cpp-toolbox/expiring_temporal_vector.git
+[submodule "src/utility/input_state"]
+	path = src/utility/input_state
+	url = git@github.com:cpp-toolbox/input_state.git

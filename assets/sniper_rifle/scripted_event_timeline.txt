@@ -1,0 +1,31 @@
+legend
+- bolt_grab
+  - key: BG
+  - type: playthrough
+- bolt_rotate
+  - key: BR
+  - type: playthrough
+- bolt_slide_back
+  - key: BSB
+  - type: playthrough
+- bolt_slide_complete
+  - key: BSC
+  - type: playthrough
+- bolt_rotate_complete
+  - key: BRC
+  - type: playthrough
+- return_to_idle
+  - key: RTI
+  - type: playthrough
+- exit_idle
+  - key: EI
+  - type: playthrough
+frame_unit: 1s
+
+x--------------------------------------------------------------------------------------------------------------------
+| events     | *EI *BG  *BSB *BRC                                                                                  
+| events     |       *BR   *BSC                                                                                    
+| events     |                *RTI                                                                                 
+| timeline   | |---------|---------|---------|---------|---------|---------|---------|---------|---------|---------
+| frame: 000 | 0---------1---------2---------3---------4---------5---------6---------7---------8---------9---------
+x--------------------------------------------------------------------------------------------------------------------

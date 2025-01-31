@@ -1,0 +1,9 @@
+{
+    "events": [
+        {
+            "name": "explosion",
+            "time": 0.0,
+            "type": "playthrough"
+        }
+    ]
+}

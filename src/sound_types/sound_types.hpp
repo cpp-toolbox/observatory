@@ -12,6 +12,15 @@ enum class SoundType {
     CIGARETTE_BURN,
     AMBIENT,
     WOOSH,
+    // another one
+    EXPLOSION,
+    // reload anim
+    BOLT_CLOSE,
+    BOLT_OPEN,
+    BOLT_SLIDE_CLOSE,
+    BOLT_SLIDE_OPEN,
+    IDLE_EXIT,
+    IDLE_RETURN
 };
 
 #endif // SOUND_TYPES_HPP
