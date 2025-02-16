@@ -6,6 +6,13 @@
 #include <GLFW/glfw3.h>
 #include <glm/detail/qualifier.hpp>
 
+
+// TODO document the fact that this has to be in the same file that the implementation header is or doesn't work
+#define STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include <stb_image.h>
+#include <stb_image_write.h>
+
 #include "graphics/texture_packer_model_loading/texture_packer_model_loading.hpp"
 #include "graphics/animated_texture_atlas/animated_texture_atlas.hpp"
 #include "graphics/scripted_events/scripted_scene_manager.hpp"
@@ -32,12 +39,6 @@
 #include "utility/stopwatch/stopwatch.hpp"
 #include "utility/fs_utils/fs_utils.hpp"
 
-#define STB_IMAGE_IMPLEMENTATION
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-
-// TODO document the fact that this has to be in the same file that the implementation header is or doesn't work
-#include <stb_image.h>
-#include <stb_image_write.h>
 
 #include <cstdio>
 #include <cstdlib>
@@ -745,6 +746,7 @@ int main() {
 
     std::string currently_packed_textures_paths = "assets/packed_textures/currently_packed_texture_paths.txt";
 
+
     std::filesystem::path font_info_path =
         std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas_font_info.json";
     std::filesystem::path font_json_path = std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas.json";
@@ -757,8 +759,11 @@ int main() {
 
     std::cout << "after FONT atlas" << std::endl;
 
-    std::filesystem::path explosion_animation_path = std::filesystem::path("assets") / "images/explosion_animation.png";
-    AnimatedTextureAtlas explosion_ata("", explosion_animation_path.string(), 50.0, false, texture_packer);
+    std::filesystem::path explosion_animation_path = std::filesystem::path("assets") / "images" / "explosion_animation.png";
+    std::filesystem::path explosion_json_path = std::filesystem::path("assets") / "images" / "explosion_animation.json";
+    AnimatedTextureAtlas explosion_ata(explosion_json_path.string(), explosion_animation_path.string(), 50.0, false, texture_packer);
+
+    std::cout << "after explosion ata" << std::endl;
 
     // START OF UI GENERATION
     UIRenderSuiteImpl ui_render_suite(batcher);
@@ -773,6 +778,8 @@ int main() {
     UI top_bar(font_atlas);
     auto open_rect = ui_grid.get_at(0, 0);
     auto settings_rect = ui_grid.get_at(1, 0);
+
+    // TODO: this needs to be toggled on when ANIMATION MODE is on
     auto pause_rect = ui_grid.get_at(6, 0);
     auto play_rect = ui_grid.get_at(7, 0);
     auto go_to_start_rect = ui_grid.get_at(8, 0);
@@ -829,11 +836,22 @@ int main() {
     auto bottom_right = ui_grid.get_at(9, 2);
     std::vector<vertex_geometry::Rectangle> rects = {top_left, bottom_right};
     auto title_rect = vertex_geometry::get_bounding_rectangle(rects);
+
     auto tension_label_rect = ui_grid.get_at(8, 3);
     auto tension_input_box_rect = ui_grid.get_at(9, 3);
 
     auto duration_label_rect = ui_grid.get_at(8, 4);
     auto duration_input_box_rect = ui_grid.get_at(9, 4);
+
+    rects = {ui_grid.get_at(8, 5), ui_grid.get_at(9, 5)};
+    auto camera_play_rect = vertex_geometry::get_bounding_rectangle(rects);
+
+    rects = {ui_grid.get_at(8, 6), ui_grid.get_at(9, 6)};
+    auto camera_pause_rect = vertex_geometry::get_bounding_rectangle(rects);
+
+
+    auto playback_percentage = ui_grid.get_at(8, 7);
+    auto playback_input_box_rect = ui_grid.get_at(9, 7);
 
     camera_spline_ui.add_textbox("camera spline", title_rect, colors.grey15);
 
@@ -863,6 +881,15 @@ int main() {
 
     camera_spline_ui.add_textbox("duration: ", duration_label_rect, colors.grey15);
     camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "5", duration_input_box_rect, colors.grey15,
+                                   colors.darkgreen);
+
+
+    camera_spline_ui.add_textbox("run", camera_play_rect, colors.grey15);
+    camera_spline_ui.add_textbox("pause", camera_pause_rect, colors.grey15);
+
+
+    camera_spline_ui.add_textbox("playback percentage: ", playback_percentage, colors.grey15);
+    camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "1", playback_input_box_rect, colors.grey15,
                                    colors.darkgreen);
 
     /*camera_spline_ui.add_input_box(camera_spline_tension_on_confirm, "1", tension_rect, colors.grey11,*/
@@ -939,7 +966,7 @@ int main() {
             }
         }
         if (has_extension(currently_selected_file, "obj")) {
-            auto model_we_are_loading = parse_model_into_ivpnts(currently_selected_file.string(), false);
+            auto model_we_are_loading = model_loading::parse_model_into_ivpnts(currently_selected_file.string(), false);
             Transform crosshair_transform = Transform();
 
             std::vector<std::string> used_texture_paths;
@@ -973,14 +1000,15 @@ int main() {
 
     Transform crosshair_transform = Transform();
     crosshair_transform.scale = glm::vec3(.01, .01, .01);
-    auto crosshair = parse_model_into_ivpnts("assets/crosshair/3d_crosshair.obj", false);
+
+    auto crosshair = model_loading::parse_model_into_ivpnts("assets/crosshair/3d_crosshair.obj", false);
     std::cout << "before crosshair pack" << std::endl;
 
     std::vector<draw_info::IVPNTexturePacked> packed_crosshair =
         texture_packer_model_loading::convert_ivpnt_to_ivpntp(crosshair, texture_packer);
     std::cout << "after crosshair pack" << std::endl;
 
-    auto lightbulb = parse_model_into_ivpnts("assets/lightbulb/lightbulb.obj", false);
+    auto lightbulb = model_loading::parse_model_into_ivpnts("assets/lightbulb/lightbulb.obj", false);
     // we have four point lights atm
 
     std::vector<draw_info::IVPNTexturePacked> packed_lightbulb_1 =
@@ -1561,10 +1589,10 @@ int main() {
 
             packed_tex_coords_last_tick = packed_tex_coords;
 
-            int ptbbi = texture_packer.get_packed_texture_bounding_box_index_of_texture(explosion_animation_path);
+            int ptbbi = texture_packer.get_packed_texture_bounding_box_index_of_texture(explosion_animation_path.string());
             const std::vector<int> ptbbis(4, ptbbi);
 
-            int pti = texture_packer.get_packed_texture_index_of_texture(explosion_animation_path);
+            int pti = texture_packer.get_packed_texture_index_of_texture(explosion_animation_path.string());
             const std::vector<int> packed_texture_indices(4, pti);
             std::vector<unsigned int> ltw_mat_idxs(4, 1);
 
