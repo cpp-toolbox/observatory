@@ -94,3 +94,6 @@
 [submodule "src/utility/input_state"]
 	path = src/utility/input_state
 	url = git@github.com:cpp-toolbox/input_state.git
+[submodule "src/graphics/picking_texture"]
+	path = src/graphics/picking_texture
+	url = git@github.com:cpp-toolbox/picking_texture.git

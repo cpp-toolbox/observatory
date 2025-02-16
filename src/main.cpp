@@ -6,30 +6,31 @@
 #include <GLFW/glfw3.h>
 #include <glm/detail/qualifier.hpp>
 
-#include "graphics/animated_texture_atlas/animated_texture_atlas.hpp"
-#include "graphics/batcher/generated/batcher.hpp"
-#include "graphics/cube_map/cube_map.hpp"
-#include "graphics/fps_camera/fps_camera.hpp"
-#include "graphics/scripted_events/scripted_scene_manager.hpp"
-#include "graphics/vertex_geometry/vertex_geometry.hpp"
-#include "graphics/window/window.hpp"
-#include "graphics/shader_cache/shader_cache.hpp"
-#include "graphics/particle_emitter/particle_emitter.hpp"
-#include "graphics/texture_packer/texture_packer.hpp"
 #include "graphics/texture_packer_model_loading/texture_packer_model_loading.hpp"
-#include "graphics/ui/ui.hpp"
+#include "graphics/animated_texture_atlas/animated_texture_atlas.hpp"
+#include "graphics/scripted_events/scripted_scene_manager.hpp"
+#include "graphics/particle_emitter/particle_emitter.hpp"
+#include "graphics/vertex_geometry/vertex_geometry.hpp"
+#include "graphics/picking_texture/picking_texture.hpp"
+#include "graphics/texture_packer/texture_packer.hpp"
+#include "graphics/shader_cache/shader_cache.hpp"
+#include "graphics/batcher/generated/batcher.hpp"
+#include "graphics/fps_camera/fps_camera.hpp"
+#include "graphics/cube_map/cube_map.hpp"
+#include "graphics/window/window.hpp"
 #include "graphics/colors/colors.hpp"
+#include "graphics/ui/ui.hpp"
 
 #include "sound_system/sound_system.hpp"
 
 #include "utility/glfw_lambda_callback_manager/glfw_lambda_callback_manager.hpp"
-#include "utility/model_loading/model_loading.hpp"
-#include "utility/rigged_model_loading/rigged_model_loading.hpp"
 #include "utility/temporal_binary_signal/temporal_binary_signal.hpp"
+#include "utility/rigged_model_loading/rigged_model_loading.hpp"
 #include "utility/unique_id_generator/unique_id_generator.hpp"
+#include "utility/model_loading/model_loading.hpp"
+#include "utility/input_state/input_state.hpp"
 #include "utility/stopwatch/stopwatch.hpp"
 #include "utility/fs_utils/fs_utils.hpp"
-#include "utility/input_state/input_state.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -344,7 +345,7 @@ template <typename T, typename R, typename... Args> auto wrap_member_function(T 
     return std::function<R(Args...)>{[&obj, f](Args &&...args) { return (obj.*f)(std::forward<Args>(args)...); }};
 }
 
-void draw_ivpntp_object(std::vector<IVPNTexturePacked> &packed_object, Transform &object_transform,
+void draw_ivpntp_object(std::vector<draw_info::IVPNTexturePacked> &packed_object, Transform &object_transform,
                         glm::mat4 *ltw_matrices, Batcher &batcher, bool replace) {
     int ltw_mat_idx = packed_object[0].id;
     ltw_matrices[ltw_mat_idx] = object_transform.get_transform_matrix();
@@ -363,7 +364,7 @@ void draw_ivpntp_object(std::vector<IVPNTexturePacked> &packed_object, Transform
     }
 }
 
-void draw_ivptp_object(std::vector<IVPNTexturePacked> &packed_object, Transform &object_transform,
+void draw_ivptp_object(std::vector<draw_info::IVPNTexturePacked> &packed_object, Transform &object_transform,
                        glm::mat4 *ltw_matrices, Batcher &batcher, bool replace) {
     int ltw_mat_idx = packed_object[0].id;
     ltw_matrices[ltw_mat_idx] = object_transform.get_transform_matrix();
@@ -404,7 +405,7 @@ void on_directory_clicked() {}
 
 std::vector<int> generate_ui_for_directory(std::filesystem::path &current_directory,
                                            std::filesystem::path &currently_selected_file,
-                                           Rectangle &main_file_view_rect, UI &filesystem_browser,
+                                           vertex_geometry::Rectangle &main_file_view_rect, UI &filesystem_browser,
                                            TemporalBinarySignal &directory_click_signal,
                                            TemporalBinarySignal &file_click_signal) {
 
@@ -412,7 +413,7 @@ std::vector<int> generate_ui_for_directory(std::filesystem::path &current_direct
 
     std::vector<std::filesystem::path> files_and_dirs = list_files_and_directories(current_directory);
 
-    Grid file_rows(files_and_dirs.size(), 1, main_file_view_rect);
+    vertex_geometry::Grid file_rows(files_and_dirs.size(), 1, main_file_view_rect);
     auto file_rects = file_rows.get_column(0);
 
     std::function<void()> on_hover = []() {};
@@ -445,7 +446,7 @@ std::vector<int> generate_ui_for_directory(std::filesystem::path &current_direct
 
 struct IVPNTPModel {
     Transform transform;
-    std::vector<IVPNTexturePacked> packed_model;
+    std::vector<draw_info::IVPNTexturePacked> packed_model;
 };
 
 struct IVPNTPRModelSE {
@@ -457,42 +458,33 @@ struct IVPNTPRModelSE {
     std::vector<IVPNTPRigged> packed_model;
 };
 
-void process_and_queue_render_ui(glm::vec2 ndc_mouse_pos, UI &curr_ui, Batcher &batcher, InputState &input_state) {
-    curr_ui.process_mouse_position(ndc_mouse_pos);
+/**
+ * @class UIRenderSuiteImpl
+ * @brief Implementation of the IUIRenderSuite interface.
+ */
+class UIRenderSuiteImpl : public IUIRenderSuite {
+  public:
+    Batcher &batcher;
 
-    auto key_strings_just_pressed = input_state.get_just_pressed_key_strings();
-    for (const auto &key_str : key_strings_just_pressed) {
-        curr_ui.process_key_press(key_str);
-    }
+    explicit UIRenderSuiteImpl(Batcher &batcher) : batcher(batcher) {}
 
-    if (input_state.is_just_pressed(EKey::BACKSPACE)) {
-        curr_ui.process_delete_action();
-    }
-
-    if (input_state.is_just_pressed(EKey::ENTER)) {
-        curr_ui.process_confirm_action();
-    }
-
-    if (input_state.is_just_pressed(EKey::LEFT_MOUSE_BUTTON)) {
-        curr_ui.process_mouse_just_clicked(ndc_mouse_pos);
-    }
-
-    for (auto &cb : curr_ui.get_colored_boxes()) {
+    void render_colored_box(const UIRect &cb) override {
         batcher.absolute_position_with_colored_vertex_shader_batcher.queue_draw(
             cb.id, cb.ivpsc.indices, cb.ivpsc.xyz_positions, cb.ivpsc.rgb_colors,
             cb.modified_signal.has_just_changed());
     }
 
-    for (auto &tb : curr_ui.get_text_boxes()) {
+    void render_text_box(const UITextBox &tb) override {
         batcher.transform_v_with_signed_distance_field_text_shader_batcher.queue_draw(
             tb.id, tb.text_drawing_data.indices, tb.text_drawing_data.xyz_positions,
             tb.text_drawing_data.texture_coordinates);
+
         batcher.absolute_position_with_colored_vertex_shader_batcher.queue_draw(
             tb.id, tb.background_ivpsc.indices, tb.background_ivpsc.xyz_positions, tb.background_ivpsc.rgb_colors,
             tb.modified_signal.has_just_changed());
     }
 
-    for (auto &cr : curr_ui.get_clickable_text_boxes()) {
+    void render_clickable_text_box(const UIClickableTextBox &cr) override {
         batcher.transform_v_with_signed_distance_field_text_shader_batcher.queue_draw(
             cr.id, cr.text_drawing_data.indices, cr.text_drawing_data.xyz_positions,
             cr.text_drawing_data.texture_coordinates);
@@ -502,8 +494,7 @@ void process_and_queue_render_ui(glm::vec2 ndc_mouse_pos, UI &curr_ui, Batcher &
             cr.modified_signal.has_just_changed());
     }
 
-    for (auto &ib : curr_ui.get_input_boxes()) {
-
+    void render_input_box(const UIInputBox &ib) override {
         batcher.transform_v_with_signed_distance_field_text_shader_batcher.queue_draw(
             ib.id, ib.text_drawing_data.indices, ib.text_drawing_data.xyz_positions,
             ib.text_drawing_data.texture_coordinates, ib.modified_signal.has_just_changed());
@@ -513,8 +504,7 @@ void process_and_queue_render_ui(glm::vec2 ndc_mouse_pos, UI &curr_ui, Batcher &
             ib.modified_signal.has_just_changed());
     }
 
-    for (auto &dd : curr_ui.get_dropdowns()) {
-
+    void render_dropdown(const UIDropdown &dd) override {
         batcher.transform_v_with_signed_distance_field_text_shader_batcher.queue_draw(
             dd.id, dd.dropdown_text_data.indices, dd.dropdown_text_data.xyz_positions,
             dd.dropdown_text_data.texture_coordinates, dd.modified_signal.has_just_changed());
@@ -522,25 +512,18 @@ void process_and_queue_render_ui(glm::vec2 ndc_mouse_pos, UI &curr_ui, Batcher &
         batcher.absolute_position_with_colored_vertex_shader_batcher.queue_draw(
             dd.id, dd.dropdown_background.indices, dd.dropdown_background.xyz_positions,
             dd.dropdown_background.rgb_colors, dd.modified_signal.has_just_changed());
-
-        // render all the dropdowns if they're active
-        if (dd.dropdown_open) {
-            int num_dropdowns = dd.dropdown_option_rects.size();
-            for (int i = 0; i < num_dropdowns; i++) {
-                IVPSolidColor ivpsc = dd.dropdown_option_backgrounds[i];
-                IVPTextured ivpt = dd.dropdown_option_text_data[i];
-                unsigned int doid = dd.dropdown_doids[i];
-
-                batcher.transform_v_with_signed_distance_field_text_shader_batcher.queue_draw(
-                    doid, ivpt.indices, ivpt.xyz_positions, ivpt.texture_coordinates,
-                    dd.modified_signal.has_just_changed());
-
-                batcher.absolute_position_with_colored_vertex_shader_batcher.queue_draw(
-                    doid, ivpsc.indices, ivpsc.xyz_positions, ivpsc.rgb_colors, dd.modified_signal.has_just_changed());
-            }
-        }
     }
-}
+
+    void render_dropdown_option(const UIDropdown &dd, const draw_info::IVPSolidColor &ivpsc,
+                                const draw_info::IVPTextured &ivpt, unsigned int doid) override {
+        batcher.transform_v_with_signed_distance_field_text_shader_batcher.queue_draw(
+            doid, ivpt.indices, ivpt.xyz_positions, ivpt.texture_coordinates, dd.modified_signal.has_just_changed());
+
+        batcher.absolute_position_with_colored_vertex_shader_batcher.queue_draw(
+            doid, ivpsc.indices, ivpsc.xyz_positions, ivpsc.rgb_colors, dd.modified_signal.has_just_changed());
+    }
+};
+
 void regenerate_texture_packer_and_update_objects(TexturePacker &texture_packer,
                                                   std::vector<std::string> &used_texture_paths,
                                                   ShaderCache &shader_cache,
@@ -580,6 +563,16 @@ int main() {
     TemporalBinarySignal mouse_clicked_signal;
     InputState input_state;
 
+    bool camera_mode_activated = false;
+    std::vector<draw_info::IndexedVertexPositions> camera_keyframes;
+    float catmullrom_tension = 1;
+    float duration_from_start_to_end_of_spline = 5;
+    draw_info::IndexedVertexPositions cone_ivp = vertex_geometry::generate_icosphere(1, 1);
+    cone_ivp.transform.rotation = glm::vec3(.3, .2, .1);
+    int selected_camera_keyframe_index = -1;
+    draw_info::IndexedVertexPositions *selected_object = nullptr;
+    float cam_reach = 3;
+
     std::vector<IVPNTPModel> packed_models;
     // as of right now this can only have size 1, because of how the shader works it would require multiple draw calls
     // to render more than one of these so for now just use size 1 to save frames
@@ -610,9 +603,9 @@ int main() {
     unsigned int flame_id = UniqueIDGenerator::generate();
     bool flame_active = false;
     bool cigarette_light_active = false;
-    std::vector<glm::vec3> flame_vertices = generate_rectangle_vertices(0, 0, 1, 1);
-    std::vector<unsigned int> flame_indices = generate_rectangle_indices();
-    auto flame_normals = generate_rectangle_normals();
+    std::vector<glm::vec3> flame_vertices = vertex_geometry::generate_rectangle_vertices(0, 0, 1, 1);
+    std::vector<unsigned int> flame_indices = vertex_geometry::generate_rectangle_indices();
+    auto flame_normals = vertex_geometry::generate_rectangle_normals();
 
     auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
     console_sink->set_level(spdlog::level::debug);
@@ -677,11 +670,17 @@ int main() {
     std::vector<ShaderType> requested_shaders = {
         ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
         ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
-        ShaderType::TRANSFORM_V_WITH_SIGNED_DISTANCE_FIELD_TEXT, ShaderType::ABSOLUTE_POSITION_WITH_COLORED_VERTEX,
-        ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED};
+        ShaderType::TRANSFORM_V_WITH_SIGNED_DISTANCE_FIELD_TEXT,
+        ShaderType::ABSOLUTE_POSITION_WITH_COLORED_VERTEX,
+        ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
+        ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_COLORED_VERTEX,
+        ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_OBJECT_ID};
 
     ShaderCache shader_cache(requested_shaders, sinks);
     Batcher batcher(shader_cache);
+
+    PickingTexture picking_texture;
+    picking_texture.initialize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     auto text_color = glm::vec3(0.5, 0.5, 1);
     float char_width = 0.5;
@@ -762,7 +761,15 @@ int main() {
     AnimatedTextureAtlas explosion_ata("", explosion_animation_path.string(), 50.0, false, texture_packer);
 
     // START OF UI GENERATION
-    Grid ui_grid(10, 10);
+    UIRenderSuiteImpl ui_render_suite(batcher);
+
+    // rendering functions for UI start
+
+    // rendering functions for UI end
+
+    // TOP BAR START
+    vertex_geometry::Grid ui_grid(10, 10);
+
     UI top_bar(font_atlas);
     auto open_rect = ui_grid.get_at(0, 0);
     auto settings_rect = ui_grid.get_at(1, 0);
@@ -813,7 +820,56 @@ int main() {
     };
     top_bar.add_input_box(time_scale_on_confirm, "1", time_scale_rect, colors.grey10, colors.darkgreen);
 
+    // TOP BAR END
+    //
+    // CAMERA SPLINE MENU START
+
+    UI camera_spline_ui(font_atlas);
+    auto top_left = ui_grid.get_at(8, 1);
+    auto bottom_right = ui_grid.get_at(9, 2);
+    std::vector<vertex_geometry::Rectangle> rects = {top_left, bottom_right};
+    auto title_rect = vertex_geometry::get_bounding_rectangle(rects);
+    auto tension_label_rect = ui_grid.get_at(8, 3);
+    auto tension_input_box_rect = ui_grid.get_at(9, 3);
+
+    auto duration_label_rect = ui_grid.get_at(8, 4);
+    auto duration_input_box_rect = ui_grid.get_at(9, 4);
+
+    camera_spline_ui.add_textbox("camera spline", title_rect, colors.grey15);
+
+    std::function<void(std::string)> camera_spline_tension_on_confirm = [&](std::string s) {
+        try {
+            catmullrom_tension = std::stof(s);
+        } catch (const std::invalid_argument &e) {
+            std::cerr << "Invalid input: '" << s << "' is not a valid float.\n";
+        } catch (const std::out_of_range &e) {
+            std::cerr << "Invalid input: '" << s << "' is out of range for a float.\n";
+        }
+    };
+
+    camera_spline_ui.add_textbox("tension: ", tension_label_rect, colors.grey15);
+    camera_spline_ui.add_input_box(camera_spline_tension_on_confirm, "1", tension_input_box_rect, colors.grey15,
+                                   colors.darkgreen);
+
+    std::function<void(std::string)> camera_spline_duration_on_confirm = [&](std::string s) {
+        try {
+            duration_from_start_to_end_of_spline = std::stof(s);
+        } catch (const std::invalid_argument &e) {
+            std::cerr << "Invalid input: '" << s << "' is not a valid float.\n";
+        } catch (const std::out_of_range &e) {
+            std::cerr << "Invalid input: '" << s << "' is out of range for a float.\n";
+        }
+    };
+
+    camera_spline_ui.add_textbox("duration: ", duration_label_rect, colors.grey15);
+    camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "5", duration_input_box_rect, colors.grey15,
+                                   colors.darkgreen);
+
+    /*camera_spline_ui.add_input_box(camera_spline_tension_on_confirm, "1", tension_rect, colors.grey11,*/
+    /*                               colors.darkgreen);*/
+
     // signals for buttons
+    // FILE BROWSER START
     TemporalBinarySignal file_click_signal;
     TemporalBinarySignal directory_click_signal;
     TemporalBinarySignal up_a_dir_signal;
@@ -870,7 +926,7 @@ int main() {
                 regenerate_texture_packer_and_update_objects(texture_packer, used_texture_paths, shader_cache,
                                                              texture_packer_regen_signal, skybox, packed_models);
 
-                active_ivptprs = convert_ivpnt_to_ivpntpr(active_ivpntrs, texture_packer);
+                active_ivptprs = texture_packer_model_loading::convert_ivpnt_to_ivpntpr(active_ivpntrs, texture_packer);
                 active_scripted_event.load_in_new_scripted_event(target_file_path.string());
 
                 animated_packed_models_scripted_event.emplace_back(&active_rirc, &active_scripted_event,
@@ -896,7 +952,8 @@ int main() {
 
             // add the new model
             Transform new_model_transform = Transform();
-            std::vector<IVPNTexturePacked> packed_model = convert_ivpnt_to_ivpntp(model_we_are_loading, texture_packer);
+            std::vector<draw_info::IVPNTexturePacked> packed_model =
+                texture_packer_model_loading::convert_ivpnt_to_ivpntp(model_we_are_loading, texture_packer);
             IVPNTPModel pm(new_model_transform, packed_model);
             packed_models.push_back(pm);
         }
@@ -906,7 +963,9 @@ int main() {
     filesystem_browser.add_clickable_textbox(on_click, on_hover, "open", fb.open_button, colors.darkgreen,
                                              colors.lightgreen);
 
-    // START OF UI GENERATION
+    // FILE BROWSER END
+
+    // END OF UI GENERATION
 
     /*AnimatedTextureAtlas animated_texture_atlas("", "assets/images/flame.png", 500.0, texture_packer);*/
 
@@ -917,16 +976,21 @@ int main() {
     auto crosshair = parse_model_into_ivpnts("assets/crosshair/3d_crosshair.obj", false);
     std::cout << "before crosshair pack" << std::endl;
 
-    std::vector<IVPNTexturePacked> packed_crosshair = convert_ivpnt_to_ivpntp(crosshair, texture_packer);
+    std::vector<draw_info::IVPNTexturePacked> packed_crosshair =
+        texture_packer_model_loading::convert_ivpnt_to_ivpntp(crosshair, texture_packer);
     std::cout << "after crosshair pack" << std::endl;
 
     auto lightbulb = parse_model_into_ivpnts("assets/lightbulb/lightbulb.obj", false);
     // we have four point lights atm
 
-    std::vector<IVPNTexturePacked> packed_lightbulb_1 = convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
-    std::vector<IVPNTexturePacked> packed_lightbulb_2 = convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
-    std::vector<IVPNTexturePacked> packed_lightbulb_3 = convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
-    std::vector<IVPNTexturePacked> packed_lightbulb_4 = convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
+    std::vector<draw_info::IVPNTexturePacked> packed_lightbulb_1 =
+        texture_packer_model_loading::convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
+    std::vector<draw_info::IVPNTexturePacked> packed_lightbulb_2 =
+        texture_packer_model_loading::convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
+    std::vector<draw_info::IVPNTexturePacked> packed_lightbulb_3 =
+        texture_packer_model_loading::convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
+    std::vector<draw_info::IVPNTexturePacked> packed_lightbulb_4 =
+        texture_packer_model_loading::convert_ivpnt_to_ivpntp(lightbulb, texture_packer);
 
     /*{{0, 0, 0}, {0.52f, 0.32f, 0.32f}, {0.1f, 0.1f, 0.1f}, {0.4f, 0.4f, 0.4f}, 1.0f, 0.09f, 0.032f},*/
     /*{{2, -2, 2}, {0.02f, 0.02f, 0.02f}, {0.1f, 0.1f, 0.1f}, {0.4f, 0.4f, 0.4f}, 1.0f, 0.09f, 0.032f},*/
@@ -951,7 +1015,8 @@ int main() {
     std::vector<IVPNTRigged> smoke_ivpntrs = rirc.parse_model_into_ivpntrs("assets/smoking/smoking.fbx");
     std::cout << "delme after smokefbx" << std::endl;
 
-    std::vector<IVPNTPRigged> smoke_ivptprs = convert_ivpnt_to_ivpntpr(smoke_ivpntrs, texture_packer);
+    std::vector<IVPNTPRigged> smoke_ivptprs =
+        texture_packer_model_loading::convert_ivpnt_to_ivpntpr(smoke_ivpntrs, texture_packer);
     std::cout << "delme after smokefbx pack" << std::endl;
 
     glfwSwapInterval(0);
@@ -1013,6 +1078,7 @@ int main() {
     cs_pe.particle_emitter.stop_emitting_particles();
     ScriptedEvent scripted_event("assets/smoking/scripted_event.json");
 
+    // TODO: you can also used shared pointers here
     IVPNTPRModelSE smoke_animated(&rirc, &scripted_event, smoke_ivptprs);
     /*animated_packed_models_scripted_event.push_back(smoke_animated);*/
 
@@ -1022,7 +1088,6 @@ int main() {
     std::vector<glm::vec4> smoke_bone_weights(4, glm::vec4(0, 0, 0, 0)); // 4 because square
 
     std::unordered_map<std::string, std::function<void(bool, bool)>> event_callbacks = {
-
         {"exit_idle",
          [&](bool first_call, bool last_call) { sound_system.queue_sound(SoundType::IDLE_EXIT, glm::vec3(0.0)); }},
         {"bolt_grab", [&](bool first_call, bool last_call) {}},
@@ -1103,9 +1168,9 @@ int main() {
 
     std::cout << "before get packed" << std::endl;
 
-    auto smoke_vertices = generate_square_vertices(0, 0, 0.5);
-    auto smoke_indices = generate_rectangle_indices();
-    std::vector<glm::vec2> smoke_local_uvs = generate_rectangle_texture_coordinates();
+    auto smoke_vertices = vertex_geometry::generate_square_vertices(0, 0, 0.5);
+    auto smoke_indices = vertex_geometry::generate_rectangle_indices();
+    std::vector<glm::vec2> smoke_local_uvs = vertex_geometry::generate_rectangle_texture_coordinates();
 
     // Convert paths to native format
     std::string smoke_texture_path = std::filesystem::path("assets/images/smoke_64px.png").make_preferred().string();
@@ -1116,6 +1181,19 @@ int main() {
     std::vector<int> smoke_pt_idxs(4, smoke_pt_idx); // 4 because square
 
     std::cout << "before while" << std::endl;
+
+    shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED, ShaderUniformVariable::CAMERA_TO_CLIP,
+                             camera.get_projection_matrix());
+
+    shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_OBJECT_ID,
+                             ShaderUniformVariable::CAMERA_TO_CLIP, camera.get_projection_matrix());
+    shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_OBJECT_ID,
+                             ShaderUniformVariable::WORLD_TO_CAMERA, glm::mat4(1));
+
+    shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_COLORED_VERTEX,
+                             ShaderUniformVariable::CAMERA_TO_CLIP, camera.get_projection_matrix());
+    shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_COLORED_VERTEX,
+                             ShaderUniformVariable::WORLD_TO_CAMERA, glm::mat4(1));
 
     int width, height;
 
@@ -1152,15 +1230,17 @@ int main() {
         //         TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES_AND_MULTIPLE_LIGHTS,
         //     ShaderUniformVariable::WORLD_TO_CAMERA, view);
 
-        shader_cache.set_uniform(
-            ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
-            ShaderUniformVariable::CAMERA_TO_CLIP, projection);
+        shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_COLORED_VERTEX,
+                                 ShaderUniformVariable::WORLD_TO_CAMERA, view);
+
+        shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_OBJECT_ID,
+                                 ShaderUniformVariable::WORLD_TO_CAMERA, view);
+
         shader_cache.set_uniform(
             ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
             ShaderUniformVariable::WORLD_TO_CAMERA, view);
 
-        shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED, ShaderUniformVariable::CAMERA_TO_CLIP,
-                                 projection);
+        // sketchy way to get the skybox working
         shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED,
                                  ShaderUniformVariable::WORLD_TO_CAMERA, origin_view);
         shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_TEXTURE_PACKED, ShaderUniformVariable::LOCAL_TO_WORLD,
@@ -1224,7 +1304,7 @@ int main() {
         glDepthFunc(GL_LEQUAL); // change depth function so depth test passes when values are equal to depth
                                 // buffer's content
         // Array of skybox faces and their corresponding identifiers
-        std::vector<std::tuple<int, const IVPTexturePacked &>> skybox_faces = {
+        std::vector<std::tuple<int, const draw_info::IVPTexturePacked &>> skybox_faces = {
             {0, skybox.top_face},  {1, skybox.bottom_face}, {2, skybox.right_face},
             {3, skybox.left_face}, {4, skybox.front_face},  {5, skybox.back_face}};
 
@@ -1499,16 +1579,30 @@ int main() {
         }
 
         // render ui now
-        auto ndc_mouse_pos = top_bar.get_ndc_mouse_pos(SCREEN_WIDTH, SCREEN_HEIGHT, camera.mouse.last_mouse_position_x,
-                                                       camera.mouse.last_mouse_position_y);
 
-        process_and_queue_render_ui(ndc_mouse_pos, top_bar, batcher, input_state);
+        auto ndc_mouse_pos = camera.mouse.get_ndc_mouse_pos(SCREEN_WIDTH, SCREEN_HEIGHT);
+        auto key_strings_just_pressed = input_state.get_just_pressed_key_strings();
+        bool delete_action_just_pressed = input_state.is_just_pressed(EKey::DELETE);
+        bool confirm_action_just_pressed = input_state.is_just_pressed(EKey::ENTER);
+        bool mouse_just_clicked = input_state.is_just_pressed(EKey::LEFT_MOUSE_BUTTON);
+
+        /*void process_and_queue_render_ui(glm::vec2 ndc_mouse_pos, UI &curr_ui, UIRenderSuite &ui_render_suite,*/
+        /*                                 const std::vector<std::string> &key_strings_just_pressed,*/
+        /*                                 bool delete_action_just_pressed, bool confirm_action_just_pressed,*/
+        /*                                 bool mouse_just_clicked, InputState &input_state) {*/
+
+        process_and_queue_render_ui(ndc_mouse_pos, top_bar, ui_render_suite, key_strings_just_pressed,
+                                    delete_action_just_pressed, confirm_action_just_pressed, mouse_just_clicked);
         if (file_browser_active) {
-            process_and_queue_render_ui(ndc_mouse_pos, filesystem_browser, batcher, input_state);
+            process_and_queue_render_ui(ndc_mouse_pos, filesystem_browser, ui_render_suite,
+
+                                        key_strings_just_pressed, delete_action_just_pressed,
+                                        confirm_action_just_pressed, mouse_just_clicked);
         }
 
         // draw file browser end ^^^^
 
+        // HANDLE fs browser button clicks
         if (directory_click_signal.has_just_changed() or up_a_dir_signal.has_just_changed()) {
             std::string current_directory_str = current_directory.string();
             std::string currently_selected_file_str = currently_selected_file.string();
@@ -1529,6 +1623,97 @@ int main() {
         if (file_click_signal.has_just_changed()) {
             filesystem_browser.modify_text_of_a_textbox(selected_file_doid, currently_selected_file_str);
         }
+
+        // HANDLE fs browser button clicks END
+
+        // CAMERA LOGIC START
+        if (input_state.is_just_pressed(EKey::c)) {
+            camera_mode_activated = not camera_mode_activated;
+        }
+
+        if (camera_mode_activated) {
+            process_and_queue_render_ui(ndc_mouse_pos, camera_spline_ui, ui_render_suite,
+
+                                        key_strings_just_pressed, delete_action_just_pressed,
+                                        confirm_action_just_pressed, mouse_just_clicked);
+
+            if (input_state.is_just_pressed(EKey::q)) {
+                draw_info::IndexedVertexPositions camera_indicator = vertex_geometry::generate_icosphere(1, .25);
+                camera_indicator.transform = camera.transform;
+                camera_keyframes.push_back(camera_indicator);
+            }
+        }
+
+        // camera indicators start
+        // TODO: eventually don't use this shader make a camera thing in blender and use that as the object.
+
+        int camera_keyframe_indicator_start_index = 500;
+
+        for (int i = 0; i < camera_keyframes.size(); i++) {
+            int idx = camera_keyframe_indicator_start_index + i;
+            ltw_matrices[idx] = camera_keyframes[i].transform.get_transform_matrix();
+            std::vector<unsigned int> cone_object_ids(cone_ivp.xyz_positions.size(), idx);
+
+            std::vector<glm::vec3> cs(cone_ivp.xyz_positions.size(), colors.black);
+            batcher.cwl_v_transformation_ubos_1024_with_colored_vertex_shader_batcher.queue_draw(
+                idx, cone_ivp.indices, cone_ivp.xyz_positions, cs, cone_object_ids);
+        }
+
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        batcher.cwl_v_transformation_ubos_1024_with_colored_vertex_shader_batcher.draw_everything();
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+        // camera indicators end
+
+        // 3d picking start
+
+        picking_texture.enable_writing();
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        for (int i = 0; i < camera_keyframes.size(); i++) {
+            int idx = camera_keyframe_indicator_start_index + i;
+            ltw_matrices[idx] = camera_keyframes[i].transform.get_transform_matrix();
+            std::vector<unsigned int> cone_object_ids(cone_ivp.xyz_positions.size(), idx);
+
+            std::vector<glm::vec3> cs(cone_ivp.xyz_positions.size(), colors.black);
+            batcher.cwl_v_transformation_ubos_1024_with_object_id_shader_batcher.queue_draw(
+                idx, cone_ivp.indices, cone_object_ids, cone_ivp.xyz_positions, cone_object_ids);
+        }
+
+        batcher.cwl_v_transformation_ubos_1024_with_object_id_shader_batcher.draw_everything();
+        picking_texture.disable_writing();
+
+        if (input_state.is_pressed(EKey::LEFT_MOUSE_BUTTON)) {
+            std::cout << "clicked mouse" << std::endl;
+
+            // using center of screen now because we are relying on where you're looking
+            unsigned int center_x = SCREEN_WIDTH / 2;
+            unsigned int center_y = SCREEN_HEIGHT / 2;
+            PickingTexture::PixelInfo clicked_pixel =
+                picking_texture.read_pixel(center_x, SCREEN_HEIGHT - 1 - center_y);
+
+            std::cout << clicked_pixel.object_id << std::endl;
+            // TODO: the way this index is handled is bad.
+            if (clicked_pixel.object_id >= 500 and clicked_pixel.object_id < 1000) {
+                selected_camera_keyframe_index = clicked_pixel.object_id - 500;
+                // TODO: unsafely using a raw pointer here, may be the source of problems
+                // if the item is deleted and we still have a pointer there.
+                selected_object = &camera_keyframes[selected_camera_keyframe_index];
+            }
+        }
+
+        if (input_state.is_pressed(EKey::RIGHT_MOUSE_BUTTON)) {
+            selected_object = nullptr;
+        }
+
+        if (selected_object != nullptr) {
+            selected_object->transform.position =
+                camera.transform.position + cam_reach * camera.transform.compute_forward_vector();
+        }
+
+        // 3d picking end
+
+        // CAMERA LOGIC END
 
         // render ui now
 
