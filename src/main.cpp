@@ -565,18 +565,20 @@ int main() {
 
     // CAMERA STUFF START
 
+    double duration_sec = 5;
     double start_time_ms = 0;
-    double end_time_ms = 15 * 1000;
+    double end_time_ms = duration_sec * 1000;
     float catmullrom_tension = 0.5;
     // TODO: have to do late initialization through a pointer so we can delay initializaton, when
     // the scripted transform can be initialized with four points, then this can be corrected
     std::unique_ptr<ScriptedTransform> cmr_scripted_transform = nullptr;
     /*ScriptedTransform cmr_scripted_transform({}, start_time_ms, end_time_ms, catmullrom_tension);*/
     double time_at_which_scripted_camera_was_started = 0;
+    bool camera_has_completed_spline_traversal = false;
     bool camera_mode_activated = false;
     bool scripted_camera_running = false;
+    // TODO: duplicated state, should be removed
     std::vector<draw_info::IndexedVertexPositions> camera_keyframes;
-    float duration_from_start_to_end_of_spline = 5;
     int selected_camera_keyframe_index = -1;
     // TODO: don't use raw pointer
     draw_info::IndexedVertexPositions *selected_object = nullptr;
@@ -880,12 +882,12 @@ int main() {
     };
 
     camera_spline_ui.add_textbox("tension: ", tension_label_rect, colors.grey15);
-    camera_spline_ui.add_input_box(camera_spline_tension_on_confirm, "1", tension_input_box_rect, colors.grey15,
+    camera_spline_ui.add_input_box(camera_spline_tension_on_confirm, "0.5", tension_input_box_rect, colors.grey15,
                                    colors.darkgreen);
 
     std::function<void(std::string)> camera_spline_duration_on_confirm = [&](std::string s) {
         try {
-            duration_from_start_to_end_of_spline = std::stof(s);
+            duration_sec = std::stof(s);
         } catch (const std::invalid_argument &e) {
             std::cerr << "Invalid input: '" << s << "' is not a valid float.\n";
         } catch (const std::out_of_range &e) {
@@ -893,7 +895,7 @@ int main() {
         }
     };
 
-    camera_spline_ui.add_textbox("duration: ", duration_label_rect, colors.grey15);
+    camera_spline_ui.add_textbox("duration sec: ", duration_label_rect, colors.grey15);
     camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "5", duration_input_box_rect, colors.grey15,
                                    colors.darkgreen);
 
@@ -901,6 +903,7 @@ int main() {
      * colors.green);*/
 
     std::function<void()> on_run_click = [&]() {
+        camera_has_completed_spline_traversal = false;
         scripted_camera_running = true;
         time_at_which_scripted_camera_was_started = glfwGetTime();
     };
@@ -911,11 +914,11 @@ int main() {
     camera_spline_ui.add_clickable_textbox(on_pause_click, on_hover, "pause", camera_pause_rect, colors.grey15,
                                            colors.darkgreen);
 
-    camera_spline_ui.add_textbox("go to start", camera_go_to_start_rect, colors.grey15);
+    /*camera_spline_ui.add_textbox("go to start", camera_go_to_start_rect, colors.grey15);*/
 
-    camera_spline_ui.add_textbox("playback percentage: ", playback_percentage, colors.grey15);
-    camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "1", playback_input_box_rect, colors.grey15,
-                                   colors.darkgreen);
+    /*camera_spline_ui.add_textbox("playback percentage: ", playback_percentage, colors.grey15);*/
+    /*camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "1", playback_input_box_rect, colors.grey15,*/
+    /*                               colors.darkgreen);*/
 
     /*camera_spline_ui.add_input_box(camera_spline_tension_on_confirm, "1", tension_rect, colors.grey11,*/
     /*                               colors.darkgreen);*/
@@ -1276,22 +1279,22 @@ int main() {
 
         glm::mat4 projection = camera.get_projection_matrix();
 
-        glm::mat4 view;
-        glm::mat4 origin_view;
         if (scripted_camera_running and cmr_scripted_transform) {
-            view = cmr_scripted_transform->transform.get_transform_matrix();
             double time_since_scripted_camera_started_sec = glfwGetTime() - time_at_which_scripted_camera_was_started;
             double time_since_scripted_camera_started_ms = time_since_scripted_camera_started_sec * 1000;
             cmr_scripted_transform->update(time_since_scripted_camera_started_ms);
-            std::cout << cmr_scripted_transform->transform.get_string_repr() << std::endl;
 
-            Transform transform_without_position = cmr_scripted_transform->transform;
-            transform_without_position.position = glm::vec3(0);
-            origin_view = transform_without_position.get_transform_matrix();
-        } else {
-            view = camera.get_view_matrix();
-            origin_view = camera.get_view_matrix_at(glm::vec3(0));
+            if (time_since_scripted_camera_started_sec >= duration_sec) {
+                // TODO: turn all this state into an object, and this is its "reset function"
+                scripted_camera_running = false;
+            }
+
+            camera.transform = cmr_scripted_transform->transform;
         }
+
+        glm::mat4 view = camera.get_view_matrix();
+        ;
+        glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));
 
         /*glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));*/
         glm::mat4 local_to_world(1.0f);
@@ -1725,7 +1728,10 @@ int main() {
                 if (cmr_scripted_transform == nullptr) {
                     if (camera_keyframes.size() >= 4) {
                         std::vector<Transform> initial_keyframes;
+
+                        std::cout << "camera debuggin" << std::endl;
                         for (const auto &camera_keyframe : camera_keyframes) {
+                            std::cout << camera_keyframe.transform.get_string_repr() << std::endl;
                             initial_keyframes.push_back(camera_keyframe.transform);
                         }
                         cmr_scripted_transform = std::make_unique<ScriptedTransform>(initial_keyframes, start_time_ms,
@@ -1745,6 +1751,8 @@ int main() {
 
         int camera_keyframe_indicator_start_index = 500;
 
+        // TODO:
+        // for (int i = 0; i < cmr_scripted_transform.get_num_keyframes(); i++) {
         for (int i = 0; i < camera_keyframes.size(); i++) {
             int idx = camera_keyframe_indicator_start_index + i;
 
@@ -1803,7 +1811,10 @@ int main() {
             }
         }
 
-        if (input_state.is_pressed(EKey::RIGHT_MOUSE_BUTTON)) {
+        if (selected_object and input_state.is_pressed(EKey::RIGHT_MOUSE_BUTTON)) {
+            std::cout << "scki: " << selected_camera_keyframe_index << " sot "
+                      << selected_object->transform.get_string_repr() << std::endl;
+            cmr_scripted_transform->update_keyframe(selected_camera_keyframe_index, selected_object->transform);
             selected_object = nullptr;
         }
 
