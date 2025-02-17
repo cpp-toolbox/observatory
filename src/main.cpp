@@ -6,7 +6,6 @@
 #include <GLFW/glfw3.h>
 #include <glm/detail/qualifier.hpp>
 
-
 // TODO document the fact that this has to be in the same file that the implementation header is or doesn't work
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -16,6 +15,7 @@
 #include "graphics/texture_packer_model_loading/texture_packer_model_loading.hpp"
 #include "graphics/animated_texture_atlas/animated_texture_atlas.hpp"
 #include "graphics/scripted_events/scripted_scene_manager.hpp"
+#include "graphics/scripted_transform/scripted_transform.hpp"
 #include "graphics/particle_emitter/particle_emitter.hpp"
 #include "graphics/vertex_geometry/vertex_geometry.hpp"
 #include "graphics/picking_texture/picking_texture.hpp"
@@ -38,7 +38,6 @@
 #include "utility/input_state/input_state.hpp"
 #include "utility/stopwatch/stopwatch.hpp"
 #include "utility/fs_utils/fs_utils.hpp"
-
 
 #include <cstdio>
 #include <cstdlib>
@@ -564,15 +563,26 @@ int main() {
     TemporalBinarySignal mouse_clicked_signal;
     InputState input_state;
 
+    // CAMERA STUFF START
+
+    double start_time_ms = 0;
+    double end_time_ms = 15 * 1000;
+    float catmullrom_tension = 0.5;
+    // TODO: have to do late initialization through a pointer so we can delay initializaton, when
+    // the scripted transform can be initialized with four points, then this can be corrected
+    std::unique_ptr<ScriptedTransform> cmr_scripted_transform = nullptr;
+    /*ScriptedTransform cmr_scripted_transform({}, start_time_ms, end_time_ms, catmullrom_tension);*/
+    double time_at_which_scripted_camera_was_started = 0;
     bool camera_mode_activated = false;
+    bool scripted_camera_running = false;
     std::vector<draw_info::IndexedVertexPositions> camera_keyframes;
-    float catmullrom_tension = 1;
     float duration_from_start_to_end_of_spline = 5;
-    draw_info::IndexedVertexPositions cone_ivp = vertex_geometry::generate_icosphere(1, 1);
-    cone_ivp.transform.rotation = glm::vec3(.3, .2, .1);
     int selected_camera_keyframe_index = -1;
+    // TODO: don't use raw pointer
     draw_info::IndexedVertexPositions *selected_object = nullptr;
     float cam_reach = 3;
+
+    // CAMERA STUFF END
 
     std::vector<IVPNTPModel> packed_models;
     // as of right now this can only have size 1, because of how the shader works it would require multiple draw calls
@@ -624,7 +634,7 @@ int main() {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    FPSCamera camera(glm::vec3(0, 0, 0), 50, SCREEN_WIDTH, SCREEN_HEIGHT, 90, 0.1, 500);
+    FPSCamera camera(glm::vec3(0, 0, 0), .5, SCREEN_WIDTH, SCREEN_HEIGHT, 90, 0.1, 500);
     std::function<void(unsigned int)> char_callback = [](unsigned int _) {};
 
     std::function<void(int, int, int, int)> key_callback = [&](int key, int scancode, int action, int mods) {
@@ -746,7 +756,6 @@ int main() {
 
     std::string currently_packed_textures_paths = "assets/packed_textures/currently_packed_texture_paths.txt";
 
-
     std::filesystem::path font_info_path =
         std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas_font_info.json";
     std::filesystem::path font_json_path = std::filesystem::path("assets") / "fonts" / "times_64_sdf_atlas.json";
@@ -759,9 +768,12 @@ int main() {
 
     std::cout << "after FONT atlas" << std::endl;
 
-    std::filesystem::path explosion_animation_path = std::filesystem::path("assets") / "images" / "explosion_animation.png";
-    std::filesystem::path explosion_json_path = std::filesystem::path("assets") / "images" / "explosion_animation.json";
-    AnimatedTextureAtlas explosion_ata(explosion_json_path.string(), explosion_animation_path.string(), 50.0, false, texture_packer);
+    /*std::filesystem::path explosion_animation_path =*/
+    /*    std::filesystem::path("assets") / "images" / "explosion_animation.png";*/
+    /*std::filesystem::path explosion_json_path = std::filesystem::path("assets") / "images" /
+     * "explosion_animation.json";*/
+    /*AnimatedTextureAtlas explosion_ata(explosion_json_path.string(), explosion_animation_path.string(), 50.0, false,*/
+    /*                                   texture_packer);*/
 
     std::cout << "after explosion ata" << std::endl;
 
@@ -810,7 +822,7 @@ int main() {
             apmse.scripted_event->reset_processed_state();
         }
         active_scripted_event.reset_processed_state();
-        explosion_ata.reset_processed_state();
+        /*explosion_ata.reset_processed_state();*/
     };
     std::function<void()> go_to_start_on_hover = []() {};
     top_bar.add_clickable_textbox(go_to_start_on_click, go_to_start_on_hover, "go to start", go_to_start_rect,
@@ -849,9 +861,11 @@ int main() {
     rects = {ui_grid.get_at(8, 6), ui_grid.get_at(9, 6)};
     auto camera_pause_rect = vertex_geometry::get_bounding_rectangle(rects);
 
+    rects = {ui_grid.get_at(8, 7), ui_grid.get_at(9, 7)};
+    auto camera_go_to_start_rect = vertex_geometry::get_bounding_rectangle(rects);
 
-    auto playback_percentage = ui_grid.get_at(8, 7);
-    auto playback_input_box_rect = ui_grid.get_at(9, 7);
+    auto playback_percentage = ui_grid.get_at(8, 8);
+    auto playback_input_box_rect = ui_grid.get_at(9, 8);
 
     camera_spline_ui.add_textbox("camera spline", title_rect, colors.grey15);
 
@@ -883,10 +897,21 @@ int main() {
     camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "5", duration_input_box_rect, colors.grey15,
                                    colors.darkgreen);
 
+    /*filesystem_browser.add_clickable_textbox(on_click, on_hover, "^", fb.up_a_dir_button, colors.purple,
+     * colors.green);*/
 
-    camera_spline_ui.add_textbox("run", camera_play_rect, colors.grey15);
-    camera_spline_ui.add_textbox("pause", camera_pause_rect, colors.grey15);
+    std::function<void()> on_run_click = [&]() {
+        scripted_camera_running = true;
+        time_at_which_scripted_camera_was_started = glfwGetTime();
+    };
+    std::function<void()> on_pause_click = [&]() { scripted_camera_running = false; };
 
+    camera_spline_ui.add_clickable_textbox(on_run_click, on_hover, "run", camera_play_rect, colors.grey15,
+                                           colors.darkgreen);
+    camera_spline_ui.add_clickable_textbox(on_pause_click, on_hover, "pause", camera_pause_rect, colors.grey15,
+                                           colors.darkgreen);
+
+    camera_spline_ui.add_textbox("go to start", camera_go_to_start_rect, colors.grey15);
 
     camera_spline_ui.add_textbox("playback percentage: ", playback_percentage, colors.grey15);
     camera_spline_ui.add_input_box(camera_spline_duration_on_confirm, "1", playback_input_box_rect, colors.grey15,
@@ -1241,12 +1266,34 @@ int main() {
 
         // pass uniforms
         if (window.cursor_is_grabbed) {
-            camera.process_input(window.glfw_window, delta_time);
+
+            camera.process_input(input_state.is_pressed(EKey::LEFT_CONTROL), input_state.is_pressed(EKey::TAB),
+                                 input_state.is_pressed(EKey::w), input_state.is_pressed(EKey::a),
+                                 input_state.is_pressed(EKey::s), input_state.is_pressed(EKey::d),
+                                 input_state.is_pressed(EKey::SPACE), input_state.is_pressed(EKey::LEFT_SHIFT),
+                                 delta_time);
         }
 
         glm::mat4 projection = camera.get_projection_matrix();
-        glm::mat4 view = camera.get_view_matrix();
-        glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));
+
+        glm::mat4 view;
+        glm::mat4 origin_view;
+        if (scripted_camera_running and cmr_scripted_transform) {
+            view = cmr_scripted_transform->transform.get_transform_matrix();
+            double time_since_scripted_camera_started_sec = glfwGetTime() - time_at_which_scripted_camera_was_started;
+            double time_since_scripted_camera_started_ms = time_since_scripted_camera_started_sec * 1000;
+            cmr_scripted_transform->update(time_since_scripted_camera_started_ms);
+            std::cout << cmr_scripted_transform->transform.get_string_repr() << std::endl;
+
+            Transform transform_without_position = cmr_scripted_transform->transform;
+            transform_without_position.position = glm::vec3(0);
+            origin_view = transform_without_position.get_transform_matrix();
+        } else {
+            view = camera.get_view_matrix();
+            origin_view = camera.get_view_matrix_at(glm::vec3(0));
+        }
+
+        /*glm::mat4 origin_view = camera.get_view_matrix_at(glm::vec3(0));*/
         glm::mat4 local_to_world(1.0f);
 
         // shader_cache.set_uniform(
@@ -1264,6 +1311,9 @@ int main() {
         shader_cache.set_uniform(ShaderType::CWL_V_TRANSFORMATION_UBOS_1024_WITH_OBJECT_ID,
                                  ShaderUniformVariable::WORLD_TO_CAMERA, view);
 
+        shader_cache.set_uniform(
+            ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
+            ShaderUniformVariable::CAMERA_TO_CLIP, projection);
         shader_cache.set_uniform(
             ShaderType::TEXTURE_PACKER_RIGGED_AND_ANIMATED_CWL_V_TRANSFORMATION_UBOS_1024_WITH_TEXTURES,
             ShaderUniformVariable::WORLD_TO_CAMERA, view);
@@ -1576,29 +1626,30 @@ int main() {
         /*}*/
 
         if (animation_playing) {
-            double ms_curr_time = current_animation_time * 1000;
-
-            std::vector<glm::vec2> packed_tex_coords =
-                explosion_ata.get_texture_coordinates_of_current_animation_frame(ms_curr_time);
-
-            bool new_coords = false;
-            if (packed_tex_coords != packed_tex_coords_last_tick) {
-                new_coords = true;
-                curr_obj_id += 1;
-            }
-
-            packed_tex_coords_last_tick = packed_tex_coords;
-
-            int ptbbi = texture_packer.get_packed_texture_bounding_box_index_of_texture(explosion_animation_path.string());
-            const std::vector<int> ptbbis(4, ptbbi);
-
-            int pti = texture_packer.get_packed_texture_index_of_texture(explosion_animation_path.string());
-            const std::vector<int> packed_texture_indices(4, pti);
-            std::vector<unsigned int> ltw_mat_idxs(4, 1);
-
-            batcher.texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_shader_batcher
-                .queue_draw(curr_obj_id, flame_indices, ltw_mat_idxs, smoke_bone_ids, smoke_bone_weights,
-                            packed_texture_indices, packed_tex_coords, ptbbis, flame_vertices, true);
+            /*double ms_curr_time = current_animation_time * 1000;*/
+            /**/
+            /*std::vector<glm::vec2> packed_tex_coords =*/
+            /*    explosion_ata.get_texture_coordinates_of_current_animation_frame(ms_curr_time);*/
+            /**/
+            /*bool new_coords = false;*/
+            /*if (packed_tex_coords != packed_tex_coords_last_tick) {*/
+            /*    new_coords = true;*/
+            /*    curr_obj_id += 1;*/
+            /*}*/
+            /**/
+            /*packed_tex_coords_last_tick = packed_tex_coords;*/
+            /**/
+            /*int ptbbi =*/
+            /*    texture_packer.get_packed_texture_bounding_box_index_of_texture(explosion_animation_path.string());*/
+            /*const std::vector<int> ptbbis(4, ptbbi);*/
+            /**/
+            /*int pti = texture_packer.get_packed_texture_index_of_texture(explosion_animation_path.string());*/
+            /*const std::vector<int> packed_texture_indices(4, pti);*/
+            /*std::vector<unsigned int> ltw_mat_idxs(4, 1);*/
+            /**/
+            /*batcher.texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_shader_batcher*/
+            /*    .queue_draw(curr_obj_id, flame_indices, ltw_mat_idxs, smoke_bone_ids, smoke_bone_weights,*/
+            /*                packed_texture_indices, packed_tex_coords, ptbbis, flame_vertices, true);*/
 
             /*batcher*/
             /*    .texture_packer_rigged_and_animated_cwl_v_transformation_ubos_1024_with_textures_and_multiple_lights_shader_batcher*/
@@ -1666,9 +1717,26 @@ int main() {
                                         confirm_action_just_pressed, mouse_just_clicked);
 
             if (input_state.is_just_pressed(EKey::q)) {
-                draw_info::IndexedVertexPositions camera_indicator = vertex_geometry::generate_icosphere(1, .25);
+
+                draw_info::IndexedVertexPositions camera_indicator = vertex_geometry::generate_icosphere(1, .1);
                 camera_indicator.transform = camera.transform;
                 camera_keyframes.push_back(camera_indicator);
+
+                if (cmr_scripted_transform == nullptr) {
+                    if (camera_keyframes.size() >= 4) {
+                        std::vector<Transform> initial_keyframes;
+                        for (const auto &camera_keyframe : camera_keyframes) {
+                            initial_keyframes.push_back(camera_keyframe.transform);
+                        }
+                        cmr_scripted_transform = std::make_unique<ScriptedTransform>(initial_keyframes, start_time_ms,
+                                                                                     end_time_ms, catmullrom_tension);
+                        std::cout << "init cmr scripted transform" << std::endl;
+                    }
+                } else {
+                    // TODO: add this back
+                    /*cmr_scripted_transform->append_keyframe(camera_indicator.transform);*/
+                    std::cout << "appended keyframe scripted transform" << std::endl;
+                }
             }
         }
 
@@ -1679,12 +1747,14 @@ int main() {
 
         for (int i = 0; i < camera_keyframes.size(); i++) {
             int idx = camera_keyframe_indicator_start_index + i;
-            ltw_matrices[idx] = camera_keyframes[i].transform.get_transform_matrix();
-            std::vector<unsigned int> cone_object_ids(cone_ivp.xyz_positions.size(), idx);
 
-            std::vector<glm::vec3> cs(cone_ivp.xyz_positions.size(), colors.black);
+            draw_info::IndexedVertexPositions camera_keyframe = camera_keyframes[i];
+            ltw_matrices[idx] = camera_keyframe.transform.get_transform_matrix();
+            std::vector<unsigned int> camera_keyframe_object_ids(camera_keyframe.xyz_positions.size(), idx);
+
+            std::vector<glm::vec3> cs(camera_keyframe.xyz_positions.size(), colors.black);
             batcher.cwl_v_transformation_ubos_1024_with_colored_vertex_shader_batcher.queue_draw(
-                idx, cone_ivp.indices, cone_ivp.xyz_positions, cs, cone_object_ids);
+                idx, camera_keyframe.indices, camera_keyframe.xyz_positions, cs, camera_keyframe_object_ids);
         }
 
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -1700,12 +1770,15 @@ int main() {
 
         for (int i = 0; i < camera_keyframes.size(); i++) {
             int idx = camera_keyframe_indicator_start_index + i;
-            ltw_matrices[idx] = camera_keyframes[i].transform.get_transform_matrix();
-            std::vector<unsigned int> cone_object_ids(cone_ivp.xyz_positions.size(), idx);
 
-            std::vector<glm::vec3> cs(cone_ivp.xyz_positions.size(), colors.black);
+            draw_info::IndexedVertexPositions camera_keyframe = camera_keyframes[i];
+            ltw_matrices[idx] = camera_keyframe.transform.get_transform_matrix();
+            std::vector<unsigned int> camera_keyframe_object_ids(camera_keyframe.xyz_positions.size(), idx);
+
+            std::vector<glm::vec3> cs(camera_keyframe.xyz_positions.size(), colors.black);
             batcher.cwl_v_transformation_ubos_1024_with_object_id_shader_batcher.queue_draw(
-                idx, cone_ivp.indices, cone_object_ids, cone_ivp.xyz_positions, cone_object_ids);
+                idx, camera_keyframe.indices, camera_keyframe_object_ids, camera_keyframe.xyz_positions,
+                camera_keyframe_object_ids);
         }
 
         batcher.cwl_v_transformation_ubos_1024_with_object_id_shader_batcher.draw_everything();

@@ -97,3 +97,9 @@
 [submodule "src/graphics/picking_texture"]
 	path = src/graphics/picking_texture
 	url = git@github.com:cpp-toolbox/picking_texture.git
+[submodule "src/graphics/catmull_rom_interpolator"]
+	path = src/graphics/catmull_rom_interpolator
+	url = git@github.com:cpp-toolbox/catmull_rom_interpolator.git
+[submodule "src/graphics/scripted_transform"]
+	path = src/graphics/scripted_transform
+	url = git@github.com:cpp-toolbox/scripted_transform.git
